@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/createAccountBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+
+    <TextView
+        android:id="@+id/login_appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/orbitron"
+        android:text="@string/app_name"
+        android:textColor="#BFFFFFFF"
+        android:textSize="60sp"
+        android:transitionName="AppTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/create_linearLayout"
+        android:layout_width="364dp"
+        android:layout_height="294dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_appName">
+
+
+        <EditText
+            android:id="@+id/entered_username_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@drawable/round_corner_v3"
+            android:ems="10"
+            android:hint="@string/prompt_Username"
+            android:inputType="textPersonName"
+            android:paddingStart="25dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="12sp"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/entered_email_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:autofillHints=""
+            android:background="@drawable/round_corner_v3"
+            android:ems="10"
+            android:hint="@string/prompt_email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="25dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="12sp"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/entered_password_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:background="@drawable/round_corner_v3"
+            android:ems="10"
+            android:hint="@string/prompt_password"
+            android:inputType="textPassword"
+            android:paddingStart="25dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="12sp"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/entered_confirmPassword_create"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:autofillHints=""
+            android:background="@drawable/round_corner_v3"
+            android:ems="10"
+            android:hint="@string/prompt_confirm_password"
+            android:inputType="textPassword"
+            android:paddingStart="25dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="12sp"
+            tools:ignore="TextContrastCheck" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/createAccount_button"
+        android:layout_width="188dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/round_corner_v2"
+        android:backgroundTint="#29E1CD"
+        android:gravity="center"
+        android:text="@string/createAccount_button"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_linearLayout"
+        tools:ignore="TextContrastCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/back_login_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:allowUndo="false"
+        android:clickable="false"
+        android:text="@string/backLogin_text"
+        android:textColor="#29E1CD"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createAccount_button"
+        tools:ignore="TextContrastCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
