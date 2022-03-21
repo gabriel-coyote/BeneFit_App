@@ -1,5 +1,6 @@
 package com.example.benefit_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -10,7 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class CreateAccountActivity extends AppCompatActivity {
@@ -22,16 +28,18 @@ public class CreateAccountActivity extends AppCompatActivity {
     private EditText enteredUsername, enteredEmail,
                      enteredPassword, enteredConfirmPassword;
 
-    // 🔥 Firebase 🔥
-    // private FirebaseAuth auth;
+    /* PURPOSE:          🔥 Firebase 🔥 */
+    private FirebaseAuth mAuth;
 
+
+    /* ********************************************************************** */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        // 🔥 Firebase 🔥
-        // auth = FirebaseAuth.getInstance();
+        /* PURPOSE:          🔥 Firebase 🔥 */
+        mAuth = FirebaseAuth.getInstance();
 
         /* PURPOSE:            Get the text entered by the user for creating account
                                from the activity_create_account.xml textFields    */
@@ -42,7 +50,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
 
         /* PURPOSE:             To call the Function 'createAccountUser()' when user
-                                Clicks on the createAccount button                */
+                                Clicks on the createAccount resetPassword_yes_button                */
         createAccount_button = (Button) findViewById(R.id.createAccount_button);
         createAccount_button.setOnClickListener(view -> createAccountUser());
 
@@ -76,11 +84,12 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
 
+    /* ********************************************************************** */
     /* FUNCTION NAME:    createAccountUser
        INPUT:            N/A
        OUTPUT:           Prompts User to fill out empty fields, if any
-       PURPOSE:          To register/create user for use with FireBase
-                         Activates on createAccount_button click    */
+       PURPOSE:          To register/create user for use with 🔥 FireBase 🔥
+                         Activates on createAccount_button click         */
     private void createAccountUser(){
 
         /* PURPOSE:        Convert our user's entered values into String(s)
@@ -125,6 +134,31 @@ public class CreateAccountActivity extends AppCompatActivity {
         }
 
 
+        /* PURPOSE:         Create a user account with 🔥 FireBase 🔥
+                            Display creation failures/successes    */
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(CreateAccountActivity.this, task -> {
+
+                    if(task.isSuccessful()){
+                        /* PURPOSE:     If registration succeed, display success message
+
+                                        Change activities to LoginActivity
+                                        Toast provides simple feedback about an,
+                                        operation in a small popup                    */
+                        Toast.makeText(CreateAccountActivity.this, "Registration Successful!",
+                                Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(CreateAccountActivity.this, LoginActivity.class));
+                    } else {
+                        /* PURPOSE:     If registration fails, display failed message
+                                        Toast provides simple feedback about an,
+                                        operation in a small popup            */
+                        Toast.makeText(CreateAccountActivity.this, "Registration Failed",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
 
     }
+
+
+
 }

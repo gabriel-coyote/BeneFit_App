@@ -1,19 +1,27 @@
 <resources>
-   <string name="app_name">BeneFit+</string>
+    <string name="app_name">BeneFit+</string>
 
-   <!-- Login Layout strings -->
-   <string name="prompt_email">Enter Email</string>
-   <string name="prompt_password">Enter Password</string>i
-   <string name="forgot_password"><u>Forgot Password?</u></string>
-   <string name="login_button">LOGIN</string>
-   <string name="signUp_text">Or Sign Up With</string>
+    <!-- Login Layout strings -->
+    <string name="prompt_email">Enter Email</string>
+    <string name="prompt_password">Enter Password</string>i
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="login_button">LOGIN</string>
+    <string name="signUp_text">Or Sign Up With</string>
 
-   <!-- Create Account Layout strings -->
-   <!-- also use some of login strings -->
-   <string name="createAccount_button">Create Account</string>
-   <string name="backLogin_text"><u>Back</u></string>
-   <string name="prompt_Username">Enter Username</string>
-   <string name="prompt_confirm_password">Confirm Password</string>
+    <!-- Create Account Layout strings -->
+    <!-- also use some of login strings -->
+    <string name="createAccount_button">Create Account</string>
+    <string name="backLogin_text"> ❯ </string>
+    <string name="prompt_Username">Enter Username</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
+
+
+    <!-- Reset Password Fragment Layout Strings -->
+    <string name="resetPassword_title">Reset Password?</string>
+    <string name="resetPassword_prompt">Enter your Email to receive reset link.</string>
+    <string name="resetPassword_yes">Yes</string>
+    <string name="resetPassword_back">Back</string>
+
 
 
 

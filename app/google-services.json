@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "419699604657",
+    "project_id": "benefit-app-6edeb",
+    "storage_bucket": "benefit-app-6edeb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419699604657:android:2b819bcb406f271293b690",
+        "android_client_info": {
+          "package_name": "com.example.benefit_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419699604657-iechlmg61na2u0gppl82no0kql707cqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAX5BdHFTnUClhsxM51URvCMzkRUh3l-No"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419699604657-iechlmg61na2u0gppl82no0kql707cqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
