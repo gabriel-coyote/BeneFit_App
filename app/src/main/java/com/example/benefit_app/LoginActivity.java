@@ -12,15 +12,13 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.fragment.app.FragmentActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 
 
@@ -28,13 +26,14 @@ public class LoginActivity extends AppCompatActivity {
 
     /* PURPOSE:         To access our corresponding items
                         from the activity_login.xml    */
-    private ImageButton signUp_button;
+    private ImageButton signUp_email_button, signUp_google_button, signUp_facebook_button;
     private Button login_button;
     private TextView forgotPassword_text;
     private EditText enteredEmail, enteredPassword;
 
     /* PURPOSE:          🔥 Firebase 🔥 */
     private FirebaseAuth auth;
+    private GoogleSignInClient googleSignInClient;
 
 
     /* ********************************************************************** */
@@ -45,6 +44,35 @@ public class LoginActivity extends AppCompatActivity {
 
         /* PURPOSE:          🔥 Firebase 🔥 */
         auth = FirebaseAuth.getInstance();
+
+
+        /* START: GOOGLE SIGN IN ---------------------------------- */
+        // TODO: Google Sign In - Not yet done
+        /* PURPOSE:         To Configure Google Sign-In and Client Object
+                            ID & basic profile are included in DEFAULT_SIGN_IN
+                            ID is found in google-services.json file         */
+        GoogleSignInOptions g_signIn_options = new GoogleSignInOptions.Builder(
+                GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken("419699604657-iechlmg61na2u0gppl82no0kql707cqj.apps.googleusercontent.com")
+                .requestEmail().build();
+        /* PURPOSE:         To build a GoogleSignInClient with the options
+                            specified by g_signIn_options               */
+        googleSignInClient = GoogleSignIn.getClient(LoginActivity.this, g_signIn_options);
+        /* PURPOSE              To start the Google Sign in process on Google Icon Click
+                                Note; deprecated means its not recommended to use, but ok for now */
+        //signUp_google_button.setOnClickListener(view -> startActivityForResult(googleSignInClient.getSignInIntent(), 100));
+        /* END: GOOGLE SIGN IN ---------------------------------- */
+
+
+        /* START: FACEBOOK SIGN IN ---------------------------------- */
+        // TODO: Facebook Sign In - Not yet done
+        /* PURPOSE:             On Facebook Icon SignUp Click, from activity_login.xml
+                                Use 🔥 FireBase 🔥 to automate the sign up process  */
+        signUp_facebook_button = (ImageButton) findViewById(R.id.signUp_Facebook_ImageButton);
+        /* PURPOSE:             On Google Icon SignUp Click, from activity_login.xml
+                                Use 🔥 FireBase 🔥 to automate the sign up process  */
+        signUp_google_button = (ImageButton) findViewById(R.id.signUp_Google_ImageButton);
+        /* END: FACEBOOK SIGN IN ---------------------------------- */
 
 
         /* PURPOSE:            Get the text entered by the user for Email & Password,
@@ -70,8 +98,8 @@ public class LoginActivity extends AppCompatActivity {
                                Change from Login Layout to Create Account Layout.
                                Using transition on the 'BeneFit+' title         */
         final TextView appTitleText = findViewById(R.id.login_appName);
-        signUp_button = (ImageButton) findViewById(R.id.signUp_email_ImageButton);
-        signUp_button.setOnClickListener(view -> {
+        signUp_email_button = (ImageButton) findViewById(R.id.signUp_email_ImageButton);
+        signUp_email_button.setOnClickListener(view -> {
 
             /* INTENT:               What we want to accomplish, in this case; change pages/activities
                ACTIVITY_OPTIONS:     How we want to change pages/activities, use transition keeping AppName
