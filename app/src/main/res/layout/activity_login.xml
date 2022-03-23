@@ -25,14 +25,39 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
+        android:id="@+id/signUp_Facebook_ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/signUp_Google_ImageButton"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_relativeLayout"
+        app:srcCompat="@drawable/facebook_sign_up_icon"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/signUp_Google_ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/signUp_email_ImageButton"
+        app:layout_constraintTop_toBottomOf="@+id/login_relativeLayout"
+        app:srcCompat="@drawable/google_sign_up_icon"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+    <ImageButton
         android:id="@+id/signUp_email_ImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="80dp"
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_relativeLayout"
         app:srcCompat="@drawable/email_sign_up_icon"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
@@ -48,9 +73,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/login_constrainLayout"
-            android:layout_below="@id/login_fragmentContainerView"
             android:layout_width="374dp"
             android:layout_height="274dp"
+            android:layout_below="@id/login_fragmentContainerView"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
