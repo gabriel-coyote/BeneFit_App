@@ -139,20 +139,27 @@ public class CreateAccountActivity extends AppCompatActivity {
                         /* PURPOSE:     If registration succeed, display success message
 
                                         Change activities to LoginActivity
-                                        Toast provides simple feedback about an,
-                                        operation in a small popup                    */
-                        Toast.makeText(CreateAccountActivity.this, "Registration Successful!",
-                                Toast.LENGTH_SHORT).show();
+                                        Using alertDialog function for message        */
+                        alertDialog("Registration Successful!");
                         startActivity(new Intent(CreateAccountActivity.this, LoginActivity.class));
                     } else {
                         /* PURPOSE:     If registration fails, display failed message
-                                        Toast provides simple feedback about an,
-                                        operation in a small popup            */
-                        Toast.makeText(CreateAccountActivity.this, "Registration Failed",
-                                Toast.LENGTH_SHORT).show();
+                                        Using alertDialog function for message     */
+                        alertDialog("Registration Failed.");
                     }
                 });
 
+    }
+
+
+    /* ********************************************************************** */
+    /* FUNCTION NAME:    alertDialog
+       INPUT:            A String
+       OUTPUT:           n/a
+       PURPOSE:          To make the code more readable,
+                         outputs an alert style text box    */
+    private void alertDialog(String text){
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
     }
 
 

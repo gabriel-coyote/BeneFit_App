@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
     android:id="@+id/loginBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -37,6 +38,19 @@
         app:layout_constraintTop_toBottomOf="@+id/login_relativeLayout"
         app:srcCompat="@drawable/facebook_sign_up_icon"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/FBlogin_button"
+        android:layout_width="25dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="52dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signUp_Facebook_ImageButton"
+        facebook:com_facebook_login_text="Continue with Facebook" />
 
     <ImageButton
         android:id="@+id/signUp_Google_ImageButton"

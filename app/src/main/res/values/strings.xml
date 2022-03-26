@@ -8,8 +8,7 @@
     <string name="login_button">LOGIN</string>
     <string name="signUp_text">Or Sign Up With</string>
 
-    <!-- Create Account Layout strings -->
-    <!-- also use some of login strings -->
+    <!-- Create Account Layout strings & Uses some of Login strings-->
     <string name="createAccount_button">Create Account</string>
     <string name="backLogin_text"> ❯ </string>
     <string name="prompt_Username">Enter Username</string>
@@ -21,6 +20,13 @@
     <string name="resetPassword_prompt">Enter your Email to receive reset link.</string>
     <string name="resetPassword_yes">Yes</string>
     <string name="resetPassword_back">Back</string>
+
+    <!-- Facebook Login Strings -->
+    <string name="facebook_app_id">370648141582272</string>
+    <string name="fb_login_protocol_scheme">fb370648141582272</string>
+    <string name="facebook_client_token">629db0657f0e801a41c3affada836267</string>
+
+
 
 
 
