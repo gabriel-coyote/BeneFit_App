@@ -6,7 +6,7 @@
     android:id="@+id/loginBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:background="@drawable/background_login"
     android:paddingTop="150dp"
     tools:context=".LoginActivity">
 
@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_relativeLayout"
-        app:srcCompat="@drawable/facebook_sign_up_icon"
+        app:srcCompat="@drawable/icon_facebook_sign_up"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <com.facebook.login.widget.LoginButton
@@ -61,7 +61,7 @@
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/signUp_email_ImageButton"
         app:layout_constraintTop_toBottomOf="@+id/login_relativeLayout"
-        app:srcCompat="@drawable/google_sign_up_icon"
+        app:srcCompat="@drawable/icon_google_sign_up"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <ImageButton
@@ -73,7 +73,7 @@
         android:backgroundTint="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_relativeLayout"
-        app:srcCompat="@drawable/email_sign_up_icon"
+        app:srcCompat="@drawable/icon_email_sign_up"
         tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
     <RelativeLayout
@@ -187,7 +187,7 @@
                 app:layout_constraintHorizontal_bias="0.056"
                 app:layout_constraintStart_toStartOf="@+id/entered_email_login"
                 app:layout_constraintTop_toTopOf="@+id/entered_email_login"
-                app:srcCompat="@drawable/email_icon"
+                app:srcCompat="@drawable/icon_email"
                 tools:ignore="ContentDescription,ImageContrastCheck" />
 
             <ImageView
@@ -200,7 +200,7 @@
                 app:layout_constraintStart_toStartOf="@+id/entered_password_login"
                 app:layout_constraintTop_toTopOf="@+id/entered_password_login"
                 app:layout_constraintVertical_bias="0.444"
-                app:srcCompat="@drawable/key_icon"
+                app:srcCompat="@drawable/icon_key"
                 tools:ignore="ContentDescription" />
 
             <TextView
