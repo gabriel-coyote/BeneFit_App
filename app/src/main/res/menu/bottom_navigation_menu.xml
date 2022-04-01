@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_Geo"
+        android:icon="@drawable/icon_menu_geo"
+        android:title="@string/menu_gyms"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/menu_Food"
+        android:icon="@drawable/icon_menu_food"
+        android:title="@string/menu_food"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/menu_placeholder"
+        android:title="@string/menu_empty"
+        android:enabled="false"
+        />
+
+    <item
+        android:id="@+id/menu_Fitness"
+        android:icon="@drawable/icon_menu_bar_chart"
+        android:title="@string/menu_fitness"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/menu_Profile"
+        android:icon="@drawable/icon_menu_profile"
+        android:title="@string/menu_profile"
+        android:enabled="true"
+        />
+</menu>

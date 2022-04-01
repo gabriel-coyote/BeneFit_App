@@ -15,6 +15,13 @@
     <string name="prompt_confirm_password">Confirm Password</string>
 
 
+    <!-- Bottom Navigation Menu Strings -->
+    <string name="menu_gyms">Gyms</string>
+    <string name="menu_food">Food</string>
+    <string name="menu_empty"> </string>
+    <string name="menu_fitness">Fitness</string>
+    <string name="menu_profile">Profile</string>
+
     <!-- Reset Password Fragment Layout Strings -->
     <string name="resetPassword_title">Reset Password?</string>
     <string name="resetPassword_prompt">Enter your Email to receive reset link.</string>
@@ -25,7 +32,6 @@
     <string name="facebook_app_id">370648141582272</string>
     <string name="fb_login_protocol_scheme">fb370648141582272</string>
     <string name="facebook_client_token">629db0657f0e801a41c3affada836267</string>
-
 
 
 

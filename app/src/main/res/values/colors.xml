@@ -10,4 +10,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- Colors used for the bottom navigation menu -->
+    <color name="menu_inactive">#787878</color>
+    <color name="menu_active">#FFFFFF</color>
+    <color name="menu_extra">#00FAE2</color>
+
 </resources>
