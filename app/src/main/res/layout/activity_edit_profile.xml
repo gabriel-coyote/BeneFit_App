@@ -37,22 +37,6 @@
             android:textSize="16sp"
             android:translationY="150" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:translationX="20"
-            android:translationY="100"
-            app:srcCompat="@drawable/ic_person" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="30dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
-            app:srcCompat="@drawable/ic_person" />
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
@@ -141,11 +125,29 @@
             android:translationY="175" />
 
         <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="8dp"
+            android:translationX="20"
+            android:translationY="-67"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
+            app:srcCompat="@drawable/ic_person" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:translationX="20"
+            android:translationY="-160"
+            app:srcCompat="@drawable/ic_person" />
+
+        <ImageView
             android:id="@+id/imageView"
             android:layout_width="30dp"
             android:layout_height="25dp"
             android:translationX="20"
-            android:translationY="0"
+            android:translationY="-50"
             app:srcCompat="@drawable/email_icon" />
 
         <Button
@@ -168,7 +170,7 @@
             android:layout_height="25dp"
             android:layout_weight="30dp"
             android:translationX="20"
-            android:translationY="-3"
+            android:translationY="-55"
             app:srcCompat="@drawable/key_icon" />
 
         <ImageView
@@ -176,7 +178,7 @@
             android:layout_width="30dp"
             android:layout_height="25dp"
             android:translationX="20"
-            android:translationY="40"
+            android:translationY="-15"
             app:srcCompat="@drawable/key_icon" />
 
     </LinearLayout>
