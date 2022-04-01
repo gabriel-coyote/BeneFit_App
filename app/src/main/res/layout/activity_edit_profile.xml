@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:background="@drawable/gradient_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/orbitron"
+            android:text="Name"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:translationX="0"
+            android:translationY="150" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/orbitron"
+            android:text="Username"
+            android:textAlignment="center"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="16sp"
+            android:translationY="150" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:translationX="20"
+            android:translationY="100"
+            app:srcCompat="@drawable/ic_person" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
+            app:srcCompat="@drawable/ic_person" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="    First Name"
+            android:textColor="@android:color/darker_gray"
+            android:translationY="175" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_search_bg"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:translationY="175" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="    Last Name"
+            android:textColor="@android:color/darker_gray"
+            android:translationY="175" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_search_bg"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:translationY="175" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="    Email"
+            android:textColor="@android:color/darker_gray"
+            android:translationY="175" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_search_bg"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:translationY="175" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="    Phone Number"
+            android:textColor="@android:color/darker_gray"
+            android:translationY="175" />
+
+        <EditText
+            android:id="@+id/editTextPhone2"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_search_bg"
+            android:ems="10"
+            android:inputType="phone"
+            android:translationX="0"
+            android:translationY="175" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="    Password"
+            android:textColor="@android:color/darker_gray"
+            android:translationY="175" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_search_bg"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:translationX="0"
+            android:translationY="175" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:translationX="20"
+            android:translationY="0"
+            app:srcCompat="@drawable/email_icon" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="364dp"
+            android:layout_height="wrap_content"
+            android:autoText="false"
+            android:background="@drawable/round_corner_v2"
+            android:capitalize="none"
+            android:fontFamily="@font/orbitron"
+            android:rotationY="0"
+            android:text="Save"
+            android:textColor="#FDFCFC"
+            android:translationX="20"
+            android:translationY="175" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:layout_weight="30dp"
+            android:translationX="20"
+            android:translationY="-3"
+            app:srcCompat="@drawable/key_icon" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:translationX="20"
+            android:translationY="40"
+            app:srcCompat="@drawable/key_icon" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
