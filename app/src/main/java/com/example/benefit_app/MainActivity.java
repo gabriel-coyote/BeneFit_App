@@ -6,17 +6,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
 
 import com.example.benefit_app.ui.fitness.FitnessFragment;
 import com.example.benefit_app.ui.food.FoodFragment;
 import com.example.benefit_app.ui.gyms.GymsFragment;
-import com.example.benefit_app.ui.profile.ProfileFragment;
+import com.example.benefit_app.ui.profile.ProfileEditFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         final Fragment fragmentGyms = new GymsFragment();
         final Fragment fragmentFood = new FoodFragment();
         final Fragment fragmentFitness = new FitnessFragment();
-        final Fragment fragmentProfile = new ProfileFragment();
+        final Fragment fragmentProfile = new ProfileEditFragment();
 
 
         /* PURPOSE:     To handle the navigation selection

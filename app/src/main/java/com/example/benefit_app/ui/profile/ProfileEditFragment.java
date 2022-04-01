@@ -10,19 +10,19 @@ import android.view.ViewGroup;
 
 import com.example.benefit_app.R;
 
-public class ProfileFragment extends Fragment {
+public class ProfileEditFragment extends Fragment {
 
 
 
 
 
 
-    public ProfileFragment() {}
+    public ProfileEditFragment() {}
 
 
 
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
+    public static ProfileEditFragment newInstance(String param1, String param2) {
+        ProfileEditFragment fragment = new ProfileEditFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -31,7 +31,7 @@ public class ProfileFragment extends Fragment {
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View viewer = inflater.inflate(R.layout.fragment_profile, container, false);
+        View viewer = inflater.inflate(R.layout.fragment_profile_edit, container, false);
 
 
 

@@ -51,6 +51,7 @@
         <entry key="app/src/main/res/layout/fragment_food.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_gyms.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35144927536231885" />
+        <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_reset_password.xml" value="0.47401247401247404" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icom.xml" value="0.203" />
