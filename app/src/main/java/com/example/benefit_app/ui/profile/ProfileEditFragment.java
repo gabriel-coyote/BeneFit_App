@@ -16,21 +16,25 @@ public class ProfileEditFragment extends Fragment {
 
 
 
-
-    public ProfileEditFragment() {}
-
-
-
-    public static ProfileEditFragment newInstance(String param1, String param2) {
-        ProfileEditFragment fragment = new ProfileEditFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
+    /* ********************************************************************** */
+    public ProfileEditFragment() {
+        // Required empty public constructor
     }
 
 
 
+    /* ********************************************************************** */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+
+    /* ********************************************************************** */
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        /* PURPOSE:             To get our items from the fragment_profile_edit.xml,
+                                Also return viewer to 'inflate' into the Fragment container viewer */
         View viewer = inflater.inflate(R.layout.fragment_profile_edit, container, false);
 
 
