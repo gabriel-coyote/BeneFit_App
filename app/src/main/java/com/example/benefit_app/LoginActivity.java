@@ -83,15 +83,15 @@ public class LoginActivity extends AppCompatActivity {
 
         /* PURPOSE:             On Facebook Icon SignUp Click, from activity_login.xml
                                 Call the facebookSignUp function                    */
-        signUp_facebook_button = (ImageButton) findViewById(R.id.signUp_Facebook_ImageButton);
+        signUp_facebook_button = findViewById(R.id.signUp_Facebook_ImageButton);
         signUp_facebook_button.setOnClickListener(view -> facebookSignUp());
 
 
 
         /* PURPOSE:            Get the text entered by the user for Email & Password,
                                from the activity_login.xml textFields              */
-        enteredEmail = (EditText) findViewById(R.id.entered_email_login);
-        enteredPassword = (EditText) findViewById(R.id.entered_password_login);
+        enteredEmail = findViewById(R.id.entered_email_login);
+        enteredPassword = findViewById(R.id.entered_password_login);
 
 
 
@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                                Change from Login Layout to Create Account Layout.
                                Using transition on the 'BeneFit+' title         */
         final TextView appTitleText = findViewById(R.id.login_appName);
-        signUp_email_button = (ImageButton) findViewById(R.id.signUp_email_ImageButton);
+        signUp_email_button = findViewById(R.id.signUp_email_ImageButton);
         signUp_email_button.setOnClickListener(view -> {
 
             /* INTENT:               What we want to accomplish, in this case; change pages/activities
@@ -125,13 +125,13 @@ public class LoginActivity extends AppCompatActivity {
 
         /* PURPOSE:              To call the Function 'signInUser()' when user
                                  Clicks on the Login resetPassword_yes_button                 */
-        login_button = (Button) findViewById((R.id.login_button));
+        login_button = findViewById((R.id.login_button));
         login_button.setOnClickListener(view ->  signInUser());
 
 
         /* PURPOSE:              To call the Function 'resetPassword()' when user
                                  Clicks on the forgot password text            */
-        forgotPassword_text = (TextView) findViewById(R.id.forgot_password_text);
+        forgotPassword_text = findViewById(R.id.forgot_password_text);
         forgotPassword_text.setOnClickListener(view -> resetPassword());
     }
 
