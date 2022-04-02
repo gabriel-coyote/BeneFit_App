@@ -39,15 +39,15 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         /* PURPOSE:            Get the text entered by the user for creating account
                                from the activity_create_account.xml textFields    */
-        enteredUsername = (EditText) findViewById(R.id.entered_username_create);
-        enteredEmail = (EditText) findViewById(R.id.entered_email_create);
-        enteredPassword = (EditText) findViewById(R.id.entered_password_create);
-        enteredConfirmPassword = (EditText) findViewById(R.id.entered_confirmPassword_create);
+        enteredUsername = findViewById(R.id.entered_username_create);
+        enteredEmail = findViewById(R.id.entered_email_create);
+        enteredPassword = findViewById(R.id.entered_password_create);
+        enteredConfirmPassword = findViewById(R.id.entered_confirmPassword_create);
 
 
         /* PURPOSE:             To call the Function 'createAccountUser()' when user
                                 Clicks on the createAccount resetPassword_yes_button                */
-        createAccount_button = (Button) findViewById(R.id.createAccount_button);
+        createAccount_button = findViewById(R.id.createAccount_button);
         createAccount_button.setOnClickListener(view -> createAccountUser());
 
 
@@ -66,7 +66,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                             Change from Create Account Layout to Login Layout
                             Using transition on the 'BeneFit+' title           */
         final TextView appTitleText = findViewById(R.id.login_appName);
-        backLogin_text = (TextView) findViewById(R.id.back_login_text);
+        backLogin_text = findViewById(R.id.back_login_text);
         backLogin_text.setOnClickListener(view -> {
 
             /* INTENT:               What we want to accomplish, in this case; change pages/activities

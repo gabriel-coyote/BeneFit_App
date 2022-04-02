@@ -45,7 +45,7 @@ public class resetPasswordFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         /* PURPOSE:             To get our items from the fragment_reset_password.xml,
-                                Also return to 'inflate' into the Fragment container viewer */
+                                Also return viewer to 'inflate' into the Fragment container viewer */
         View viewer = inflater.inflate(R.layout.fragment_reset_password, container, false);
 
         /* PURPOSE:          🔥 Firebase 🔥 */
@@ -54,16 +54,16 @@ public class resetPasswordFragment extends Fragment {
 
         /* PURPOSE:             Get the text entered by the user for Email
                                 From fragment_reset_password.xml, use 'viewer' */
-        resetPassword_enteredEmail = (EditText) viewer.findViewById(R.id.resetPassword_enteredEmail);
+        resetPassword_enteredEmail = viewer.findViewById(R.id.resetPassword_enteredEmail);
 
         /* PURPOSE:             To close the reset password dialog/fragment on BACK button click */
-        resetPasswordButton_Back = (Button) viewer.findViewById(R.id.resetPassword_back_button);
+        resetPasswordButton_Back = viewer.findViewById(R.id.resetPassword_back_button);
         resetPasswordButton_Back.setOnClickListener(view -> getActivity().getSupportFragmentManager()
                 .beginTransaction().remove(resetPasswordFragment.this).commit());
 
         /* PURPOSE:             To call the Function 'resetPassword_SendEmail()' when user clicks
                                 Clicks on the YES button of fragment_reset_password.xml   */
-        resetPasswordButton_Yes = (Button) viewer.findViewById(R.id.resetPassword_yes_button);
+        resetPasswordButton_Yes = viewer.findViewById(R.id.resetPassword_yes_button);
         resetPasswordButton_Yes.setOnClickListener( view -> resetPassword_SendEmail());
 
         /* PURPOSE:         Inflate the layout for this fragment */

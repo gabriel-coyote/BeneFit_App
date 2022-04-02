@@ -16,21 +16,24 @@ public class ProfileFragment extends Fragment {
 
 
 
-
-    public ProfileFragment() {}
-
-
-
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
+    /* ********************************************************************** */
+    public ProfileFragment() {
+        // Required empty public constructor
     }
 
 
+    /* ********************************************************************** */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
+
+    /* ********************************************************************** */
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        /* PURPOSE:             To get our items from the fragment_profile.xml,
+                                Also return viewer to 'inflate' into the Fragment container viewer */
         View viewer = inflater.inflate(R.layout.fragment_profile, container, false);
 
 
