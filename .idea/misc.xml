@@ -5,67 +5,42 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable-v24/round_corner_v4.xml" value="0.3655" />
-        <entry key="app/src/main/res/drawable-v24/round_corner_v5.xml" value="0.3655" />
+        <entry key="app/src/main/res/drawable-v24/round_corner_v5.xml" value="0.10328979492187501" />
         <entry key="app/src/main/res/drawable/app_icom_background.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/app_icon_background.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/app_icon_v1_background.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/app_icon_v2_background.xml" value="0.1445" />
-        <entry key="app/src/main/res/drawable/background_gradient.xml" value="0.293" />
-        <entry key="app/src/main/res/drawable/background_gradient_v2.xml" value="0.293" />
-        <entry key="app/src/main/res/drawable/background_gyms_container.xml" value="0.328" />
-        <entry key="app/src/main/res/drawable/background_reset_password.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/background_transparent.xml" value="0.1395" />
-        <entry key="app/src/main/res/drawable/bottom_nav_colors.xml" value="0.2345" />
         <entry key="app/src/main/res/drawable/email_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/email_sign_up_icon.xml" value="0.226" />
         <entry key="app/src/main/res/drawable/facebook_sign_up_icon.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/google_sign_up_icon.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.1585" />
-        <entry key="app/src/main/res/drawable/ic_create_button.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
-        <entry key="app/src/main/res/drawable/icon_action_button.xml" value="0.293" />
-        <entry key="app/src/main/res/drawable/icon_bar_chart.xml" value="0.293" />
-        <entry key="app/src/main/res/drawable/icon_email.xml" value="0.293" />
-        <entry key="app/src/main/res/drawable/icon_food.xml" value="0.293" />
-        <entry key="app/src/main/res/drawable/icon_geo.xml" value="0.293" />
-        <entry key="app/src/main/res/drawable/icon_man_running.xml" value="0.385" />
-        <entry key="app/src/main/res/drawable/icon_menu_action_button.xml" value="0.3475" />
-        <entry key="app/src/main/res/drawable/icon_profile.xml" value="0.293" />
+        <entry key="app/src/main/res/drawable/ic_profilepagebutton1.xml" value="0.3195" />
         <entry key="app/src/main/res/drawable/key_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/login_button_format.xml" value="0.1585" />
-        <entry key="app/src/main/res/drawable/main_gradiant.xml" value="0.291" />
-        <entry key="app/src/main/res/drawable/main_gradiant_v2.xml" value="0.314" />
-        <entry key="app/src/main/res/drawable/main_gradient.xml" value="0.291" />
+        <entry key="app/src/main/res/drawable/main_gradient.xml" value="0.3195" />
+        <entry key="app/src/main/res/drawable/profile_button1.xml" value="0.3195" />
+        <entry key="app/src/main/res/drawable/profilepagebutton1.xml" value="0.3195" />
         <entry key="app/src/main/res/drawable/reset_password_background.xml" value="0.3655" />
         <entry key="app/src/main/res/drawable/round_corner_v1.xml" value="0.1865" />
         <entry key="app/src/main/res/drawable/round_corner_v2.xml" value="0.1865" />
         <entry key="app/src/main/res/drawable/round_corner_v3.xml" value="0.1785" />
-        <entry key="app/src/main/res/drawable/round_corner_v6.xml" value="0.385" />
         <entry key="app/src/main/res/drawable/rounded_corner_view.xml" value="0.11" />
-        <entry key="app/src/main/res/drawable/weather_partly_sunny.xml" value="0.385" />
         <entry key="app/src/main/res/font/.xml" value="0.2935185185185185" />
         <entry key="app/src/main/res/font/bai_jamjuree_bold.xml" value="0.1675925925925926" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.14824024483550116" />
-        <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.21223021582733814" />
-        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.19630192502532928" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.4025772094726562" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2644927536231884" />
-        <entry key="app/src/main/res/layout/activity_main_test.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/food_page.xml" value="0.23822463768115942" />
-        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.35144927536231885" />
-        <entry key="app/src/main/res/layout/fragment_food.xml" value="0.35144927536231885" />
-        <entry key="app/src/main/res/layout/fragment_gyms.xml" value="0.29061371841155237" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35144927536231885" />
-        <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.35144927536231885" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.33240051269531223" />
         <entry key="app/src/main/res/layout/fragment_reset_password.xml" value="0.47401247401247404" />
-        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icom.xml" value="0.203" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icom_round.xml" value="0.203" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icon.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icon_v1.xml" value="0.203" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icon_v2.xml" value="0.1445" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/app_icon_v2_round.xml" value="0.397" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icon_v3.xml" value="0.1445" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icon_v3_round.xml" value="0.1445" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
