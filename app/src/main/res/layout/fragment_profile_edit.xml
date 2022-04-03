@@ -187,7 +187,7 @@
             android:text="Save"
             android:textColor="#FDFCFC"
             android:translationX="20dp"
-            android:translationY="175dp" />
+            android:translationY="120dp" />
 
         <ImageView
             android:id="@+id/imageView5"
