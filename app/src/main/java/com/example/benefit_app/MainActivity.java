@@ -13,6 +13,7 @@ import com.example.benefit_app.ui.fitness.FitnessFragment;
 import com.example.benefit_app.ui.food.FoodFragment;
 import com.example.benefit_app.ui.gyms.GymsFragment;
 import com.example.benefit_app.ui.profile.ProfileEditFragment;
+import com.example.benefit_app.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         final Fragment fragmentGyms = new GymsFragment();
         final Fragment fragmentFood = new FoodFragment();
         final Fragment fragmentFitness = new FitnessFragment();
-        final Fragment fragmentProfile = new ProfileEditFragment();
+        final Fragment fragmentProfileEdit = new ProfileEditFragment();
+        final Fragment fragmentProfile = new ProfileFragment();
 
 
         /* PURPOSE:         To handle the navigation selection on BottomNavigationView
