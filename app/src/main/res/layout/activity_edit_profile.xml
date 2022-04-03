@@ -25,8 +25,8 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="34sp"
-            android:translationX="0"
-            android:translationY="150" />
+            android:translationX="0dp"
+            android:translationY="150dp" />
 
         <TextView
             android:id="@+id/textView6"
@@ -37,7 +37,7 @@
             android:textAlignment="center"
             android:textColor="@android:color/darker_gray"
             android:textSize="16sp"
-            android:translationY="150" />
+            android:translationY="150dp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:text="    First Name"
             android:textColor="@android:color/darker_gray"
-            android:translationY="175" />
+            android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextTextPersonName3"
@@ -54,7 +54,7 @@
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="textPersonName"
-            android:translationY="175" />
+            android:translationY="175dp" />
 
         <TextView
             android:id="@+id/textView"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:text="    Last Name"
             android:textColor="@android:color/darker_gray"
-            android:translationY="175" />
+            android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextTextPersonName4"
@@ -71,7 +71,7 @@
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="textPersonName"
-            android:translationY="175" />
+            android:translationY="175dp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:text="    Email"
             android:textColor="@android:color/darker_gray"
-            android:translationY="175" />
+            android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextTextEmailAddress2"
@@ -88,7 +88,7 @@
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:translationY="175" />
+            android:translationY="175dp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:text="    Phone Number"
             android:textColor="@android:color/darker_gray"
-            android:translationY="175" />
+            android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextPhone2"
@@ -105,8 +105,8 @@
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="phone"
-            android:translationX="0"
-            android:translationY="175"
+            android:translationX="0dp"
+            android:translationY="175dp"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:text="    Password"
             android:textColor="@android:color/darker_gray"
-            android:translationY="175" />
+            android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -124,16 +124,16 @@
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="textPassword"
-            android:translationX="0"
-            android:translationY="175" />
+            android:translationX="0dp"
+            android:translationY="175dp" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="30dp"
             android:layout_height="25dp"
             android:layout_marginEnd="8dp"
-            android:translationX="20"
-            android:translationY="-67"
+            android:translationX="20dp"
+            android:translationY="-67dp"
             app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
             app:srcCompat="@drawable/ic_person" />
 
@@ -141,16 +141,16 @@
             android:id="@+id/imageView4"
             android:layout_width="30dp"
             android:layout_height="25dp"
-            android:translationX="20"
-            android:translationY="-160"
+            android:translationX="20dp"
+            android:translationY="-160dp"
             app:srcCompat="@drawable/ic_person" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="30dp"
             android:layout_height="25dp"
-            android:translationX="20"
-            android:translationY="-50"
+            android:translationX="20dp"
+            android:translationY="-50dp"
             app:srcCompat="@drawable/icon_email" />
 
         <Button
@@ -164,24 +164,24 @@
             android:rotationY="0"
             android:text="Save"
             android:textColor="#FDFCFC"
-            android:translationX="20"
-            android:translationY="175" />
+            android:translationX="20dp"
+            android:translationY="175dp" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="30dp"
             android:layout_height="25dp"
-            android:layout_weight="30dp"
-            android:translationX="20"
-            android:translationY="-55"
+
+            android:translationX="20dp"
+            android:translationY="-55dp"
             app:srcCompat="@drawable/icon_key" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="30dp"
             android:layout_height="25dp"
-            android:translationX="20"
-            android:translationY="-15"
+            android:translationX="20dp"
+            android:translationY="-15dp"
             app:srcCompat="@drawable/icon_key" />
 
     </LinearLayout>
