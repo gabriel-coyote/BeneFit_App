@@ -151,7 +151,7 @@
             android:layout_height="25dp"
             android:translationX="20"
             android:translationY="-50"
-            app:srcCompat="@drawable/email_icon" />
+            app:srcCompat="@drawable/icon_email" />
 
         <Button
             android:id="@+id/button2"
@@ -174,7 +174,7 @@
             android:layout_weight="30dp"
             android:translationX="20"
             android:translationY="-55"
-            app:srcCompat="@drawable/key_icon" />
+            app:srcCompat="@drawable/icon_key" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -182,7 +182,7 @@
             android:layout_height="25dp"
             android:translationX="20"
             android:translationY="-15"
-            app:srcCompat="@drawable/key_icon" />
+            app:srcCompat="@drawable/icon_key" />
 
     </LinearLayout>
 
