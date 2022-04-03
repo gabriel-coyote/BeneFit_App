@@ -45,15 +45,20 @@
             android:layout_height="wrap_content"
             android:text="    First Name"
             android:textColor="@android:color/darker_gray"
+            android:translationX="5dp"
             android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextTextPersonName3"
-            android:layout_width="match_parent"
+            android:layout_width="386dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="textPersonName"
+            android:paddingStart="50dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:translationX="5dp"
             android:translationY="175dp" />
 
         <TextView
@@ -62,15 +67,20 @@
             android:layout_height="wrap_content"
             android:text="    Last Name"
             android:textColor="@android:color/darker_gray"
+            android:translationX="5dp"
             android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextTextPersonName4"
-            android:layout_width="match_parent"
+            android:layout_width="386dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="textPersonName"
+            android:paddingStart="50dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:translationX="5dp"
             android:translationY="175dp" />
 
         <TextView
@@ -79,15 +89,20 @@
             android:layout_height="wrap_content"
             android:text="    Email"
             android:textColor="@android:color/darker_gray"
+            android:translationX="5dp"
             android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextTextEmailAddress2"
-            android:layout_width="match_parent"
+            android:layout_width="387dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="textEmailAddress"
+            android:paddingStart="50dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:translationX="5dp"
             android:translationY="175dp" />
 
         <TextView
@@ -96,16 +111,20 @@
             android:layout_height="wrap_content"
             android:text="    Phone Number"
             android:textColor="@android:color/darker_gray"
+            android:translationX="5dp"
             android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextPhone2"
-            android:layout_width="409dp"
+            android:layout_width="386dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="phone"
-            android:translationX="0dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="5dp"
+            android:textColor="@color/white"
+            android:translationX="5dp"
             android:translationY="175dp"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -115,16 +134,19 @@
             android:layout_height="wrap_content"
             android:text="    Password"
             android:textColor="@android:color/darker_gray"
+            android:translationX="5dp"
             android:translationY="175dp" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
-            android:layout_width="409dp"
+            android:layout_width="387dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_search_bg"
             android:ems="10"
             android:inputType="textPassword"
-            android:translationX="0dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="5dp"
+            android:translationX="5dp"
             android:translationY="175dp" />
 
         <ImageView
@@ -132,7 +154,7 @@
             android:layout_width="30dp"
             android:layout_height="25dp"
             android:layout_marginEnd="8dp"
-            android:translationX="20dp"
+            android:translationX="25dp"
             android:translationY="-67dp"
             app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName3"
             app:srcCompat="@drawable/ic_person" />
@@ -141,7 +163,7 @@
             android:id="@+id/imageView4"
             android:layout_width="30dp"
             android:layout_height="25dp"
-            android:translationX="20dp"
+            android:translationX="25dp"
             android:translationY="-160dp"
             app:srcCompat="@drawable/ic_person" />
 
@@ -149,7 +171,7 @@
             android:id="@+id/imageView"
             android:layout_width="30dp"
             android:layout_height="25dp"
-            android:translationX="20dp"
+            android:translationX="25dp"
             android:translationY="-50dp"
             app:srcCompat="@drawable/icon_email" />
 
@@ -172,7 +194,7 @@
             android:layout_width="30dp"
             android:layout_height="25dp"
 
-            android:translationX="20dp"
+            android:translationX="25dp"
             android:translationY="-55dp"
             app:srcCompat="@drawable/icon_key" />
 
@@ -180,7 +202,7 @@
             android:id="@+id/imageView2"
             android:layout_width="30dp"
             android:layout_height="25dp"
-            android:translationX="20dp"
+            android:translationX="25dp"
             android:translationY="-15dp"
             app:srcCompat="@drawable/icon_key" />
 
