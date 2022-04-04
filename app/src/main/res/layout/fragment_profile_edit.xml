@@ -59,7 +59,8 @@
             android:paddingEnd="5dp"
             android:textColor="@color/white"
             android:translationX="5dp"
-            android:translationY="175dp" />
+            android:translationY="175dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView"
@@ -81,7 +82,8 @@
             android:paddingEnd="5dp"
             android:textColor="@color/white"
             android:translationX="5dp"
-            android:translationY="175dp" />
+            android:translationY="175dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView3"
@@ -103,7 +105,8 @@
             android:paddingEnd="5dp"
             android:textColor="@color/white"
             android:translationX="5dp"
-            android:translationY="175dp" />
+            android:translationY="175dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView4"
@@ -147,7 +150,8 @@
             android:paddingStart="50dp"
             android:paddingEnd="5dp"
             android:translationX="5dp"
-            android:translationY="175dp" />
+            android:translationY="175dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageView
             android:id="@+id/imageView3"
