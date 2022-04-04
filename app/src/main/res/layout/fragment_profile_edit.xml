@@ -210,8 +210,8 @@
             android:id="@+id/imageView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:translationX="150"
-            android:translationY="-500"
+            android:translationX="150dp"
+            android:translationY="-500dp"
             app:srcCompat="@drawable/bf_logo" />
 
     </LinearLayout>

@@ -263,7 +263,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/bf_logo"
-        android:translationX="340"
-        android:translationY="60" />
+        android:translationX="340dp"
+        android:translationY="60dp" />
 
 </FrameLayout>
