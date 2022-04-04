@@ -206,6 +206,14 @@
             android:translationY="-15dp"
             app:srcCompat="@drawable/icon_key" />
 
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:translationX="150"
+            android:translationY="-500"
+            app:srcCompat="@drawable/bf_logo" />
+
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
