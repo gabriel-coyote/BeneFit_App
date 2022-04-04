@@ -36,7 +36,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/infoButton"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_rectangle22" />
+            app:srcCompat="@drawable/icon_line_v1" />
 
         <ImageView
             android:id="@+id/imageView14"
@@ -47,7 +47,7 @@
             app:layout_constraintHorizontal_bias="0.673"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/infoButton"
-            app:srcCompat="@drawable/icon_rectangle22" />
+            app:srcCompat="@drawable/icon_line_v1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
