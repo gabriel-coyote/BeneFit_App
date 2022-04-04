@@ -76,7 +76,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/profile_editButton"
             android:layout_width="177dp"
             android:layout_height="50dp"
             android:layout_marginTop="3dp"
