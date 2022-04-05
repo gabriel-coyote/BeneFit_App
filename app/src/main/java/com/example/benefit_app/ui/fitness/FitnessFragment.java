@@ -40,6 +40,8 @@ public class FitnessFragment extends Fragment {
         View viewer = inflater.inflate(R.layout.fragment_fitness, container, false);
 
 
+
+
         /* TODO: Delete this or reuse somewhere else.
         logoutButton = viewer.findViewById(R.id.test_fragment_logout_button);
         logoutButton.setOnClickListener(view -> {
