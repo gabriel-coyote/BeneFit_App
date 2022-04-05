@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_gradiant"
-    android:theme="@style/AppTheme.Login"
-    >
+    android:background="@drawable/main_gradiant">
+
+
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="92dp"
@@ -86,25 +86,25 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/website_response"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto"
         android:text="Food"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Food_SearchText" />
+        app:layout_constraintTop_toBottomOf="@+id/food_search_field" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="99dp"
-        android:layout_height="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="128dp"
-        android:layout_marginEnd="292dp"
+        android:layout_marginEnd="304dp"
         android:text="Food Description"
         android:textColor="#80FFFFFF"
         android:textSize="12sp"
@@ -232,61 +232,90 @@
         app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/CaloriesText"
+        <EditText
+            android:id="@+id/calories"
             android:layout_width="match_parent"
-            android:layout_height="31dp"
+            android:layout_height="35dp"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:inputType="textPersonName"
             android:text="Calories: "
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:textColor="#FBFBFB"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/WaterText"
+        <EditText
+            android:id="@+id/water"
             android:layout_width="match_parent"
             android:layout_height="33dp"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:inputType="textPersonName"
             android:text="Water:"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:textColor="#FBFBFB"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/ProteinText"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:text="Protein: "
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
-
-        <TextView
-            android:id="@+id/CarbsText"
+        <EditText
+            android:id="@+id/protein"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Carbs: "
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:inputType="textPersonName"
+            android:text="Protein:"
+            android:textColor="#FBFBFB"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/SugarText"
+        <EditText
+            android:id="@+id/carbs"
             android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:text="Sugar: "
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:inputType="textPersonName"
+            android:text="Carbs:"
+            android:textColor="#FBFBFB"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/FiberText"
+        <EditText
+            android:id="@+id/sugar"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="Fiber: "
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:inputType="textPersonName"
+            android:text="Sugar:"
+            android:textColor="#FBFBFB"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
-        <TextView
-            android:id="@+id/FatText"
+        <EditText
+            android:id="@+id/fiber"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:text="Fat: "
-            android:textColor="#FFFFFF"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:inputType="textPersonName"
+            android:text="Fiber:"
+            android:textColor="#FBFBFB"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/fat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/roboto"
+            android:inputType="textPersonName"
+            android:text="Fat:"
+            android:textColor="#FBFBFB"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
     </LinearLayout>
 
     <TextView
@@ -326,11 +355,11 @@
         app:layout_constraintTop_toTopOf="@+id/square3" />
 
     <EditText
-        android:id="@+id/Food_SearchText"
+        android:id="@+id/food_search_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Search "
@@ -351,16 +380,27 @@
         app:srcCompat="@drawable/bf_logo" />
 
     <Button
-        android:id="@+id/FindButton"
-        android:layout_width="64dp"
+        android:id="@+id/food_search_button"
+        android:layout_width="70dp"
         android:layout_height="36dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="36dp"
         android:background="@drawable/background_app_icon_v2"
         android:backgroundTint="#8832FFF9"
         android:text="Find"
         app:layout_constraintEnd_toStartOf="@+id/imageView10"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="113dp"
+        android:layout_height="132dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="52dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/square3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

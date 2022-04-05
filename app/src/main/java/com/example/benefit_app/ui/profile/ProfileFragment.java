@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.benefit_app.LoginActivity;
-import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -49,7 +48,7 @@ final Fragment fragmentProfileEdit = new ProfileEditFragment();
         profile_editButton.setOnClickListener(view -> loadFragment(fragmentProfileEdit));
 
         //SIGN-OUT FEATURE---------------->
-        sign_out_button = viewer.findViewById(R.id.sign_out_button);
+        sign_out_button = viewer.findViewById(R.id.sign_out_button_layout);
         sign_out_button.setOnClickListener(view -> {
             FirebaseAuth.getInstance().signOut();
             com.facebook.login.LoginManager.getInstance().logOut();
