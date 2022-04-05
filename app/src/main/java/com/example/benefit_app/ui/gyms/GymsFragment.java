@@ -1,8 +1,6 @@
 package com.example.benefit_app.ui.gyms;
 
 
-
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -31,7 +29,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
@@ -141,13 +138,11 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
     /* ********************************************************************** */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+
         mapView = view.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.onResume();
         mapView.getMapAsync(this);//when you already implement OnMapReadyCallback in your fragment
-
-
-
 
     }
 
@@ -186,7 +181,8 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
     }
 
 
-    /* ********************************************************************** *//**
+    /* ********************************************************************** */
+    /**
      * Handles the result of the request for location permissions.
      */
     // [START maps_current_place_on_request_permissions_result]
@@ -348,27 +344,24 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
     /* ********************************************************************** */
     private void openPlacesDialog() {
         // Ask the user to choose the place where they are now.
-        DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // The "which" argument contains the position of the selected item.
-                LatLng markerLatLng = likelyPlaceLatLngs[which];
-                String markerSnippet = likelyPlaceAddresses[which];
-                if (likelyPlaceAttributions[which] != null) {
-                    markerSnippet = markerSnippet + "\n" + likelyPlaceAttributions[which];
-                }
-
-                // Add a marker for the selected place, with an info window
-                // showing information about that place.
-                googleMap.addMarker(new MarkerOptions()
-                        .title(likelyPlaceNames[which])
-                        .position(markerLatLng)
-                        .snippet(markerSnippet));
-
-                // Position the map's camera at the location of the marker.
-                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(markerLatLng,
-                        DEFAULT_ZOOM));
+        DialogInterface.OnClickListener listener = (dialog, which) -> {
+            // The "which" argument contains the position of the selected item.
+            LatLng markerLatLng = likelyPlaceLatLngs[which];
+            String markerSnippet = likelyPlaceAddresses[which];
+            if (likelyPlaceAttributions[which] != null) {
+                markerSnippet = markerSnippet + "\n" + likelyPlaceAttributions[which];
             }
+
+            // Add a marker for the selected place, with an info window
+            // showing information about that place.
+            googleMap.addMarker(new MarkerOptions()
+                    .title(likelyPlaceNames[which])
+                    .position(markerLatLng)
+                    .snippet(markerSnippet));
+
+            // Position the map's camera at the location of the marker.
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(markerLatLng,
+                    DEFAULT_ZOOM));
         };
 
         // Display the dialog.

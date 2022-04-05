@@ -20,9 +20,9 @@ public class ProfileFragment extends Fragment {
 
 
 
-private Button profile_editButton;
-private Button sign_out_button;
-final Fragment fragmentProfileEdit = new ProfileEditFragment();
+    private Button profile_editButton;
+    private Button sign_out_button;
+    final Fragment fragmentProfileEdit = new ProfileEditFragment();
 
     /* ********************************************************************** */
     public ProfileFragment() {

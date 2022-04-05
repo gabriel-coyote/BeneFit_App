@@ -1,34 +1,18 @@
 package com.example.benefit_app.ui.food;
 
-import android.net.http.Request;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.textclassifier.TextLinks;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.benefit_app.MainActivity;
+import androidx.fragment.app.Fragment;
+
 import com.example.benefit_app.R;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
-import java.net.URL;
 
 
 public class FoodFragment extends Fragment {
@@ -37,7 +21,7 @@ public class FoodFragment extends Fragment {
     private Button food_search_button;
     private String food_search_response;
 
-    private TextView response;
+    private TextView response_box;
 
 
 
@@ -62,9 +46,13 @@ public class FoodFragment extends Fragment {
         /* PURPOSE:             To get our items from the fragment_food.xml,
                                 Also return viewer to 'inflate' into the Fragment container viewer */
         View viewer = inflater.inflate(R.layout.fragment_food, container, false);
+
+
         food_search_textfield = viewer.findViewById(R.id.food_search_field);
+        response_box = viewer.findViewById(R.id.website_response);
+
+
         food_search_button = viewer.findViewById(R.id.food_search_button);
-        response = viewer.findViewById(R.id.website_response);
         food_search_button.setOnClickListener(view -> {
             try {
                 getFood();
@@ -79,6 +67,8 @@ public class FoodFragment extends Fragment {
         return viewer;
     }
 
+
+    /* ********************************************************************** */
     public void getFood() throws IOException {
         String foodtext = food_search_textfield.getText().toString().trim();
 
@@ -126,7 +116,7 @@ public class FoodFragment extends Fragment {
 
 
         //Response response =
-        response.setText("result");
+        response_box.setText("result");
 
     }
 

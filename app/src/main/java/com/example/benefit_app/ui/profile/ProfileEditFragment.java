@@ -15,9 +15,7 @@ import com.example.benefit_app.R;
 public class ProfileEditFragment extends Fragment {
 
 
-private ImageView backButton;
-//final Fragment fragmentProfile = new ProfileFragment();
-
+    private ImageView backButton;
 
     /* ********************************************************************** */
     public ProfileEditFragment() {
@@ -40,8 +38,11 @@ private ImageView backButton;
                                 Also return viewer to 'inflate' into the Fragment container viewer */
         View viewer = inflater.inflate(R.layout.fragment_profile_edit, container, false);
 
+        /* On back button click of the Profile Edit Page go back to main Profile Page */
         backButton = viewer.findViewById(R.id.editProfileBackArrow);
-        //backButton.setOnClickListener(view -> loadFragment(fragmentProfile));
+        backButton.setOnClickListener(view -> getActivity().onBackPressed());
+
+
         return viewer;
     }
 

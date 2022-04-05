@@ -6,7 +6,7 @@ plugins {
 android {
     compileSdk 32
 
-    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.example.benefit_app"
         minSdk 29
@@ -42,13 +42,16 @@ dependencies {
     implementation 'com.facebook.android:facebook-login:latest.release'
 
 
-    /* Other dependencies */
-    implementation 'com.android.volley:volley:1.1.0'
-
-    implementation 'com.google.android.gms:play-services-auth:20.1.0'
-    implementation 'com.google.android.libraries.places:places:2.6.0'
+    /* Google Maps dependencies */
     implementation 'com.google.android.gms:play-services-maps:18.0.2'
     implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'com.google.android.libraries.places:places:2.6.0'
+
+    /* Website Api get request dependencies */
+    implementation 'com.android.volley:volley:1.1.0'
+
+    /* Other dependencies */
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
