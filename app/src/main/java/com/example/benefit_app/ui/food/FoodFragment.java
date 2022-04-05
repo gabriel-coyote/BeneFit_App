@@ -1,14 +1,18 @@
 package com.example.benefit_app.ui.food;
 
+import android.app.DownloadManager;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.textclassifier.TextLinks;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
 import com.example.benefit_app.R;
 
 import java.net.URL;
@@ -52,7 +56,6 @@ public class FoodFragment extends Fragment {
 
     public void getFood(){
         String foodtext = food_search_textfield.getText().toString().trim();
-        URL url = new
 
 
     }

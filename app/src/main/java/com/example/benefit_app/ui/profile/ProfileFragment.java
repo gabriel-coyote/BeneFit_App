@@ -1,5 +1,6 @@
 package com.example.benefit_app.ui.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,8 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.benefit_app.LoginActivity;
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileFragment extends Fragment {
 
@@ -19,6 +22,7 @@ public class ProfileFragment extends Fragment {
 
 
 private Button profile_editButton;
+private Button sign_out_button;
 final Fragment fragmentProfileEdit = new ProfileEditFragment();
 
     /* ********************************************************************** */
@@ -44,6 +48,13 @@ final Fragment fragmentProfileEdit = new ProfileEditFragment();
         profile_editButton = viewer.findViewById(R.id.profile_editButton);
         profile_editButton.setOnClickListener(view -> loadFragment(fragmentProfileEdit));
 
+        //SIGN-OUT FEATURE---------------->
+        sign_out_button = viewer.findViewById(R.id.sign_out_button);
+        sign_out_button.setOnClickListener(view -> {
+            FirebaseAuth.getInstance().signOut();
+            com.facebook.login.LoginManager.getInstance().logOut();
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+        });
         return viewer;
     }
 
