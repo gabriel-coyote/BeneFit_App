@@ -18,6 +18,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    /* PURPOSE:         Defining our fragments
+                    To use in conjunction with loadfragment() */
+    final Fragment fragmentGyms = new GymsFragment();
+    final Fragment fragmentFood = new FoodFragment();
+    final Fragment fragmentFitness = new FitnessFragment();
+    public final static Fragment fragmentProfileEdit = new ProfileEditFragment();
+    final Fragment fragmentProfile = new ProfileFragment();
+
+
     /* ********************************************************************** */
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -26,13 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        /* PURPOSE:         Defining our fragments
-                            To use in conjunction with loadfragment() */
-        final Fragment fragmentGyms = new GymsFragment();
-        final Fragment fragmentFood = new FoodFragment();
-        final Fragment fragmentFitness = new FitnessFragment();
-        final Fragment fragmentProfileEdit = new ProfileEditFragment();
-        final Fragment fragmentProfile = new ProfileFragment();
+
 
 
         /* PURPOSE:         To handle the navigation selection on BottomNavigationView
@@ -72,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
        INPUT:            A Fragment
        OUTPUT:           n/a
        PURPOSE:          Switches/loads a fragment into the main fragment container */
-    private void loadFragment(Fragment fragment) {
+    public void loadFragment(Fragment fragment) {
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.main_fragment_Container, fragment);

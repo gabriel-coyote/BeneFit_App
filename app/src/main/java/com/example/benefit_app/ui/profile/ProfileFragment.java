@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.benefit_app.LoginActivity;
+import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -22,7 +23,7 @@ public class ProfileFragment extends Fragment {
 
     private Button profile_editButton;
     private Button sign_out_button;
-    final Fragment fragmentProfileEdit = new ProfileEditFragment();
+
 
     /* ********************************************************************** */
     public ProfileFragment() {
@@ -45,7 +46,7 @@ public class ProfileFragment extends Fragment {
         View viewer = inflater.inflate(R.layout.fragment_profile, container, false);
 
         profile_editButton = viewer.findViewById(R.id.profile_editButton);
-        profile_editButton.setOnClickListener(view -> loadFragment(fragmentProfileEdit));
+        profile_editButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentProfileEdit));
 
         //SIGN-OUT FEATURE---------------->
         sign_out_button = viewer.findViewById(R.id.sign_out_button_layout);
@@ -58,7 +59,10 @@ public class ProfileFragment extends Fragment {
     }
 
     /* ********************************************************************** */
-
+    /* FUNCTION NAME:    loadFragment
+       INPUT:            A Fragment
+       OUTPUT:           n/a
+       PURPOSE:          Switches/loads a fragment into the main fragment container */
     private void loadFragment(Fragment fragment) {
 
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -66,6 +70,7 @@ public class ProfileFragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
 
 
 
