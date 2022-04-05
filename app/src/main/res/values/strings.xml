@@ -33,6 +33,9 @@
     <string name="fb_login_protocol_scheme">fb370648141582272</string>
     <string name="facebook_client_token">629db0657f0e801a41c3affada836267</string>
 
+    <!-- Food Api search -->
+    <string name="food_search_API_key">9uNZgAKO3Hb657GW2aYeIA==6QSUhrgPXxiwypMp</string>
+
 
 
 </resources>
