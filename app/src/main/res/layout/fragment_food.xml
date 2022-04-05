@@ -352,10 +352,10 @@
 
     <Button
         android:id="@+id/FindButton"
-        android:layout_width="64dp"
+        android:layout_width="70dp"
         android:layout_height="36dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/background_app_icon_v2"
         android:backgroundTint="#8832FFF9"
         android:text="Find"
