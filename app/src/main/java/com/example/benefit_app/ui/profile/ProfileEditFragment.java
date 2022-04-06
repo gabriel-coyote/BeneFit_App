@@ -115,12 +115,18 @@ public class ProfileEditFragment extends Fragment {
 
 
                         alertDialog("Saving Complete 😌");
+                        getActivity().onBackPressed();
+
                     }else if(!task.isSuccessful()){
                         alertDialog("Saving Failed... :(");
                     }
                 }
             });
+
+
         }
+
+
 
 
 
