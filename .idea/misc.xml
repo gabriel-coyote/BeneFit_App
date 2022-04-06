@@ -3,10 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/fragment_fitness.xml" value="0.5371376811594203" />
-        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/fragment_gyms.xml" value="0.4008152173913043" />
-        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/fragment_profile.xml" value="0.5371376811594203" />
-        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/fragment_profile_edit.xml" value="0.4008152173913043" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable-v24/round_corner_v4.xml" value="0.3655" />
         <entry key="app/src/main/res/drawable-v24/round_corner_v5.xml" value="0.3655" />
@@ -47,9 +43,11 @@
         <entry key="app/src/main/res/layout/activity_foodpage2.xml" value="0.39879759519038077" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.27319587628865977" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2644927536231884" />
-        <entry key="app/src/main/res/layout/fragment_food.xml" value="0.29558740145918266" />
+        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.30675675675675673" />
+        <entry key="app/src/main/res/layout/fragment_food.xml" value="0.7632418204044953" />
+        <entry key="app/src/main/res/layout/fragment_gyms.xml" value="0.30675675675675673" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2661682128906251" />
-        <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.21965789794921875" />
+        <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.372381591796875" />
         <entry key="app/src/main/res/layout/fragment_reset_password.xml" value="0.3559323348523178" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icom.xml" value="0.203" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icom_round.xml" value="0.203" />
