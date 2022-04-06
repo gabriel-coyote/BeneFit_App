@@ -78,7 +78,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/editTextFname"
+                android:id="@+id/first_name_text"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
@@ -132,7 +132,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/editTextLname"
+                android:id="@+id/last_name_text"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
@@ -186,7 +186,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/editTextEmail"
+                android:id="@+id/email_text"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
@@ -209,7 +209,7 @@
                 android:layout_height="25dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="26dp"
-                app:layout_constraintEnd_toEndOf="@+id/editTextEmail"
+                app:layout_constraintEnd_toEndOf="@+id/email_text"
                 app:layout_constraintHorizontal_bias="0.04"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -242,7 +242,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/pnum_text"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
@@ -267,7 +267,7 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/editTextPhone"
+                app:layout_constraintTop_toTopOf="@+id/pnum_text"
                 app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/icon_call" />
 
@@ -289,7 +289,7 @@
                 android:layout_marginLeft="6dp"
                 android:layout_marginBottom="36dp"
                 android:alpha=".5"
-                android:text="Password"
+                android:text="Username"
                 android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -297,13 +297,13 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/editTextPassword"
+                android:id="@+id/username_text"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
                 android:background="@drawable/ic_search_bg"
                 android:ems="10"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:paddingStart="50dp"
                 android:paddingEnd="5dp"
                 android:paddingBottom="10dp"
@@ -328,7 +328,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/saveButton"
+            android:id="@+id/finish_edit_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/round_corner_v2"
