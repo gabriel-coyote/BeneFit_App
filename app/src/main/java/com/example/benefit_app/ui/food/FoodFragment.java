@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -22,7 +23,7 @@ import okhttp3.Response;
 public class FoodFragment extends Fragment {
 
     private EditText food_search_textfield;
-    private Button food_search_button;
+    private ImageView food_search_button;
     private String food_search_response;
 
     private TextView response_box;
@@ -56,7 +57,7 @@ public class FoodFragment extends Fragment {
         //response_box = viewer.findViewById(R.id.foodtest_result);
 
 
-        food_search_button = viewer.findViewById(R.id.food_search_button);
+        food_search_button = viewer.findViewById(R.id.foodSearchIcon);
         food_search_button.setOnClickListener(view -> {
             try {
                 getFood();
