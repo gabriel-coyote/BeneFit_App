@@ -98,16 +98,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_rectangle_19" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="51dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="196dp"
-        android:layout_marginEnd="172dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bread" />
-
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
@@ -144,16 +134,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_rectangle_19" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="53dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="192dp"
-        android:layout_marginEnd="56dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/meat" />
 
     <TextView
         android:id="@+id/textView19"
@@ -401,12 +381,33 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/fireSymbol"
-        android:layout_width="64dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="196dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="192dp"
         android:src="@drawable/fire_animated"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="196dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_sandwich" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="188dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_meat" />
 </androidx.constraintlayout.widget.ConstraintLayout>
