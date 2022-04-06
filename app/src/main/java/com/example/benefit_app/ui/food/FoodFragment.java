@@ -14,6 +14,10 @@ import com.example.benefit_app.R;
 
 import java.io.IOException;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 
 public class FoodFragment extends Fragment {
 
@@ -49,7 +53,7 @@ public class FoodFragment extends Fragment {
 
 
         food_search_textfield = viewer.findViewById(R.id.food_search_field);
-        response_box = viewer.findViewById(R.id.website_response);
+        //response_box = viewer.findViewById(R.id.foodtest_result);
 
 
         food_search_button = viewer.findViewById(R.id.food_search_button);
@@ -116,7 +120,26 @@ public class FoodFragment extends Fragment {
 
 
         //Response response =
-        response_box.setText("result");
+        
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder().
+                url("https://api.calorieninjas.com/v1/nutrition?query="+foodtext).header("X-Api-Key", "9uNZgAKO3Hb657GW2aYeIA==6QSUhrgPXxiwypMp").build();
+
+
+        try (Response response = client.newCall(request).execute()) {
+            if (!response.isSuccessful()) {
+                // ... handle failed request
+            }
+
+            String responseBody = response.body().string();
+            response_box.setText(responseBody);// ... do something with response
+            
+        } catch (IOException e) {
+            // ... handle IO exception
+        }
+
+
+        //response_box.setText("result");
 
     }
 

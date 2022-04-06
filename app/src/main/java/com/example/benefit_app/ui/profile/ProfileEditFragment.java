@@ -2,6 +2,7 @@ package com.example.benefit_app.ui.profile;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -14,6 +15,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.benefit_app.R;
+import com.example.benefit_app.users.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class ProfileEditFragment extends Fragment {
 
@@ -25,6 +33,9 @@ public class ProfileEditFragment extends Fragment {
     private TextView email_text;
     private TextView pnum_text;
     private TextView username_text;
+
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
     /* ********************************************************************** */
     public ProfileEditFragment() {
@@ -77,6 +88,7 @@ public class ProfileEditFragment extends Fragment {
         transaction.commit();
     }
 
+    /* ********************************************************************** */
     private void changeInfo(){
 
         String fname_input = first_name_text.getText().toString().trim();
@@ -87,10 +99,35 @@ public class ProfileEditFragment extends Fragment {
 
         if(fname_input.isEmpty() || lname_input.isEmpty() || email_input.isEmpty() || pnum_input.isEmpty() || username_input.isEmpty()){
           alertDialog("Please fill out all entries.");
+        } else {
+            // Everything is filled in
+
+            User user = new User(fname_input,lname_input,email_input,pnum_input,username_input);
+
+
+            FirebaseDatabase.getInstance().getReference("Users")
+                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+
+                    if(task.isSuccessful()){
+
+
+                        alertDialog("Saving Complete 😌");
+                    }else if(!task.isSuccessful()){
+                        alertDialog("Saving Failed... :(");
+                    }
+                }
+            });
         }
+
+
+
 
     }
 
+    /* ********************************************************************** */
     private void alertDialog(String text){ Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
     }
 
