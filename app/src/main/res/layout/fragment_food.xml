@@ -73,16 +73,6 @@
         app:layout_constraintStart_toStartOf="@+id/square1"
         app:layout_constraintTop_toTopOf="@+id/square1" />
 
-    <ImageView
-        android:id="@+id/fireSymbol"
-        android:layout_width="57dp"
-        android:layout_height="54dp"
-        android:layout_marginEnd="280dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toBottomOf="@+id/square1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/fire" />
-
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
@@ -194,7 +184,7 @@
         android:id="@+id/Nutrition"
         android:layout_width="192dp"
         android:layout_height="34dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:text="Nutrition Facts"
         android:textAlignment="center"
         android:textColor="#FBFBFB"
@@ -409,4 +399,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_research" />
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/fireSymbol"
+        android:layout_width="64dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="196dp"
+        android:src="@drawable/fire_animated"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
