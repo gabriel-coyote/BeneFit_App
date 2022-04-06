@@ -20,7 +20,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class ProfileEditFragment extends Fragment {
@@ -33,9 +37,16 @@ public class ProfileEditFragment extends Fragment {
     private TextView email_text;
     private TextView pnum_text;
     private TextView username_text;
+    private TextView profile_display_name;
+    private TextView profile_display_username;
+    private TextView edit_profile_display_name;
+    private TextView edit_profile_display_username;
+
 
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference userReference;
 
     /* ********************************************************************** */
     public ProfileEditFragment() {
@@ -68,6 +79,27 @@ public class ProfileEditFragment extends Fragment {
         email_text = viewer.findViewById(R.id.email_text);
         pnum_text = viewer.findViewById(R.id.pnum_text);
         username_text = viewer.findViewById(R.id.username_text);
+        profile_display_name = viewer.findViewById(R.id.profile_display_name);
+        profile_display_username = viewer.findViewById(R.id.profile_display_username);
+        edit_profile_display_name = viewer.findViewById(R.id.edit_profile_display_name);
+        edit_profile_display_username = viewer.findViewById(R.id.edit_profile_display_username);
+        firebaseDatabase = firebaseDatabase.getInstance();
+        userReference = firebaseDatabase.getReference("Users");
+        userReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
+                profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
+                edit_profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
+                edit_profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         finish_edit_button = viewer.findViewById(R.id.finish_edit_button);
         finish_edit_button.setOnClickListener(view -> changeInfo());
 
@@ -97,6 +129,7 @@ public class ProfileEditFragment extends Fragment {
         String pnum_input = pnum_text.getText().toString().trim();
         String username_input = username_text.getText().toString().trim();
 
+
         if(fname_input.isEmpty() || lname_input.isEmpty() || email_input.isEmpty() || pnum_input.isEmpty() || username_input.isEmpty()){
           alertDialog("Please fill out all entries.");
         } else {
@@ -113,8 +146,10 @@ public class ProfileEditFragment extends Fragment {
 
                     if(task.isSuccessful()){
 
-
                         alertDialog("Saving Complete 😌");
+
+
+
                         getActivity().onBackPressed();
 
                     }else if(!task.isSuccessful()){
