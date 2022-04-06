@@ -2,7 +2,7 @@ package com.example.benefit_app.users;
 
 public class User {
 
-    public String firstName, lastName, email, phoneNumber, username;
+    private String firstName, lastName, email, phoneNumber, username;
 
     public User(){
 
