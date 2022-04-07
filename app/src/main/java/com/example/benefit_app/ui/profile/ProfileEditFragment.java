@@ -37,6 +37,8 @@ public class ProfileEditFragment extends Fragment {
     private TextView email_text;
     private TextView pnum_text;
     private TextView username_text;
+
+    // TO update Name & username
     private TextView profile_display_name;
     private TextView profile_display_username;
     private TextView edit_profile_display_name;
@@ -48,6 +50,8 @@ public class ProfileEditFragment extends Fragment {
     private FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference userReference;
+
+
 
     /* ********************************************************************** */
     public ProfileEditFragment() {
@@ -80,6 +84,8 @@ public class ProfileEditFragment extends Fragment {
         email_text = viewer.findViewById(R.id.email_text);
         pnum_text = viewer.findViewById(R.id.pnum_text);
         username_text = viewer.findViewById(R.id.username_text);
+
+        // To update username & name
         profile_display_name = viewer.findViewById(R.id.profile_display_name);
         profile_display_username = viewer.findViewById(R.id.profile_display_username);
         edit_profile_display_name = viewer.findViewById(R.id.edit_profile_display_name);
@@ -138,6 +144,7 @@ public class ProfileEditFragment extends Fragment {
                     if(task.isSuccessful()){
 
                         alertDialog("Saving Complete 😌");
+
 
                         /* TODO: Update profile names on pages
 
