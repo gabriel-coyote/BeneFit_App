@@ -35,7 +35,8 @@
 
     <!-- Food Api search -->
     <string name="food_search_API_key">9uNZgAKO3Hb657GW2aYeIA==6QSUhrgPXxiwypMp</string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

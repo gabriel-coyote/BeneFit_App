@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 
+import com.example.benefit_app.fitness.waterFragment;
 import com.example.benefit_app.ui.fitness.FitnessFragment;
 import com.example.benefit_app.ui.food.FoodFragment;
 import com.example.benefit_app.ui.gyms.GymsFragment;
@@ -20,12 +21,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     /* PURPOSE:         Defining our fragments
-                    To use in conjunction with loadfragment() */
+                        To use in conjunction with loadfragment() */
     final Fragment fragmentGyms = new GymsFragment();
     final Fragment fragmentFood = new FoodFragment();
     final Fragment fragmentFitness = new FitnessFragment();
-    public final static Fragment fragmentProfileEdit = new ProfileEditFragment();
     final Fragment fragmentProfile = new ProfileFragment();
+
+    /* PURPOSE:         Defining our sub fragments */
+    public final static Fragment fragmentProfileEdit = new ProfileEditFragment();
+    public final static Fragment fragmentWater = new waterFragment();
+
 
 
     /* ********************************************************************** */
