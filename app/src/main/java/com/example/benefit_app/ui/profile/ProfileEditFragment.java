@@ -94,20 +94,20 @@ public class ProfileEditFragment extends Fragment {
 
         /*
 
-        userReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
-                profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
-                edit_profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
-                edit_profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        userReference.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
+//                profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
+//                edit_profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
+//                edit_profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
 
          */

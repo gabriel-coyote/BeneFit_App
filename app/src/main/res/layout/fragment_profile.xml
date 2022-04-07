@@ -309,13 +309,15 @@
 
     <ImageView
         android:id="@+id/profilePic"
-        android:layout_width="128dp"
-        android:layout_height="124dp"
-        android:layout_marginTop="112dp"
+        android:layout_width="150dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="100dp"
+        android:contextClickable="false"
+        android:cropToPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/com_facebook_profile_picture_blank_square" />
+        app:srcCompat="@mipmap/picture_cat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

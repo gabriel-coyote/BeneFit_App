@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="148dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/workoutpage_rectangle" />
@@ -30,17 +30,17 @@
         android:id="@+id/CaloriesSquare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="148dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/WaterSquare"
+        app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/workoutpage_rectangle" />
 
     <ImageView
         android:id="@+id/imageView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
+        android:layout_marginEnd="48dp"
         android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toTopOf="@+id/CaloriesSquare"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
         android:fontFamily="@font/roboto"
         android:text="Steps"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/StepSquare"
         app:layout_constraintTop_toTopOf="@+id/StepSquare" />
 
@@ -64,11 +64,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/roboto"
         android:text="Workouts"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/imageView23"
         app:layout_constraintTop_toTopOf="@+id/imageView23" />
 
@@ -80,7 +80,7 @@
         android:layout_marginEnd="65dp"
         android:text="Water"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/WaterSquare"
         app:layout_constraintTop_toTopOf="@+id/WaterSquare" />
 
@@ -92,7 +92,7 @@
         android:layout_marginEnd="51dp"
         android:text="Calories"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/CaloriesSquare"
         app:layout_constraintTop_toTopOf="@+id/CaloriesSquare" />
 
@@ -102,6 +102,7 @@
         android:layout_height="25dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="11dp"
+        android:tint="@color/quantum_googred"
         app:layout_constraintEnd_toEndOf="@+id/CaloriesSquare"
         app:layout_constraintTop_toTopOf="@+id/CaloriesSquare"
         app:srcCompat="@drawable/icon_flame_outline" />
@@ -110,8 +111,8 @@
         android:id="@+id/workoutsPic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="@+id/imageView23"
         app:layout_constraintTop_toTopOf="@+id/imageView23"
         app:srcCompat="@drawable/bench_press" />
@@ -120,8 +121,9 @@
         android:id="@+id/stepsPic"
         android:layout_width="32dp"
         android:layout_height="28dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="19dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:tint="@color/quantum_yellow"
         app:layout_constraintEnd_toEndOf="@+id/StepSquare"
         app:layout_constraintTop_toTopOf="@+id/StepSquare"
         app:srcCompat="@drawable/running" />
@@ -132,6 +134,7 @@
         android:layout_height="27dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="21dp"
+        android:tint="@color/quantum_lightblue"
         app:layout_constraintEnd_toEndOf="@+id/WaterSquare"
         app:layout_constraintTop_toTopOf="@+id/WaterSquare"
         app:srcCompat="@drawable/ic_water_drop" />
@@ -141,7 +144,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/orbitron"
         android:text="Your Activity"
         android:textColor="#FFFFFF"
@@ -189,5 +192,66 @@
         android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="@+id/WaterSquare"
         app:layout_constraintEnd_toEndOf="@+id/WaterSquare" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/background_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_ellipse1" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:srcCompat="@drawable/icon_bell" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:alpha=".5"
+        android:fontFamily="monospace"
+        android:text="Friday"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/orbitron"
+        android:text="April, 2022"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="103dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/picture_cat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
