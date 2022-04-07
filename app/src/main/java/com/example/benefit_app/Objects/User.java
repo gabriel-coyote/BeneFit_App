@@ -1,4 +1,4 @@
-package com.example.benefit_app.users;
+package com.example.benefit_app.Objects;
 
 public class User {
 
