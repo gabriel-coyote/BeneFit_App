@@ -186,7 +186,8 @@
         android:layout_height="30dp"
         android:text="Button"
         tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="185dp" />
+        tools:layout_editor_absoluteY="185dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/finish_edit_todays_goal"
@@ -194,6 +195,7 @@
         android:layout_height="31dp"
         android:text="Button"
         tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="338dp" />
+        tools:layout_editor_absoluteY="338dp"
+        tools:ignore="MissingConstraints" />
     <!--comment -->
 </androidx.constraintlayout.widget.ConstraintLayout>
