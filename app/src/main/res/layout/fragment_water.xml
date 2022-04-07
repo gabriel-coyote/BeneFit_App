@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_gradiant">
+
+    <ImageView
+        android:id="@+id/squareOne"
+        android:layout_width="254dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="68dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rectangle22" />
+
+    <ImageView
+        android:id="@+id/minus1"
+        android:layout_width="43dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/squareOne"
+        app:layout_constraintTop_toTopOf="@+id/squareOne"
+        app:srcCompat="@drawable/icon_minus_circle" />
+
+    <ImageView
+        android:id="@+id/squareTwo"
+        android:layout_width="254dp"
+        android:layout_height="85dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/ProgressText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rectangle22" />
+
+    <ImageView
+        android:id="@+id/squareThree"
+        android:layout_width="254dp"
+        android:layout_height="85dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="316dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rectangle22" />
+
+    <ImageView
+        android:id="@+id/plus1"
+        android:layout_width="43dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/squareOne"
+        app:layout_constraintTop_toTopOf="@+id/squareOne"
+        app:srcCompat="@drawable/icon_plus_circle" />
+
+    <TextView
+        android:id="@+id/WaterbottleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="13dp"
+        android:fontFamily="@font/orbitron"
+        android:text="Water Bottle Size"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/squareOne"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/TextTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/orbitron"
+        android:text="Today's Goal"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/squareTwo"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/minus2"
+        android:layout_width="43dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/squareTwo"
+        app:layout_constraintTop_toTopOf="@+id/squareTwo"
+        app:srcCompat="@drawable/icon_minus_circle" />
+
+    <ImageView
+        android:id="@+id/plus2"
+        android:layout_width="43dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/squareTwo"
+        app:layout_constraintTop_toTopOf="@+id/squareTwo"
+        app:srcCompat="@drawable/icon_plus_circle" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="43dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/squareThree"
+        app:layout_constraintTop_toTopOf="@+id/squareThree"
+        app:srcCompat="@drawable/icon_minus_circle" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="43dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/squareThree"
+        app:layout_constraintTop_toTopOf="@+id/squareThree"
+        app:srcCompat="@drawable/icon_plus_circle" />
+
+    <TextView
+        android:id="@+id/ProgressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/orbitron"
+        android:text="Today's Progress"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/squareThree"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="@font/roboto"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/squareOne"
+        app:layout_constraintEnd_toStartOf="@+id/plus1" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="@font/roboto"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/squareTwo"
+        app:layout_constraintEnd_toStartOf="@+id/plus2" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="@font/roboto"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/squareThree"
+        app:layout_constraintEnd_toStartOf="@+id/imageView18" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
