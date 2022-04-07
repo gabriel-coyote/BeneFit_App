@@ -21,6 +21,8 @@ public class waterFragment extends Fragment{
     private Button todays_goal_minus;
     private Button progress_plus;
     private Button progress_minus;
+    private Button finish_edit_bottle_size;
+    private Button finish_edit_todays_goal;
 
 
 
@@ -52,10 +54,12 @@ public class waterFragment extends Fragment{
         //Bottle size listeners
         bottle_size_minus.setOnClickListener(view -> changeWaterValue());
         bottle_size_plus.setOnClickListener(view -> changeWaterValue());
+        finish_edit_bottle_size.setOnClickListener(view -> changeWaterValue());
 
         //goal listeners
         todays_goal_plus.setOnClickListener(view -> changeWaterValue());
         todays_goal_minus.setOnClickListener(view -> changeWaterValue());
+        finish_edit_todays_goal.setOnClickListener(view -> changeWaterValue());
 
         //progress listeners
         progress_plus.setOnClickListener(view -> changeWaterValue());

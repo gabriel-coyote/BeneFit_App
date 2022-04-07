@@ -10,7 +10,7 @@
         android:id="@+id/squareOne"
         android:layout_width="254dp"
         android:layout_height="85dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="68dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -71,14 +71,14 @@
         app:layout_constraintBottom_toTopOf="@+id/squareOne"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/TextTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="140dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="12dp"
         android:fontFamily="@font/orbitron"
         android:text="Today's Goal"
         android:textAlignment="center"
@@ -179,5 +179,21 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/squareThree"
         app:layout_constraintEnd_toStartOf="@+id/progress_plus" />
-<!--comment -->
+
+    <Button
+        android:id="@+id/finish_edit_bottle_size"
+        android:layout_width="68dp"
+        android:layout_height="30dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="185dp" />
+
+    <Button
+        android:id="@+id/finish_edit_todays_goal"
+        android:layout_width="67dp"
+        android:layout_height="31dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="163dp"
+        tools:layout_editor_absoluteY="338dp" />
+    <!--comment -->
 </androidx.constraintlayout.widget.ConstraintLayout>
