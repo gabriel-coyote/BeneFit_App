@@ -53,11 +53,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="276dp"
+        android:layout_marginBottom="192dp"
         android:background="@drawable/profilepagebutton1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -119,11 +119,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="272dp"
         android:background="@drawable/profilepagebutton1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
@@ -132,12 +132,12 @@
             android:layout_height="wrap_content"
             android:alpha=".5"
             android:fontFamily="monospace"
-            android:text="Edit security and other settings"
+            android:text="See current notifications and alerts "
             android:textColor="#FFFFFF"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.593"
+            app:layout_constraintHorizontal_bias="0.931"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.885" />
@@ -162,12 +162,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron"
-            android:text="Settings"
+            android:text="Notifications"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.259"
+            app:layout_constraintHorizontal_bias="0.327"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.24" />
@@ -180,7 +180,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_gear" />
+            app:srcCompat="@drawable/icon_bell" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
