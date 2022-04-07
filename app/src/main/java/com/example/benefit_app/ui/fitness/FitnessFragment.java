@@ -1,6 +1,7 @@
 package com.example.benefit_app.ui.fitness;
 
 
+import android.media.Image;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.example.benefit_app.MainActivity;
@@ -19,6 +21,8 @@ public class FitnessFragment extends Fragment {
 
 
     private ProgressBar waterProgressBar;
+    private ImageView workoutsIcon;
+    private ImageView notificationBell;
 
 
     /* ********************************************************************** */
@@ -47,7 +51,13 @@ public class FitnessFragment extends Fragment {
         waterProgressBar = viewer.findViewById(R.id.WaterProgressBar);
         waterProgressBar.setOnClickListener(view -> loadFragment(MainActivity.fragmentWater));
 
+        // Redirects to notifications
+        notificationBell = viewer.findViewById(R.id.fitness_notification_bell);
+        notificationBell.setOnClickListener(view -> loadFragment(MainActivity.fragmentNotifications));
 
+        // Redirects to workouts Page
+        workoutsIcon = viewer.findViewById(R.id.StartWorkoutsIcon);
+        workoutsIcon.setOnClickListener(view -> loadFragment(MainActivity.fragmentWorkouts));
 
 
         return viewer;

@@ -6,15 +6,23 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.benefit_app.LoginActivity;
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfileFragment extends Fragment {
 
@@ -24,6 +32,12 @@ public class ProfileFragment extends Fragment {
     private Button profile_notifications;
     private Button profile_editButton;
     private Button sign_out_button;
+
+
+    public static TextView profile_display_name;
+    public static TextView profile_display_username;
+
+    private View viewer;
 
 
     /* ********************************************************************** */
@@ -44,7 +58,16 @@ public class ProfileFragment extends Fragment {
 
         /* PURPOSE:             To get our items from the fragment_profile.xml,
                                 Also return viewer to 'inflate' into the Fragment container viewer */
-        View viewer = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        // IF the viewer doesn't exist then make one
+        // Else keep the same viewer
+        if (viewer != null) {
+            if ((ViewGroup)viewer.getParent() != null)
+                ((ViewGroup)viewer.getParent()).removeView(viewer);
+            return viewer;
+        }else {
+            viewer = inflater.inflate(R.layout.fragment_profile, container, false);
+        }
 
         profile_editButton = viewer.findViewById(R.id.profile_editButton);
         profile_editButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentProfileEdit));
@@ -53,8 +76,12 @@ public class ProfileFragment extends Fragment {
         profile_notifications.setOnClickListener(view -> loadFragment(MainActivity.fragmentNotifications));
 
 
+        profile_display_name = viewer.findViewById(R.id.profile_display_name);
+        profile_display_username = viewer.findViewById(R.id.profile_display_username);
 
 
+        // Updates Name and Username when the user logs in; if exist
+        updateUI();
 
         //SIGN-OUT FEATURE---------------->
         sign_out_button = viewer.findViewById(R.id.sign_out_button_layout);
@@ -79,7 +106,36 @@ public class ProfileFragment extends Fragment {
         transaction.commit();
     }
 
+    /* ********************************************************************** */
+    // Check if the logged in user has a saved profile
+    // If so update UI to display name & username
+    public static void updateUI(){
 
+       FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference userNameRef = rootRef.child("Users").child(currentUser.getUid());
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()) {
+                    //create new user
+                    profile_display_name.setText(dataSnapshot.child("firstName").getValue(String.class));
+                    profile_display_username.setText(dataSnapshot.child("username").getValue(String.class));
+                } else{
+                    // User doesn't have a saved profile so use default placeholder for name & username.
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.d("ProfileUpdate_TAG:", databaseError.getMessage()); //Don't ignore errors!
+            }
+        };
+
+        userNameRef.addListenerForSingleValueEvent(eventListener);
+
+    }
 
 
 }

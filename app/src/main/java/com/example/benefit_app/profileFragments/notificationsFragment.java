@@ -39,7 +39,7 @@ public class notificationsFragment extends Fragment {
         View viewer = inflater.inflate(R.layout.fragment_notifications, container, false);
 
         notification_doneButton = viewer.findViewById(R.id.notification_DoneButton);
-        notification_doneButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentProfile));
+        notification_doneButton.setOnClickListener(view -> MainActivity.bottomNavigationView.setSelectedItemId(R.id.menu_Profile));
 
 
         return viewer;

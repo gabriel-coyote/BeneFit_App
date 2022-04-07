@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 
 import com.example.benefit_app.fitnessFragments.waterFragment;
+import com.example.benefit_app.fitnessFragments.workoutsFragment;
 import com.example.benefit_app.profileFragments.notificationsFragment;
 import com.example.benefit_app.ui.fitness.FitnessFragment;
 import com.example.benefit_app.ui.food.FoodFragment;
@@ -26,15 +27,16 @@ public class MainActivity extends AppCompatActivity {
     final Fragment fragmentGyms = new GymsFragment();
     final Fragment fragmentFood = new FoodFragment();
     final Fragment fragmentFitness = new FitnessFragment();
-    public final static Fragment fragmentProfile = new ProfileFragment();
+    final Fragment fragmentProfile = new ProfileFragment();
 
     /* PURPOSE:         Defining our sub/helper fragments */
     public final static Fragment fragmentProfileEdit = new ProfileEditFragment();
     public final static Fragment fragmentWater = new waterFragment();
     public final static Fragment fragmentNotifications = new notificationsFragment();
+    public final static Fragment fragmentWorkouts = new workoutsFragment();
 
 
-
+    public static BottomNavigationView bottomNavigationView;
     /* ********************************************************************** */
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -48,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         /* PURPOSE:         To handle the navigation selection on BottomNavigationView
                             Switches fragments/page based on current selected menu item */
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) item -> {
 
             switch (item.getItemId()){

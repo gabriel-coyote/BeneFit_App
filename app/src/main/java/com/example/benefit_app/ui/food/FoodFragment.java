@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,21 +13,25 @@ import androidx.fragment.app.Fragment;
 import com.example.benefit_app.R;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class FoodFragment extends Fragment {
 
     private EditText food_search_textfield;
     private ImageView food_search_button;
-    private String food_search_response;
+
+
 
     private TextView response_box;
 
 
+    private View viewer;
 
 
     /* ********************************************************************** */
@@ -50,21 +53,29 @@ public class FoodFragment extends Fragment {
 
         /* PURPOSE:             To get our items from the fragment_food.xml,
                                 Also return viewer to 'inflate' into the Fragment container viewer */
-        View viewer = inflater.inflate(R.layout.fragment_food, container, false);
 
+        // IF the viewer doesn't exist then make one
+        // Else keep the same viewer
+        if (viewer != null) {
+            if ((ViewGroup)viewer.getParent() != null)
+                ((ViewGroup)viewer.getParent()).removeView(viewer);
+            return viewer;
+        } else {
+            viewer = inflater.inflate(R.layout.fragment_food, container, false);
+        }
 
         food_search_textfield = viewer.findViewById(R.id.food_search_field);
-        //response_box = viewer.findViewById(R.id.foodtest_result);
+        response_box = viewer.findViewById(R.id.foodDescription_placeholder);
 
 
         food_search_button = viewer.findViewById(R.id.foodSearchIcon);
-        food_search_button.setOnClickListener(view -> {
-            try {
-                getFood();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        //food_search_button.setOnClickListener(view -> {
+           // try {
+                //TODO: Fix food functions -> getFood();
+           // } catch (IOException e) {
+           ///     e.printStackTrace();
+         //   }
+        //});
 
 
 
@@ -75,10 +86,22 @@ public class FoodFragment extends Fragment {
 
     /* ********************************************************************** */
     public void getFood() throws IOException {
-        String foodtext = food_search_textfield.getText().toString().trim();
+
+        String food_name_input = food_search_textfield.getText().toString().trim();
 
 
-        String query = foodtext;
+        URL url = new URL("https://api.api-ninjas.com/v1/nutrition?query=1lb brisket and fries");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        connection.setRequestProperty("accept", "application/json");
+        InputStream responseStream = connection.getInputStream();
+
+        ObjectMapper mapper = new ObjectMapper();
+        JsonNode root = mapper.readTree(responseStream);
+
+        System.out.println(root.path("fact").asText());
+
+
 
         /*
         // From foodninji website
@@ -146,7 +169,8 @@ public class FoodFragment extends Fragment {
         */
 
 
-        //response_box.setText("result");
+        response_box.setText(root.path("fact").asText());
+
 
     }
 
