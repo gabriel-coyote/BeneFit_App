@@ -1,4 +1,4 @@
-package com.example.benefit_app.fitness;
+package com.example.benefit_app.fitnessFragments;
 
 import android.os.Bundle;
 
@@ -8,19 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.benefit_app.R;
 
-import java.io.IOException;
-
 public class waterFragment extends Fragment{
 
-    private Button bottle_size_plus;
-    private Button bottle_size_minus;
-    private Button todays_goal_plus;
-    private Button todays_goal_minus;
-    private Button progress_plus;
-    private Button progress_minus;
+    private ImageView bottle_size_plus;
+    private ImageView bottle_size_minus;
+    private ImageView todays_goal_plus;
+    private ImageView todays_goal_minus;
+    private ImageView progress_plus;
+    private ImageView progress_minus;
 
 
 

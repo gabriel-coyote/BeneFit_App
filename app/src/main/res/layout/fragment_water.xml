@@ -31,7 +31,7 @@
         android:layout_width="254dp"
         android:layout_height="85dp"
         android:layout_marginEnd="68dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="72dp"
         app:layout_constraintBottom_toTopOf="@+id/ProgressText"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle22" />
@@ -41,7 +41,7 @@
         android:layout_width="254dp"
         android:layout_height="85dp"
         android:layout_marginEnd="68dp"
-        android:layout_marginBottom="316dp"
+        android:layout_marginBottom="236dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle22" />
@@ -182,20 +182,26 @@
 
     <Button
         android:id="@+id/finish_edit_bottle_size"
-        android:layout_width="68dp"
-        android:layout_height="30dp"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="185dp"
+        app:layout_constraintBottom_toTopOf="@+id/TextTwo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/squareOne"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/finish_edit_todays_goal"
-        android:layout_width="67dp"
-        android:layout_height="31dp"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="17dp"
         android:text="Button"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="338dp"
+        app:layout_constraintBottom_toTopOf="@+id/ProgressText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todays_goal_minus"
+        app:layout_constraintVertical_bias="0.625"
         tools:ignore="MissingConstraints" />
     <!--comment -->
 </androidx.constraintlayout.widget.ConstraintLayout>

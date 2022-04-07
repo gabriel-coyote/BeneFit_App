@@ -91,6 +91,9 @@ public class ProfileEditFragment extends Fragment {
         edit_profile_display_username = viewer.findViewById(R.id.edit_profile_display_username);
         firebaseDatabase = firebaseDatabase.getInstance();
         userReference = firebaseDatabase.getReference("Users");
+
+        /*
+
         userReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -105,6 +108,9 @@ public class ProfileEditFragment extends Fragment {
 
             }
         });
+
+
+         */
 
         finish_edit_button = viewer.findViewById(R.id.finish_edit_button);
         finish_edit_button.setOnClickListener(view -> changeInfo());
