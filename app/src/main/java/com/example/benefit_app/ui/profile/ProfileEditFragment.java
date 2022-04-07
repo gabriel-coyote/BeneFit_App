@@ -45,7 +45,6 @@ public class ProfileEditFragment extends Fragment {
     private TextView edit_profile_display_username;
 
 
-    // TODO: Update profile names on pages
     private FirebaseAuth firebaseAuth;
     private FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     private FirebaseDatabase firebaseDatabase;
@@ -90,12 +89,22 @@ public class ProfileEditFragment extends Fragment {
         profile_display_username = viewer.findViewById(R.id.profile_display_username);
         edit_profile_display_name = viewer.findViewById(R.id.edit_profile_display_name);
         edit_profile_display_username = viewer.findViewById(R.id.edit_profile_display_username);
+        firebaseDatabase = firebaseDatabase.getInstance();
+        userReference = firebaseDatabase.getReference("Users");
+        userReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
+                profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
+                edit_profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
+                edit_profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-        // TODO: Update profile names on pages
-        //firebaseDatabase = firebaseDatabase.getInstance();
-        //userReference = firebaseDatabase.getReference("Users");
-
+            }
+        });
 
         finish_edit_button = viewer.findViewById(R.id.finish_edit_button);
         finish_edit_button.setOnClickListener(view -> changeInfo());
@@ -146,23 +155,6 @@ public class ProfileEditFragment extends Fragment {
                         alertDialog("Saving Complete 😌");
 
 
-                        /* TODO: Update profile names on pages
-
-                                             userReference.addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
-                                profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
-                                edit_profile_display_name.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("firstName").getValue(String.class));
-                                edit_profile_display_username.setText(snapshot.child(firebaseAuth.getInstance().getCurrentUser().getUid()).child("username").getValue(String.class));
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-                         */
 
 
                         getActivity().onBackPressed();

@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/rectangle22" />
 
     <ImageView
-        android:id="@+id/minus1"
+        android:id="@+id/bottle_size_minus"
         android:layout_width="43dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/icon_minus_circle" />
 
     <ImageView
-        android:id="@+id/squareTwo"
+        android:id="@+id/todays_goal_minus"
         android:layout_width="254dp"
         android:layout_height="85dp"
         android:layout_marginEnd="68dp"
@@ -47,7 +47,7 @@
         app:srcCompat="@drawable/rectangle22" />
 
     <ImageView
-        android:id="@+id/plus1"
+        android:id="@+id/Bottle_size_plus"
         android:layout_width="43dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -84,7 +84,7 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/squareTwo"
+        app:layout_constraintBottom_toTopOf="@+id/todays_goal_minus"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
@@ -93,22 +93,22 @@
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/squareTwo"
-        app:layout_constraintTop_toTopOf="@+id/squareTwo"
+        app:layout_constraintStart_toStartOf="@+id/todays_goal_minus"
+        app:layout_constraintTop_toTopOf="@+id/todays_goal_minus"
         app:srcCompat="@drawable/icon_minus_circle" />
 
     <ImageView
-        android:id="@+id/plus2"
+        android:id="@+id/todays_goal_plus"
         android:layout_width="43dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/squareTwo"
-        app:layout_constraintTop_toTopOf="@+id/squareTwo"
+        app:layout_constraintEnd_toEndOf="@+id/todays_goal_minus"
+        app:layout_constraintTop_toTopOf="@+id/todays_goal_minus"
         app:srcCompat="@drawable/icon_plus_circle" />
 
     <ImageView
-        android:id="@+id/imageView17"
+        android:id="@+id/progress_minus"
         android:layout_width="43dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
@@ -118,7 +118,7 @@
         app:srcCompat="@drawable/icon_minus_circle" />
 
     <ImageView
-        android:id="@+id/imageView18"
+        android:id="@+id/progress_plus"
         android:layout_width="43dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
@@ -152,7 +152,7 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/squareOne"
-        app:layout_constraintEnd_toStartOf="@+id/plus1" />
+        app:layout_constraintEnd_toStartOf="@+id/Bottle_size_plus" />
 
     <TextView
         android:id="@+id/textView21"
@@ -164,8 +164,8 @@
         android:text="0"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/squareTwo"
-        app:layout_constraintEnd_toStartOf="@+id/plus2" />
+        app:layout_constraintBottom_toBottomOf="@+id/todays_goal_minus"
+        app:layout_constraintEnd_toStartOf="@+id/todays_goal_plus" />
 
     <TextView
         android:id="@+id/textView22"
@@ -178,6 +178,6 @@
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/squareThree"
-        app:layout_constraintEnd_toStartOf="@+id/imageView18" />
+        app:layout_constraintEnd_toStartOf="@+id/progress_plus" />
 <!--comment -->
 </androidx.constraintlayout.widget.ConstraintLayout>
