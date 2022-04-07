@@ -121,7 +121,10 @@ public class FoodFragment extends Fragment {
 
 
         //Response response =
-        
+
+       /*
+
+
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().
                 url("https://api.calorieninjas.com/v1/nutrition?query="+foodtext).header("X-Api-Key", "9uNZgAKO3Hb657GW2aYeIA==6QSUhrgPXxiwypMp").build();
@@ -138,6 +141,9 @@ public class FoodFragment extends Fragment {
         } catch (IOException e) {
             // ... handle IO exception
         }
+
+
+        */
 
 
         //response_box.setText("result");
