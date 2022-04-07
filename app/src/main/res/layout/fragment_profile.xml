@@ -143,7 +143,7 @@
             app:layout_constraintVertical_bias="0.885" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/notification_profileButton"
             android:layout_width="177dp"
             android:layout_height="50dp"
             android:layout_marginTop="3dp"
@@ -158,7 +158,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/settingText"
+            android:id="@+id/notificationProfileID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/orbitron"

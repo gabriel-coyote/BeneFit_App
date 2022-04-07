@@ -21,6 +21,7 @@ public class ProfileFragment extends Fragment {
 
 
 
+    private Button profile_notifications;
     private Button profile_editButton;
     private Button sign_out_button;
 
@@ -47,6 +48,13 @@ public class ProfileFragment extends Fragment {
 
         profile_editButton = viewer.findViewById(R.id.profile_editButton);
         profile_editButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentProfileEdit));
+
+        profile_notifications = viewer.findViewById(R.id.notification_profileButton);
+        profile_notifications.setOnClickListener(view -> loadFragment(MainActivity.fragmentNotifications));
+
+
+
+
 
         //SIGN-OUT FEATURE---------------->
         sign_out_button = viewer.findViewById(R.id.sign_out_button_layout);

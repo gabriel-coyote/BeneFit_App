@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 
 import com.example.benefit_app.fitnessFragments.waterFragment;
+import com.example.benefit_app.profileFragments.notificationsFragment;
 import com.example.benefit_app.ui.fitness.FitnessFragment;
 import com.example.benefit_app.ui.food.FoodFragment;
 import com.example.benefit_app.ui.gyms.GymsFragment;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     /* PURPOSE:         Defining our sub/helper fragments */
     public final static Fragment fragmentProfileEdit = new ProfileEditFragment();
     public final static Fragment fragmentWater = new waterFragment();
+    public final static Fragment fragmentNotifications = new notificationsFragment();
 
 
 
