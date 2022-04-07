@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     final Fragment fragmentGyms = new GymsFragment();
     final Fragment fragmentFood = new FoodFragment();
     final Fragment fragmentFitness = new FitnessFragment();
-    final Fragment fragmentProfile = new ProfileFragment();
+    public final static Fragment fragmentProfile = new ProfileFragment();
 
     /* PURPOSE:         Defining our sub/helper fragments */
     public final static Fragment fragmentProfileEdit = new ProfileEditFragment();

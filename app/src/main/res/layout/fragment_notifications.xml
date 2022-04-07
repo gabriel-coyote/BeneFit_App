@@ -7,7 +7,7 @@
     android:background="@drawable/main_gradient">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/notification_DoneButton"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginBottom="76dp"
