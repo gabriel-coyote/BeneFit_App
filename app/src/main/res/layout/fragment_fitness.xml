@@ -102,10 +102,10 @@
         android:layout_height="25dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="11dp"
-        android:tint="@color/quantum_googred"
         app:layout_constraintEnd_toEndOf="@+id/CaloriesSquare"
         app:layout_constraintTop_toTopOf="@+id/CaloriesSquare"
-        app:srcCompat="@drawable/icon_flame_outline" />
+        app:srcCompat="@drawable/icon_flame_outline"
+        app:tint="@color/quantum_googred" />
 
     <ImageView
         android:id="@+id/workoutsPic"
@@ -123,10 +123,10 @@
         android:layout_height="28dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
-        android:tint="@color/quantum_yellow"
         app:layout_constraintEnd_toEndOf="@+id/StepSquare"
         app:layout_constraintTop_toTopOf="@+id/StepSquare"
-        app:srcCompat="@drawable/running" />
+        app:srcCompat="@drawable/running"
+        app:tint="@color/quantum_yellow" />
 
     <ImageView
         android:id="@+id/waterPic"
@@ -134,10 +134,10 @@
         android:layout_height="27dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="21dp"
-        android:tint="@color/quantum_lightblue"
         app:layout_constraintEnd_toEndOf="@+id/WaterSquare"
         app:layout_constraintTop_toTopOf="@+id/WaterSquare"
-        app:srcCompat="@drawable/ic_water_drop" />
+        app:srcCompat="@drawable/ic_water_drop"
+        app:tint="@color/quantum_lightblue" />
 
     <TextView
         android:id="@+id/textView25"
@@ -203,7 +203,8 @@
         app:layout_constraintHorizontal_bias="0.136"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_ellipse1" />
+        app:srcCompat="@drawable/ic_ellipse1"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
         android:id="@+id/imageView"
