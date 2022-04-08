@@ -307,17 +307,26 @@
         app:layout_constraintVertical_bias=".076"
         app:srcCompat="@drawable/bf_logo" />
 
-    <ImageView
-        android:id="@+id/profilePic"
-        android:layout_width="150dp"
-        android:layout_height="152dp"
-        android:layout_marginTop="100dp"
-        android:contextClickable="false"
-        android:cropToPadding="false"
+    <androidx.cardview.widget.CardView
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:foregroundGravity="center"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/profile_display_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/picture_cat" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:srcCompat="@mipmap/picture_cat"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="135dp"
+            tools:layout_editor_absoluteY="99dp"/>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

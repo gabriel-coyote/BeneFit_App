@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +22,7 @@ public class waterFragment extends Fragment{
     private ImageView todays_goal_minus;
     private ImageView progress_plus;
     private ImageView progress_minus;
-
+    private ImageView backButton;
     private TextView todays_progress_text;
     private TextView bottle_size_text;
     private TextView todays_goal_text;
@@ -72,6 +73,9 @@ public class waterFragment extends Fragment{
         progress_plus = viewer.findViewById(R.id.progress_plus);
         progress_minus = viewer.findViewById(R.id.progress_minus);
 
+        //back button
+        backButton = viewer.findViewById(R.id.back_button);
+        backButton.setOnClickListener(view -> getActivity().onBackPressed());
         //save buttons------------>
         save_bottle_size_button = viewer.findViewById(R.id.save_bottle_size_button);
         save_todays_goal_button = viewer.findViewById(R.id.save_todays_goal_button);

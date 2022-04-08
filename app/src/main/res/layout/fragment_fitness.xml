@@ -217,55 +217,42 @@
         app:srcCompat="@drawable/icon_bell" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/date_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:alpha=".5"
-        android:fontFamily="monospace"
-        android:text="Friday"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="72dp"
         android:fontFamily="@font/orbitron"
         android:text="April, 2022"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="103dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="24dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:foregroundGravity="center"
+        android:translationX="-10dp"
+
+        android:translationY="-10dp"
+        app:cardCornerRadius="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/picture_cat" />
+        app:layout_constraintStart_toEndOf="@+id/date_text"
+        tools:layout_editor_absoluteY="73dp"
+        tools:ignore="MissingConstraints">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="234dp"
-        android:layout_height="223dp"
-        android:background="@drawable/circle_shape"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="50"
-        android:progressDrawable="@drawable/circular_progress_bar"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="544dp" />
 
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleX="2"
+            android:scaleY="2"
+            app:srcCompat="@mipmap/picture_cat"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="274dp"
+            tools:layout_editor_absoluteY="64dp" />
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

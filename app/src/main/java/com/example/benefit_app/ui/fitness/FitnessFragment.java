@@ -12,10 +12,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FitnessFragment extends Fragment {
 
@@ -23,6 +26,7 @@ public class FitnessFragment extends Fragment {
     private ProgressBar waterProgressBar;
     private ImageView workoutsIcon;
     private ImageView notificationBell;
+    private TextView date_text;
 
 
     /* ********************************************************************** */
@@ -40,13 +44,16 @@ public class FitnessFragment extends Fragment {
 
     /* ********************************************************************** */
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
+        Date thisDate = new Date();
+        SimpleDateFormat dateForm = new SimpleDateFormat("MM/dd/Y");
 
         /* PURPOSE:             To get our items from the fragment_fitness.xml,
                                 Also return viewer to 'inflate' into the Fragment container viewer */
         View viewer = inflater.inflate(R.layout.fragment_fitness, container, false);
 
-
+        //For time
+        date_text = viewer.findViewById(R.id.date_text);
+        date_text.setText(dateForm.format(thisDate));
         // For Water
         waterProgressBar = viewer.findViewById(R.id.WaterProgressBar);
         waterProgressBar.setOnClickListener(view -> loadFragment(MainActivity.fragmentWater));
