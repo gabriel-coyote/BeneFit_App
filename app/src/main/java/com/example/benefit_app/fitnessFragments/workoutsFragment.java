@@ -41,11 +41,10 @@ public class workoutsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        viewer = inflater.inflate(R.layout.fragment_workouts, container, false);
-
         Date thisDate = new Date();
         SimpleDateFormat dateForm = new SimpleDateFormat("MM/dd/Y");
+        // Inflate the layout for this fragment
+        viewer = inflater.inflate(R.layout.fragment_workouts, container, false);
 
         //set date
         date_text_workout = viewer.findViewById(R.id.textViewWorkout2);
