@@ -1,27 +1,29 @@
 package com.example.benefit_app.fitnessFragments;
 
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
+import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
 
 
-public class layout_part2_Fragment extends Fragment {
+public class workoutsFragment extends Fragment {
 
 
 
-
+    private Button openWorkoutsButton;
     View viewer;
 
 
 
-    public layout_part2_Fragment() {
+    public workoutsFragment() {
         // Required empty public constructor
     }
 
@@ -35,10 +37,11 @@ public class layout_part2_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        viewer = inflater.inflate(R.layout.fragment_layout_part2, container, false);
+        viewer = inflater.inflate(R.layout.fragment_workouts, container, false);
 
         // Opening the specific workout
-
+        openWorkoutsButton = viewer.findViewById(R.id.workouts_openButton);
+        openWorkoutsButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentLayout_part2));
 
 
 
