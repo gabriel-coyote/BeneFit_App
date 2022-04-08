@@ -200,6 +200,7 @@ public class waterFragment extends Fragment{
 
                     todaysWater += water_count;
                     //int waterAdded = water_count + Long.toString(todaysWater);
+                    // Update helper
 
                     //TODO: Fix water added to database
                     todaysWaterRef.child("todaysProgress").setValue(todaysWater);
