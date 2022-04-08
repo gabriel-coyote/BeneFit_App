@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="232dp"
         android:fontFamily="@font/orbitron"
-        android:text="April 10, 2022"
+        android:text="April 08, 2022"
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
