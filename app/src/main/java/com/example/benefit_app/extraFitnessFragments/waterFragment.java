@@ -193,14 +193,13 @@ public class waterFragment extends Fragment{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()) {
 
-                    //String todaysWater = Integer.toString(snapshot.child("todaysProgress").getValue());
+
+                    //String todaysWater_str = snapshot.child("todaysProgress").getValue(String.class);
                     int todaysWater = snapshot.child("todaysProgress").getValue(Integer.class);
-                    // int todaysWater =  Integer.parseInt(snapshot.child("todaysProgress").getValue(String.class));
 
 
                     todaysWater += water_count;
-                    //int waterAdded = water_count + Long.toString(todaysWater);
-                    // Update helper
+
 
                     //TODO: Fix water added to database
                     todaysWaterRef.child("todaysProgress").setValue(todaysWater);
@@ -244,7 +243,7 @@ public class waterFragment extends Fragment{
 
                     todaysWaterRef.child("todaysGoal").setValue(water_goal);
 
-                    alertDialog("Added "+water_goal+"oz. Goal to Log");
+                    alertDialog("Set "+water_goal+"oz. Goal to Log");
                 }
             }
 
@@ -264,7 +263,7 @@ public class waterFragment extends Fragment{
     /* ********************************************************************** */
     private void createTodaysWaterLog(){
 
-        DailyWaterLog waterLog = new DailyWaterLog("0","0");
+        DailyWaterLog waterLog = new DailyWaterLog(0,0);
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         String key = currentUser.getUid()+"_"+date;
