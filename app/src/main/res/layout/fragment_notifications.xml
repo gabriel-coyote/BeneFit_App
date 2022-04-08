@@ -21,7 +21,7 @@
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/save_todays_goal_button"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginBottom="128dp"

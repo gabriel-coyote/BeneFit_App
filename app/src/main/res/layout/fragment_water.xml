@@ -43,7 +43,7 @@
                 android:id="@+id/squareThree"
                 android:layout_width="300dp"
                 android:layout_height="100dp"
-                app:layout_constraintBottom_toTopOf="@+id/button3"
+                app:layout_constraintBottom_toTopOf="@+id/save_todays_progress_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/rectangle22" />
@@ -85,7 +85,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/todays_progress_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
@@ -98,7 +98,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/save_todays_progress_button"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginBottom="4dp"
@@ -125,7 +125,7 @@
                 android:id="@+id/squareTwo"
                 android:layout_width="300dp"
                 android:layout_height="100dp"
-                app:layout_constraintBottom_toTopOf="@+id/button2"
+                app:layout_constraintBottom_toTopOf="@+id/save_todays_goal_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/rectangle22" />
@@ -167,7 +167,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/textViewGoal"
+                android:id="@+id/todays_goal_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
@@ -180,7 +180,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/save_todays_goal_button"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginBottom="4dp"
@@ -207,7 +207,7 @@
                 android:id="@+id/squareOne"
                 android:layout_width="300dp"
                 android:layout_height="100dp"
-                app:layout_constraintBottom_toTopOf="@+id/button1"
+                app:layout_constraintBottom_toTopOf="@+id/save_bottle_size_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/rectangle22" />
@@ -249,7 +249,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/textViewSize"
+                android:id="@+id/bottle_size_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
@@ -262,7 +262,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/save_bottle_size_button"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginBottom="4dp"

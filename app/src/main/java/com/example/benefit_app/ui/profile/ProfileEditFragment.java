@@ -30,7 +30,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 
-public class ProfileEditFragment extends Fragment {
+public class ProfileEditFragment<FirebaseStorage> extends Fragment {
 
 
     private ImageView backButton;
@@ -49,8 +49,11 @@ public class ProfileEditFragment extends Fragment {
 
     // For use of uploading & setting profile image
     //Create a reference to upload, download, or delete a file, or to get or update its metadata
+    /*
     private FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
     private StorageReference firebaseStorageReference = firebaseStorage.getReference();
+
+     */
 
     private  View viewer;
 
