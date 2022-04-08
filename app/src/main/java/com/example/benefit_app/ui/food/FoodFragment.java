@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import com.example.benefit_app.R;
 
 import java.io.IOException;
+
+
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -20,17 +22,17 @@ import java.net.URL;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 
 public class FoodFragment extends Fragment {
 
     private EditText food_search_textfield;
     private ImageView food_search_button;
 
-
-
     private TextView response_box;
-
-
     private View viewer;
 
 
@@ -69,6 +71,18 @@ public class FoodFragment extends Fragment {
 
 
         food_search_button = viewer.findViewById(R.id.foodSearchIcon);
+        food_search_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    getFood();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
         //food_search_button.setOnClickListener(view -> {
            // try {
                 //TODO: Fix food functions -> getFood();
@@ -76,8 +90,6 @@ public class FoodFragment extends Fragment {
            ///     e.printStackTrace();
          //   }
         //});
-
-
 
 
         return viewer;
@@ -90,16 +102,6 @@ public class FoodFragment extends Fragment {
         String food_name_input = food_search_textfield.getText().toString().trim();
 
 
-        URL url = new URL("https://api.api-ninjas.com/v1/nutrition?query=1lb brisket and fries");
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-        connection.setRequestProperty("accept", "application/json");
-        InputStream responseStream = connection.getInputStream();
-
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode root = mapper.readTree(responseStream);
-
-        System.out.println(root.path("fact").asText());
 
 
 
@@ -169,7 +171,7 @@ public class FoodFragment extends Fragment {
         */
 
 
-        response_box.setText(root.path("fact").asText());
+        //response_box.setText(root.path("fact").asText());
 
 
     }

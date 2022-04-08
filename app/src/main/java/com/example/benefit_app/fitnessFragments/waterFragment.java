@@ -2,17 +2,30 @@ package com.example.benefit_app.fitnessFragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.benefit_app.Objects.DailyWaterLog;
 import com.example.benefit_app.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class waterFragment extends Fragment{
 
@@ -22,7 +35,7 @@ public class waterFragment extends Fragment{
     private ImageView todays_goal_minus;
     private ImageView progress_plus;
     private ImageView progress_minus;
-    private ImageView backButton;
+
     private TextView todays_progress_text;
     private TextView bottle_size_text;
     private TextView todays_goal_text;
@@ -36,6 +49,12 @@ public class waterFragment extends Fragment{
     private Button save_bottle_size_button;
     private Button save_todays_goal_button;
     private Button save_todays_progress_button;
+
+    //Current Date
+    LocalDate dateObj = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+    String date = dateObj.format(formatter);
+
 
     private View viewer;
 
@@ -73,9 +92,6 @@ public class waterFragment extends Fragment{
         progress_plus = viewer.findViewById(R.id.progress_plus);
         progress_minus = viewer.findViewById(R.id.progress_minus);
 
-        //back button :)
-        backButton = viewer.findViewById(R.id.back_button);
-        backButton.setOnClickListener(view -> getActivity().onBackPressed());
         //save buttons------------>
         save_bottle_size_button = viewer.findViewById(R.id.save_bottle_size_button);
         save_todays_goal_button = viewer.findViewById(R.id.save_todays_goal_button);
@@ -99,7 +115,11 @@ public class waterFragment extends Fragment{
         progress_minus.setOnClickListener(view -> changeWaterValue(0,0,0,0,0,1));
 
 
+        //Creates a default DailywaterLog for user for todays date in Firebase Database
+        createTodaysWaterLog();
 
+        // Saved Buttons Functions on click
+        save_bottle_size_button.setOnClickListener(view -> addWater(bottle_size_count));
 
         return viewer;
     }
@@ -110,6 +130,10 @@ public class waterFragment extends Fragment{
         String bottle_size_temp;
         String todays_goal_temp;
         String progress_temp;
+
+
+
+
 
         if(bsp == 1){
             bottle_size_count += 1;
@@ -146,4 +170,92 @@ public class waterFragment extends Fragment{
 
     }
 
+
+
+    /* ********************************************************************** */
+    private void addWater(int water_count){
+
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String currentKey = currentUser.getUid()+"_"+date;
+
+
+        DatabaseReference todaysWaterRef = FirebaseDatabase.getInstance().getReference()
+                .child("DailyWaterLog")
+                .child(currentKey);
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+
+                    Integer todaysWater =  Integer.parseInt(snapshot.child("todaysProgress").getValue(String.class));
+
+                    todaysWater += water_count;
+
+                    todaysWaterRef.child("todaysProgress").setValue(todaysWater);
+
+                    alertDialog("Added "+todaysWater+"oz. to Log");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("AddWaterUpdate_TAG:", error.getMessage()); //Don't ignore errors!
+            }
+        };
+
+
+        todaysWaterRef.addValueEventListener(eventListener);
+
+
+
+
+    }
+
+
+    /* ********************************************************************** */
+    private void createTodaysWaterLog(){
+
+        DailyWaterLog waterLog = new DailyWaterLog("0","0");
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String key = currentUser.getUid()+"_"+date;
+
+
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference userNameRef = rootRef.child("DailyWaterLog").child(key);
+
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(!snapshot.exists()){
+                    // Doesn't exist so create blank one
+
+                    // Adding blank waterlog for today to firebase database.
+                    FirebaseDatabase.getInstance().getReference("DailyWaterLog")
+                            .child(key).setValue(waterLog);
+
+                    alertDialog("Created Blank Water Log ");
+                } else {
+                    // they already have a saved today water log
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("BlankWaterLogUpdate_TAG:", error.getMessage()); //Don't ignore errors!
+            }
+        };
+
+        userNameRef.addValueEventListener(eventListener);
+
+
+
+
+    }
+
+
+    /* ********************************************************************** */
+    private void alertDialog(String text){ Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+    }
 }
