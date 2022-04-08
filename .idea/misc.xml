@@ -43,7 +43,7 @@
         <entry key="app/src/main/res/layout/activity_foodpage2.xml" value="0.39879759519038077" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.27319587628865977" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2644927536231884" />
-        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.30675675675675673" />
+        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_food.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_gyms.xml" value="0.30675675675675673" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.33" />

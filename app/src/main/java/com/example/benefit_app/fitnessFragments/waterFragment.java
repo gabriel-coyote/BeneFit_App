@@ -124,6 +124,7 @@ public class waterFragment extends Fragment{
 
         // Saved Buttons Functions on click
         save_bottle_size_button.setOnClickListener(view -> addWater(bottle_size_count));
+        save_todays_goal_button.setOnClickListener(view -> setWaterGoal(todays_goal_count));
 
         return viewer;
     }
@@ -192,10 +193,15 @@ public class waterFragment extends Fragment{
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()) {
 
-                    Integer todaysWater =  Integer.parseInt(snapshot.child("todaysProgress").getValue(String.class));
+                    //String todaysWater = Integer.toString(snapshot.child("todaysProgress").getValue());
+                    int todaysWater = snapshot.child("todaysProgress").getValue(Integer.class);
+                    // int todaysWater =  Integer.parseInt(snapshot.child("todaysProgress").getValue(String.class));
+
 
                     todaysWater += water_count;
+                    //int waterAdded = water_count + Long.toString(todaysWater);
 
+                    //TODO: Fix water added to database
                     todaysWaterRef.child("todaysProgress").setValue(todaysWater);
 
                     alertDialog("Added "+todaysWater+"oz. to Log");
@@ -217,6 +223,43 @@ public class waterFragment extends Fragment{
     }
 
 
+    /* ********************************************************************** */
+    private void setWaterGoal(int water_goal){
+
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String currentKey = currentUser.getUid()+"_"+date;
+
+
+        DatabaseReference todaysWaterRef = FirebaseDatabase.getInstance().getReference()
+                .child("DailyWaterLog")
+                .child(currentKey);
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+
+
+
+                    todaysWaterRef.child("todaysGoal").setValue(water_goal);
+
+                    alertDialog("Added "+water_goal+"oz. Goal to Log");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("AddWaterGoalUpdate_TAG:", error.getMessage()); //Don't ignore errors!
+            }
+        };
+
+
+        todaysWaterRef.addValueEventListener(eventListener);
+
+
+
+
+    }
     /* ********************************************************************** */
     private void createTodaysWaterLog(){
 
