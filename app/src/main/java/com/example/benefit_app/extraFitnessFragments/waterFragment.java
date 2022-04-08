@@ -1,4 +1,4 @@
-package com.example.benefit_app.fitnessFragments;
+package com.example.benefit_app.extraFitnessFragments;
 
 import android.os.Bundle;
 

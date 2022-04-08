@@ -1,4 +1,4 @@
-package com.example.benefit_app.profileFragments;
+package com.example.benefit_app.extraFitnessFragments;
 
 import android.os.Bundle;
 
@@ -14,37 +14,39 @@ import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
 
 
-public class notificationsFragment extends Fragment {
+public class workoutsFragment extends Fragment {
 
 
-    private Button notification_doneButton;
 
-    /* ********************************************************************** */
-    public notificationsFragment() {
+    private Button openWorkoutsButton;
+    View viewer;
+
+
+
+    public workoutsFragment() {
         // Required empty public constructor
     }
 
-    /* ********************************************************************** */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
 
-    /* ********************************************************************** */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View viewer = inflater.inflate(R.layout.fragment_notifications, container, false);
+        viewer = inflater.inflate(R.layout.fragment_workouts, container, false);
 
-        notification_doneButton = viewer.findViewById(R.id.notification_DoneButton);
-        notification_doneButton.setOnClickListener(view -> MainActivity.bottomNavigationView.setSelectedItemId(R.id.menu_Profile));
+        // Opening the specific workout
+        openWorkoutsButton = viewer.findViewById(R.id.workouts_openButton);
+        openWorkoutsButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentLayout_part2));
 
 
-        return viewer;
+
+     return viewer;
     }
-
 
 
 

@@ -51,32 +51,32 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
+                android:id="@+id/weatherLocation"
+                android:layout_width="123dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="104dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="84dp"
                 android:text="Lubbock, TX"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView10"
-                android:layout_width="102dp"
-                android:layout_height="16dp"
-                android:layout_marginEnd="80dp"
+                android:id="@+id/weatherCondition"
+                android:layout_width="123dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="84dp"
                 android:text="Great Condition"
                 android:textColor="@color/menu_inactive"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView9"
-                app:layout_constraintVertical_bias="0.2" />
+                app:layout_constraintTop_toBottomOf="@+id/weatherLocation"
+                app:layout_constraintVertical_bias="0.1" />
 
             <TextView
-                android:id="@+id/textView11"
-                android:layout_width="41dp"
-                android:layout_height="31dp"
+                android:id="@+id/weatherTemp"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
                 android:gravity="center"
                 android:text="85°F"
@@ -90,25 +90,24 @@
                 android:id="@+id/imageView6"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
-                android:layout_marginBottom="4dp"
+                android:layout_marginStart="16dp"
                 android:src="@drawable/icon_man_running"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/textView10"
-                app:layout_constraintHorizontal_bias="0.457"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.75" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/weatherIcon"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
                 android:src="@drawable/weather_partly_sunny"
                 app:layout_constraintBottom_toTopOf="@+id/imageView6"
-                app:layout_constraintEnd_toStartOf="@+id/textView9"
-                app:layout_constraintHorizontal_bias="0.457"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.333" />
+                app:layout_constraintVertical_bias="0.307" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,39 +7,45 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.benefit_app.R;
 
-import java.io.IOException;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class FoodFragment extends Fragment {
 
+
+    /* PURPOSE:         To access our corresponding items
+                         from the fragment_food.xml    */
     private EditText food_search_textfield;
     private ImageView food_search_button;
 
-    private TextView response_box;
+    private TextView foodTitle, foodDescription;
+
+    private TextView caloriesDisplay, carbsDisplay, proteinDisplay;
+    private TextView caloriesText, carbsText, proteinText, sodiumText, sugarText, fatText, fiberText;
+
+
     private View viewer;
 
 
     /* ********************************************************************** */
     public FoodFragment() {
         // Required empty public constructor
-
     }
 
 
@@ -66,30 +72,31 @@ public class FoodFragment extends Fragment {
             viewer = inflater.inflate(R.layout.fragment_food, container, false);
         }
 
+
+
         food_search_textfield = viewer.findViewById(R.id.food_search_field);
-        response_box = viewer.findViewById(R.id.foodDescription_placeholder);
+
+        foodTitle       = viewer.findViewById(R.id.foodName_placeholder);
+        foodDescription = viewer.findViewById(R.id.foodDescription_placeholder);
+
+        caloriesDisplay = viewer.findViewById(R.id.mainCalories);
+        carbsDisplay    = viewer.findViewById(R.id.mainCarbs);
+        proteinDisplay  = viewer.findViewById(R.id.mainProtein);
+
+        caloriesText = viewer.findViewById(R.id.caloriesText);
+        carbsText    = viewer.findViewById(R.id.carbsText);
+        proteinText  = viewer.findViewById(R.id.proteinText);
+        sodiumText   = viewer.findViewById(R.id.sodiumText);
+        sugarText    = viewer.findViewById(R.id.sugarText);
+        fatText      = viewer.findViewById(R.id.fatText);
+        fiberText    = viewer.findViewById(R.id.fiberText);
 
 
+        /* PURPOSE:            On Food Search Icon click, from fragment_food.xml,
+                               Call the function getfood() */
         food_search_button = viewer.findViewById(R.id.foodSearchIcon);
-        food_search_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    getFood();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        food_search_button.setOnClickListener(view -> getFood());
 
-
-        //food_search_button.setOnClickListener(view -> {
-           // try {
-                //TODO: Fix food functions -> getFood();
-           // } catch (IOException e) {
-           ///     e.printStackTrace();
-         //   }
-        //});
 
 
         return viewer;
@@ -97,84 +104,98 @@ public class FoodFragment extends Fragment {
 
 
     /* ********************************************************************** */
-    public void getFood() throws IOException {
-
-        String food_name_input = food_search_textfield.getText().toString().trim();
-
-
-
-
-
-        /*
-        // From foodninji website
-        Response response = Request.Get("https://api.calorieninjas.com/v1/nutrition?query="+query)
-                .addHeader("X-Api-Key", "YOUR_API_KEY")
-                .execute();
+    /* FUNCTION NAME:    getFood()
+       INPUT:            n/a
+       OUTPUT:           n/a
+       PURPOSE:          Makes a request to CaloriesNinja Food API
+                         Gets JSON with food nutritional values
+                         Then set the textview fields accordingly */
+    public void getFood() {
 
 
-         */
+        String foodName_input = food_search_textfield.getText().toString().trim();
 
 
-        /*
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        String url = "https://api.calorieninjas.com/v1/nutrition?query="+foodName_input;
 
-        String myUrl = "https://api.calorieninjas.com/v1/nutrition?query="+foodtext;
-        StringRequest myRequest = new StringRequest(Request.Method.GET, myUrl,
-                response -> {
-                    try{
-                        //Create a JSON object containing information from the API.
-                        JSONObject myJsonObject = new JSONObject(response);
-                        food_search_response = myJsonObject.getString("items");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                },
-                volleyError -> Toast.makeText(getActivity(), volleyError.getMessage(), Toast.LENGTH_SHORT).show()
-        );
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
+
+         /* PURPOSE:         Our Needed Nutrition Info from Food */
+            String calories, carbs, protein, sodium, sugar, fiber, fat;
+            try {
 
 
-         */
 
 
-        /*
-        HttpClient httpclient = new DefaultHttpClient();
-        HttpGet request = new HttpGet("https://api.calorieninjas.com/v1/nutrition?query="+foodtext);
-        request.addHeader("x-api-key", "9uNZgAKO3Hb657GW2aYeIA==6QSUhrgPXxiwypMp");
-        HttpResponse food_search_response = httpclient.execute(request);
-*/
-
-        //System.out.println(food_search_response);
+                JSONArray foodItem = response.getJSONArray("items");
+                JSONObject nutritionInfo = foodItem.getJSONObject(0);
 
 
-        //Response response =
 
-       /*
+                /* PURPOSE:     Parse the nutritional info into string variables */
+                calories    = Double.toString( nutritionInfo.getDouble("calories") );
+                carbs       = Double.toString( nutritionInfo.getDouble("carbohydrates_total_g") );
+                protein     = Double.toString( nutritionInfo.getDouble("protein_g") );
+
+                sodium      = Double.toString( nutritionInfo.getDouble("sodium_mg") );
+                sugar       = Double.toString( nutritionInfo.getDouble("sugar_g") );
+                fiber       = Double.toString( nutritionInfo.getDouble("fiber_g") );
+                fat         = Double.toString( nutritionInfo.getDouble("fat_total_g") );
 
 
-        OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder().
-                url("https://api.calorieninjas.com/v1/nutrition?query="+foodtext).header("X-Api-Key", "9uNZgAKO3Hb657GW2aYeIA==6QSUhrgPXxiwypMp").build();
 
+                /* PURPOSE:      Update Food UI with search Results */
+                foodTitle.setText(foodName_input);
 
-        try (Response response = client.newCall(request).execute()) {
-            if (!response.isSuccessful()) {
-                // ... handle failed request
+                caloriesDisplay.setText(calories);
+                carbsDisplay.setText(carbs + " g");
+                proteinDisplay.setText(protein + " g");
+
+                caloriesText.setText(calories);
+                carbsText.setText(carbs + " g");
+                proteinText.setText(protein + " g");
+                sodiumText.setText(sodium + " mg");
+                sugarText.setText(sugar + " g");
+                fiberText.setText(fiber + " g");
+                fatText.setText(fat + " g");
+
+            } catch (JSONException e){
+               food_search_textfield.setError("Check Spelling? 🤨");
+               food_search_textfield.requestFocus();
+             e.printStackTrace();
             }
 
-            String responseBody = response.body().string();
-            response_box.setText(responseBody);// ... do something with response
-            
-        } catch (IOException e) {
-            // ... handle IO exception
-        }
+
+        }, error -> error.printStackTrace()
+
+        )
+            {
+                /* PURPOSE:         Passing our API key for accessing Food Nutrition API */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    //headers.put("Content-Type", "application/json");
+                    headers.put("X-Api-Key", "9uNZgAKO3Hb657GW2aYeIA==6QSUhrgPXxiwypMp");
+                    return headers;
+                }
+            };
 
 
-        */
 
-
-        //response_box.setText(root.path("fact").asText());
+            queue.add(jsonObjectRequest);
 
 
     }
 
 
+   /* ********************************************************************** */
+    /* FUNCTION NAME:    alertDialog
+       INPUT:            A String
+       OUTPUT:           n/a
+       PURPOSE:          To make the code more readable,
+                         outputs an alert style text box    */
+    private void alertDialog(String text){
+        Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+    }
 }

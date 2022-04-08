@@ -33,8 +33,13 @@
     <string name="fb_login_protocol_scheme">fb370648141582272</string>
     <string name="facebook_client_token">629db0657f0e801a41c3affada836267</string>
 
-    <!-- Food Api search -->
+    <!-- Food API search -->
     <string name="food_search_API_key">9uNZgAKO3Hb657GW2aYeIA==6QSUhrgPXxiwypMp</string>
+    <!-- Image API search -->
+    <string name="image_search_API_key">563492ad6f917000010000013ff13c8084b2462198b8c626c661ea3c</string>
+    <!-- Weather API search -->
+    <string name="weather_search_API_key">4688280b3f0c44f9995105842220804</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

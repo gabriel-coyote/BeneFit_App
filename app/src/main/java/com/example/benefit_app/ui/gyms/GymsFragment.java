@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +20,11 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.benefit_app.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationListener;
@@ -37,13 +44,21 @@ import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
 import com.google.android.libraries.places.api.net.FindCurrentPlaceResponse;
 import com.google.android.libraries.places.api.net.PlacesClient;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class GymsFragment extends Fragment implements OnMapReadyCallback {
 
 
+    /* PURPOSE:         To access our corresponding items
+                        from the fragment_gyms.xml    */
     private MapView mapView;
     private GoogleMap googleMap;
 
@@ -60,7 +75,7 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
     private boolean locationPermissionGranted;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
 
-    // Used for selecting the current place.
+    /* PURPOSE:             Used for setting current location */
     private static final String KEY_CAMERA_POSITION = "camera_position";
     private static final String KEY_LOCATION = "location";
     private CameraPosition cameraPosition;
@@ -71,10 +86,17 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
     private LatLng[] likelyPlaceLatLngs;
 
 
+    /* PURPOSE:     For out Weather Information */
+    private TextView weatherLocation;
+    private TextView weatherCondition;
+    private TextView weatherTemp;
+
+
     /* ********************************************************************** */
     public GymsFragment() {
         // Required empty public constructor
     }
+
 
     /* ********************************************************************** */
     @Override
@@ -92,17 +114,18 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Setup/Initialize the Places Client SDK
+        /* PURPOSE:      Setup/Initialize the Places Client SDK */
         if (!Places.isInitialized()) {
             Places.initialize(getActivity().getApplicationContext(), "AIzaSyCLZuWWw3Rf2Yn5wKRPC2eF9FZGlizVBwA");
         }
 
-        // Create a new PlacesClient instance
+        /* PURPOSE:       Create a new PlacesClient instance */
         placesClient = Places.createClient(getActivity());
 
-        // Construct a FusedLocationProviderClient.
+        /* PURPOSE:       Construct a FusedLocationProviderClient. */
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
 
+        /* PURPOSE:       Loads the saved location if it exists */
         if(savedInstanceState != null){
             currentLocation = savedInstanceState.getParcelable(KEY_LOCATION);
             cameraPosition = savedInstanceState.getParcelable(KEY_CAMERA_POSITION);
@@ -131,6 +154,14 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
                                 Also return viewer to 'inflate' into the Fragment container viewer */
         View viewer = inflater.inflate(R.layout.fragment_gyms, container, false);
 
+
+        weatherLocation = viewer.findViewById(R.id.weatherLocation);
+        weatherCondition = viewer.findViewById(R.id.weatherCondition);
+        weatherTemp = viewer.findViewById(R.id.weatherTemp);
+
+
+        //setWeatherData();
+
         return viewer;
     }
 
@@ -142,7 +173,7 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
         mapView = view.findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
         mapView.onResume();
-        mapView.getMapAsync(this);//when you already implement OnMapReadyCallback in your fragment
+        mapView.getMapAsync(this);
 
     }
 
@@ -160,11 +191,15 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
 
         showCurrentPlace();
 
+
+
     }
+
 
     /* ********************************************************************** */
     private void getLocationPermission(){
-        /*
+        /* PURPOSE:
+         *
          * Request location permission, so that we can get the location of the
          * device. The result of the permission request is handled by a callback,
          * onRequestPermissionsResult.
@@ -182,7 +217,8 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
 
 
     /* ********************************************************************** */
-    /**
+    /* PURPOSE:
+     *
      * Handles the result of the request for location permissions.
      */
     // [START maps_current_place_on_request_permissions_result]
@@ -242,6 +278,8 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
                             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                     new LatLng(currentLocation.getLatitude(),
                                             currentLocation.getLongitude()), DEFAULT_ZOOM));
+
+                            setWeatherData(currentLocation.getLatitude(), currentLocation.getLongitude());
                         }
 
 
@@ -319,7 +357,8 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
                     // marker at the selected place.
 
                     //MapsActivityCurrentPlace.this.openPlacesDialog();
-                    //TODO: what to do with this ?-> this.openPlacesDialog();
+                    //TODO: what to do with this ?->
+                    this.openPlacesDialog();
                 }
                 else {
                     Log.e("showCurrentPlace_tag: ", "Exception: %s", task.getException());
@@ -370,4 +409,71 @@ public class GymsFragment extends Fragment implements OnMapReadyCallback {
                 .setItems(likelyPlaceNames, listener)
                 .show();
     }
+
+
+    /* ********************************************************************** */
+    /* FUNCTION NAME:    setWeatherData()
+       INPUT:            n/a
+       OUTPUT:           n/a
+       PURPOSE:          Makes a request to Weather API
+                         Gets JSON with current location weather data
+                         Then set the textview weather fields accordingly */
+    private void setWeatherData(double lat, double lon){
+
+        /* **** Start API weather request **** */
+
+
+
+        String currLocation = Double.toString(lat) +"," +Double.toString(lon);
+
+        RequestQueue queue = Volley.newRequestQueue(getActivity());
+        String url = "http://api.weatherapi.com/v1/current.json?key=4688280b3f0c44f9995105842220804&q="+currLocation+"&aqi=no";
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
+
+            /* PURPOSE:         Our Needed Weather Info from response JSON */
+            String location, condition, temperature;
+            try {
+
+                JSONObject locationInfo = response.getJSONObject("location");
+                JSONObject weatherInfo = response.getJSONObject("current");
+
+                location    = locationInfo.getString("name")+", "+locationInfo.getString("region");
+                condition   = weatherInfo.getJSONObject("condition").getString("text");
+                temperature = weatherInfo.getString("temp_f");
+
+                weatherLocation.setText(location);
+                weatherCondition.setText(condition);
+                weatherTemp.setText(temperature+" °F");
+
+
+
+
+
+            } catch (JSONException e){
+                alertDialog("ERROR: Loading Weather Data 😔");
+                e.printStackTrace();
+            }
+
+
+        }, error -> error.printStackTrace()
+
+        );
+
+
+
+        queue.add(jsonObjectRequest);
+    }
+
+
+    /* ********************************************************************** */
+    /* FUNCTION NAME:    alertDialog
+       INPUT:            A String
+       OUTPUT:           n/a
+       PURPOSE:          To make the code more readable,
+                         outputs an alert style text box    */
+    private void alertDialog(String text){
+        Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+    }
+
 }
