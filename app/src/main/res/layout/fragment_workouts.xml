@@ -9,8 +9,19 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <ImageView
+        android:id="@+id/applogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:src="@drawable/bf_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewWorkout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="144dp"
@@ -23,12 +34,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewWorkout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="232dp"
         android:fontFamily="@font/orbitron"
-        android:text="April 08, 2022"
+        android:text="April 10, 2022"
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewWorkout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="276dp"
@@ -49,24 +60,6 @@
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/workouts_openButton3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="7dp"
-        android:background="@drawable/ic_rectangle_notification"
-        android:fontFamily="@font/orbitron"
-        android:paddingBottom="15dp"
-        android:text="Legs"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/workouts_openButton4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workouts_openButton2"
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/workouts_openButton"
@@ -106,22 +99,21 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/workouts_openButton5"
+        android:id="@+id/workouts_openButton3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="7dp"
         android:layout_marginEnd="7dp"
-        android:layout_marginBottom="127dp"
         android:background="@drawable/ic_rectangle_notification"
         android:fontFamily="@font/orbitron"
         android:paddingBottom="15dp"
-        android:text="Big backs"
+        android:text="Legs"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/workouts_openButton4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workouts_openButton4"
+        app:layout_constraintTop_toBottomOf="@+id/workouts_openButton2"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
@@ -142,15 +134,23 @@
         app:layout_constraintTop_toBottomOf="@+id/workouts_openButton3"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:src="@drawable/bf_logo"
+    <Button
+        android:id="@+id/workouts_openButton5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="127dp"
+        android:background="@drawable/ic_rectangle_notification"
+        android:fontFamily="@font/orbitron"
+        android:paddingBottom="15dp"
+        android:text="Big backs"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/workouts_openButton4"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
