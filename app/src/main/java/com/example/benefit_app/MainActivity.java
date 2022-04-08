@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 
+import com.example.benefit_app.fitnessFragments.layout_part2_Fragment;
 import com.example.benefit_app.fitnessFragments.waterFragment;
 import com.example.benefit_app.fitnessFragments.workoutsFragment;
 import com.example.benefit_app.profileFragments.notificationsFragment;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public final static Fragment fragmentWater = new waterFragment();
     public final static Fragment fragmentNotifications = new notificationsFragment();
     public final static Fragment fragmentWorkouts = new workoutsFragment();
+    public final static Fragment fragmentLayout_part2 = new layout_part2_Fragment();
 
 
     public static BottomNavigationView bottomNavigationView;
