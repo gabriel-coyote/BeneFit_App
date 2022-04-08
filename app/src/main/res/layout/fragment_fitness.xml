@@ -255,4 +255,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/picture_cat" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="234dp"
+        android:layout_height="223dp"
+        android:background="@drawable/circle_shape"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="544dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
