@@ -1,4 +1,4 @@
-package com.example.benefit_app.fitnessFragments;
+package com.example.benefit_app.stepProgress_Testing;
 
 import android.os.Bundle;
 
@@ -8,29 +8,19 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 
-import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
+public class stepCounterFragment extends Fragment {
 
-public class workoutsFragment extends Fragment {
-
-
-
-    private Button openWorkoutsButton;
-    private TextView date_text_workout;
     View viewer;
 
-
     /* ********************************************************************** */
-    public workoutsFragment() {
+    public stepCounterFragment() {
         // Required empty public constructor
     }
+
     /* ********************************************************************** */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,22 +31,18 @@ public class workoutsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Date thisDate = new Date();
-        SimpleDateFormat dateForm = new SimpleDateFormat("MM/dd/Y");
-        // Inflate the layout for this fragment
-        viewer = inflater.inflate(R.layout.fragment_workouts, container, false);
-
-        //set date
-        date_text_workout = viewer.findViewById(R.id.textViewWorkout2);
-        date_text_workout.setText(dateForm.format(thisDate));
-
-        // Opening the specific workout
-        openWorkoutsButton = viewer.findViewById(R.id.workouts_openButton);
-        openWorkoutsButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentLayout_part2));
+        // IF the viewer doesn't exist then make one
+        // Else keep the same viewer
+        if (viewer != null) {
+            if ((ViewGroup)viewer.getParent() != null)
+                ((ViewGroup)viewer.getParent()).removeView(viewer);
+            return viewer;
+        } else{
+            viewer = inflater.inflate(R.layout.step_counter_testing, container, false);
+        }
 
 
-
-     return viewer;
+        return  viewer;
     }
 
 

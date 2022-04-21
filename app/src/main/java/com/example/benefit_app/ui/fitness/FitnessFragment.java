@@ -22,6 +22,7 @@ import java.util.Date;
 
 public class FitnessFragment extends Fragment {
 
+    private ProgressBar stepsProgressBar;
 
     private ProgressBar waterProgressBar;
     private ImageView workoutsIcon;
@@ -66,6 +67,9 @@ public class FitnessFragment extends Fragment {
         workoutsIcon = viewer.findViewById(R.id.StartWorkoutsIcon);
         workoutsIcon.setOnClickListener(view -> loadFragment(MainActivity.fragmentWorkouts));
 
+
+        stepsProgressBar = viewer.findViewById(R.id.StepsProgressBar);
+        stepsProgressBar.setOnClickListener(view -> loadFragment(MainActivity.stepCounterFragment));
 
         return viewer;
     }

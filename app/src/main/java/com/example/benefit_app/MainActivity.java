@@ -24,6 +24,7 @@ import com.example.benefit_app.fitnessFragments.layout_part2_Fragment;
 import com.example.benefit_app.stepProgress_Testing.SensorFilter;
 import com.example.benefit_app.stepProgress_Testing.StepDetector;
 import com.example.benefit_app.stepProgress_Testing.StepListener;
+import com.example.benefit_app.stepProgress_Testing.stepCounterFragment;
 import com.example.benefit_app.ui.fitness.FitnessFragment;
 import com.example.benefit_app.ui.food.FoodFragment;
 import com.example.benefit_app.ui.gyms.GymsFragment;
@@ -37,6 +38,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     // TODO: Might need to have all the step counter stuff in its own fragment class under 'stepProgress_Testing'
     /* **************** STEP COUNTER STUFF - BEGIN **************** */
+
+    public final static Fragment stepCounterFragment = new stepCounterFragment();
+
+
     private TextView textView;
     private StepDetector simpleStepDetector;
     private SensorManager sensorManager;
