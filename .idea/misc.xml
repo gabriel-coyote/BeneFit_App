@@ -15,9 +15,14 @@
         <entry key="app/src/main/res/drawable/background_reset_password.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/background_transparent.xml" value="0.1395" />
         <entry key="app/src/main/res/drawable/bottom_nav_colors.xml" value="0.2345" />
-        <entry key="app/src/main/res/drawable/circular_progress_bar_calories.xml" value="0.3555" />
-        <entry key="app/src/main/res/drawable/circular_progress_bar_steps.xml" value="0.3555" />
-        <entry key="app/src/main/res/drawable/circular_progress_bar_water.xml" value="0.3555" />
+        <entry key="app/src/main/res/drawable/circle_shape.xml" value="0.167" />
+        <entry key="app/src/main/res/drawable/circle_shape_calories.xml" value="0.326" />
+        <entry key="app/src/main/res/drawable/circle_shape_steps.xml" value="0.326" />
+        <entry key="app/src/main/res/drawable/circle_shape_water.xml" value="0.326" />
+        <entry key="app/src/main/res/drawable/circular_progress_bar.xml" value="0.167" />
+        <entry key="app/src/main/res/drawable/circular_progress_bar_calories.xml" value="0.326" />
+        <entry key="app/src/main/res/drawable/circular_progress_bar_steps.xml" value="0.326" />
+        <entry key="app/src/main/res/drawable/circular_progress_bar_water.xml" value="0.326" />
         <entry key="app/src/main/res/drawable/email_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/email_sign_up_icon.xml" value="0.226" />
         <entry key="app/src/main/res/drawable/facebook_sign_up_icon.xml" value="0.3235" />
@@ -32,6 +37,7 @@
         <entry key="app/src/main/res/drawable/icon_geo.xml" value="0.293" />
         <entry key="app/src/main/res/drawable/icon_menu_action_button.xml" value="0.3475" />
         <entry key="app/src/main/res/drawable/icon_profile.xml" value="0.293" />
+        <entry key="app/src/main/res/drawable/icon_pulse.xml" value="0.167" />
         <entry key="app/src/main/res/drawable/key_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/login_button_format.xml" value="0.1585" />
         <entry key="app/src/main/res/drawable/main_gradiant.xml" value="0.291" />
@@ -50,17 +56,17 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2644927536231884" />
         <entry key="app/src/main/res/layout/activity_main_test.xml" value="0.33" />
         <entry key="app/src/main/res/layout/food_page.xml" value="0.23822463768115942" />
-        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.25923614501953135" />
         <entry key="app/src/main/res/layout/fragment_food.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_gyms.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_layout_part2.xml" value="0.26721014492753625" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.30678839199784874" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2814254760742188" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_reset_password.xml" value="0.47401247401247404" />
         <entry key="app/src/main/res/layout/fragment_water.xml" value="0.3836050724637681" />
         <entry key="app/src/main/res/layout/fragment_workouts.xml" value="0.28703155517578127" />
-        <entry key="app/src/main/res/layout/step_counter_testing.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/step_counter_testing.xml" value="0.26502685546875004" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icom.xml" value="0.203" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icom_round.xml" value="0.203" />
