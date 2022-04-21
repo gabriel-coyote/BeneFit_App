@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
+import com.example.benefit_app.stepProgress_Testing.stepCounterFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -71,7 +72,16 @@ public class FitnessFragment extends Fragment {
         stepsProgressBar = viewer.findViewById(R.id.StepsProgressBar);
         stepsProgressBar.setOnClickListener(view -> loadFragment(MainActivity.stepCounterFragment));
 
+
+
+
         return viewer;
+    }
+
+
+    // TODO: Run this method every so often - somehow
+    public void setStepsProgressBar() {
+        stepsProgressBar.setProgress(MainActivity.stepsCounted_main);
     }
 
 

@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     public final static Fragment stepCounterFragment = new stepCounterFragment();
 
+    // Holds the global variable of steps counted
+    public static int stepsCounted_main;
 
     private TextView textView;
     private StepDetector simpleStepDetector;
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         To use in conjunction with loadfragment() */
     final Fragment fragmentGyms = new GymsFragment();
     final Fragment fragmentFood = new FoodFragment();
-    final Fragment fragmentFitness = new FitnessFragment();
+    public final static Fragment fragmentFitness = new FitnessFragment();
     final Fragment fragmentProfile = new ProfileFragment();
 
     /* PURPOSE:         Defining our sub/helper fragments */
@@ -91,6 +93,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         TvSteps = (TextView) findViewById(R.id.tv_steps);
         BtnStart = (Button) findViewById(R.id.btn_start);
         BtnStop = (Button) findViewById(R.id.btn_stop);
+
+
 
         /*
         BtnStart.setOnClickListener(new View.OnClickListener() {
@@ -163,12 +167,12 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         transaction.commit();
     }
 
-
+    /* **************** STEP COUNTER STUFF - BEGIN **************** */
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
 
-    /* **************** STEP COUNTER STUFF - BEGIN **************** */
+
 
     @Override
     public void onSensorChanged(SensorEvent event) {

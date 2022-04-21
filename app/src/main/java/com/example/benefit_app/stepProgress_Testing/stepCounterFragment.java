@@ -9,13 +9,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
+import com.example.benefit_app.ui.fitness.FitnessFragment;
 
 
 public class stepCounterFragment extends Fragment {
 
     View viewer;
 
+    // Setting Variable to hold steps and a function to get
+    // The variable in FitnessFragment.java
+    private int stepsCounted;
+
+
+    // TODO: Run this method every so often - somehow
+    private  void calcSteps(){
+        MainActivity.stepsCounted_main = stepsCounted;
+    }
     /* ********************************************************************** */
     public stepCounterFragment() {
         // Required empty public constructor
@@ -40,6 +51,10 @@ public class stepCounterFragment extends Fragment {
         } else{
             viewer = inflater.inflate(R.layout.step_counter_testing, container, false);
         }
+
+
+
+
 
 
         return  viewer;
