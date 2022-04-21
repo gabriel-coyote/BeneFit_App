@@ -30,6 +30,8 @@ public class FitnessFragment extends Fragment {
     private ImageView notificationBell;
     private TextView date_text;
 
+    public TextView stepsProgressText;
+    View viewer;
 
     /* ********************************************************************** */
     public FitnessFragment() {
@@ -41,6 +43,7 @@ public class FitnessFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
 
@@ -51,8 +54,16 @@ public class FitnessFragment extends Fragment {
 
         /* PURPOSE:             To get our items from the fragment_fitness.xml,
                                 Also return viewer to 'inflate' into the Fragment container viewer */
-        View viewer = inflater.inflate(R.layout.fragment_fitness, container, false);
-
+        //View viewer = inflater.inflate(R.layout.fragment_fitness, container, false);
+        // IF the viewer doesn't exist then make one
+        // Else keep the same viewer
+        if (viewer != null) {
+            if ((ViewGroup)viewer.getParent() != null)
+                ((ViewGroup)viewer.getParent()).removeView(viewer);
+            return viewer;
+        }else {
+            viewer = inflater.inflate(R.layout.fragment_fitness, container, false);
+        }
         //For time
         date_text = viewer.findViewById(R.id.date_text);
         date_text.setText(dateForm.format(thisDate));
@@ -69,14 +80,18 @@ public class FitnessFragment extends Fragment {
         workoutsIcon.setOnClickListener(view -> loadFragment(MainActivity.fragmentWorkouts));
 
 
-        stepsProgressBar = viewer.findViewById(R.id.StepsProgressBar);
-        stepsProgressBar.setOnClickListener(view -> loadFragment(MainActivity.stepCounterFragment));
+        //stepsProgressBar = viewer.findViewById(R.id.StepsProgressBar);
+        //stepsProgressBar.setOnClickListener(view -> loadFragment(MainActivity.stepCounterFragment));
+
+        stepsProgressText = viewer.findViewById(R.id.stepsCounter_Text_fitnessPage);
 
 
-
+        // TODO: GET the steps on the fitness page to display & might have to transfer code from main to here
+        //stepsProgressText.setText(MainActivity.numSteps);
 
         return viewer;
     }
+
 
 
     // TODO: Run this method every so often - somehow

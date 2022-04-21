@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager;
     private Sensor accel;
     private static final String TEXT_NUM_STEPS = "Number of Steps: ";
-    private int numSteps;
+    public static int numSteps;
 
 
     private TextView TvSteps;
@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         /* **************** STEP COUNTER STUFF - BEGIN **************** */
 
+
         // Get an instance of the SensorManager
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -90,9 +91,21 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         simpleStepDetector.registerListener(this);
 
                                         // TODO: Might need to change these ID's
-        TvSteps = (TextView) findViewById(R.id.tv_steps);
+        TvSteps = (TextView) findViewById(R.id.StepsProgress_text);
+
         BtnStart = (Button) findViewById(R.id.btn_start);
-        BtnStop = (Button) findViewById(R.id.btn_stop);
+
+        // Starts Counting steps
+        BtnStart.setOnClickListener(arg0 -> {
+
+            numSteps = 0;
+            sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
+
+        });
+
+        BtnStart.performClick();
+
+        //BtnStop = (Button) findViewById(R.id.btn_stop);
 
 
 
@@ -130,15 +143,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             switch (item.getItemId()){
                 case R.id.menu_Geo:
                     loadFragment(fragmentGyms);
+                    TvSteps.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.menu_Food:
                     loadFragment(fragmentFood);
+                    TvSteps.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.menu_Fitness:
                     loadFragment(fragmentFitness);
+                    TvSteps.setVisibility(View.VISIBLE);
                     break;
                 case R.id.menu_Profile:
                     loadFragment(fragmentProfile);
+                    TvSteps.setVisibility(View.INVISIBLE);
                     break;
                 default: break;
             }

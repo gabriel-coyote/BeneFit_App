@@ -51,5 +51,25 @@
         tools:ignore="ContentDescription,SpeakableTextPresentCheck,
         SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
 
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="86dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        android:clickable="false"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/StepsProgress_text"
+        android:layout_width="197dp"
+        android:layout_height="199dp"
+        android:layout_marginBottom="72dp"
+        android:text="steps taken"
+        android:textColor="#03A9F4"
+        android:textSize="50sp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
