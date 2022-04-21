@@ -6,7 +6,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 //import com.example.benefit_app.extraFitnessFragments.layout_part2_Fragment;
@@ -14,6 +21,9 @@ import com.example.benefit_app.extraFitnessFragments.waterFragment;
 import com.example.benefit_app.extraFitnessFragments.workoutsFragment;
 import com.example.benefit_app.extraProfileFragments.notificationsFragment;
 import com.example.benefit_app.fitnessFragments.layout_part2_Fragment;
+import com.example.benefit_app.stepProgress_Testing.SensorFilter;
+import com.example.benefit_app.stepProgress_Testing.StepDetector;
+import com.example.benefit_app.stepProgress_Testing.StepListener;
 import com.example.benefit_app.ui.fitness.FitnessFragment;
 import com.example.benefit_app.ui.food.FoodFragment;
 import com.example.benefit_app.ui.gyms.GymsFragment;
@@ -21,7 +31,23 @@ import com.example.benefit_app.ui.profile.ProfileEditFragment;
 import com.example.benefit_app.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SensorEventListener, StepListener {
+
+
+
+    // TODO: Might need to have all the step counter stuff in its own fragment class under 'stepProgress_Testing'
+    /* **************** STEP COUNTER STUFF - BEGIN **************** */
+    private TextView textView;
+    private StepDetector simpleStepDetector;
+    private SensorManager sensorManager;
+    private Sensor accel;
+    private static final String TEXT_NUM_STEPS = "Number of Steps: ";
+    private int numSteps;
+
+
+    private TextView TvSteps;
+    private Button BtnStart, BtnStop;
+    /* **************** STEP COUNTER STUFF - END **************** */
 
 
     /* PURPOSE:         Defining our fragments
@@ -48,9 +74,44 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /* **************** STEP COUNTER STUFF - BEGIN **************** */
+
+        // Get an instance of the SensorManager
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        simpleStepDetector = new StepDetector();
+        simpleStepDetector.registerListener(this);
+
+                                        // TODO: Might need to change these ID's
+        TvSteps = (TextView) findViewById(R.id.tv_steps);
+        BtnStart = (Button) findViewById(R.id.btn_start);
+        BtnStop = (Button) findViewById(R.id.btn_stop);
+
+        /*
+        BtnStart.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                numSteps = 0;
+                sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
+
+            }
+        });
 
 
+        BtnStop.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View arg0) {
+
+                sensorManager.unregisterListener(MainActivity.this);
+
+            }
+        });
+
+         */
+        /* **************** STEP COUNTER STUFF - END **************** */
 
         /* PURPOSE:         To handle the navigation selection on BottomNavigationView
                             Switches fragments/page based on current selected menu item */
@@ -98,6 +159,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    }
 
+    /* **************** STEP COUNTER STUFF - BEGIN **************** */
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            simpleStepDetector.updateAccel(
+                    event.timestamp, event.values[0], event.values[1], event.values[2]);
+        }
+    }
+
+    @Override
+    public void step(long timeNs) {
+        numSteps++;
+        TvSteps.setText(TEXT_NUM_STEPS + numSteps);
+    }
+
+
+    /* **************** STEP COUNTER STUFF - END **************** */
 
 }
