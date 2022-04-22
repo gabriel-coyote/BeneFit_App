@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public static int numSteps;
 
 
-    private TextView TvSteps;
+    public static  TextView TvSteps;
     private Button BtnStart, BtnStop;
     /* **************** STEP COUNTER STUFF - END **************** */
 

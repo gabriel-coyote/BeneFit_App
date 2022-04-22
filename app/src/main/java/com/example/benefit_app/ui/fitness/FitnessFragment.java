@@ -69,15 +69,18 @@ public class FitnessFragment extends Fragment {
         date_text.setText(dateForm.format(thisDate));
         // For Water
         waterProgressBar = viewer.findViewById(R.id.WaterProgressBar);
-        waterProgressBar.setOnClickListener(view -> loadFragment(MainActivity.fragmentWater));
+        waterProgressBar.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWater);
+    MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
 
         // Redirects to notifications
         notificationBell = viewer.findViewById(R.id.fitness_notification_bell);
-        notificationBell.setOnClickListener(view -> loadFragment(MainActivity.fragmentNotifications));
+        notificationBell.setOnClickListener(view -> {loadFragment(MainActivity.fragmentNotifications);
+        MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
 
         // Redirects to workouts Page
         workoutsIcon = viewer.findViewById(R.id.StartWorkoutsIcon);
-        workoutsIcon.setOnClickListener(view -> loadFragment(MainActivity.fragmentWorkouts));
+        workoutsIcon.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWorkouts);
+        MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
 
 
         //stepsProgressBar = viewer.findViewById(R.id.StepsProgressBar);

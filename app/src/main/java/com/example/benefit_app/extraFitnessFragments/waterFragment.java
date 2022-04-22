@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.Objects.DailyWaterLog;
 import com.example.benefit_app.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -95,7 +96,8 @@ public class waterFragment extends Fragment{
 
         //back button----->
         back_button = viewer.findViewById(R.id.back_button);
-        back_button.setOnClickListener(view -> getActivity().onBackPressed());
+        back_button.setOnClickListener(view -> {getActivity().onBackPressed();
+                    MainActivity.TvSteps.setVisibility(View.VISIBLE);});
         //save buttons------------>
         save_bottle_size_button = viewer.findViewById(R.id.save_bottle_size_button);
         save_todays_goal_button = viewer.findViewById(R.id.save_todays_goal_button);
