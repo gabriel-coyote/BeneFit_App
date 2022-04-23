@@ -86,7 +86,7 @@ public class FitnessFragment extends Fragment {
         //stepsProgressBar = viewer.findViewById(R.id.StepsProgressBar);
         //stepsProgressBar.setOnClickListener(view -> loadFragment(MainActivity.stepCounterFragment));
 
-        stepsProgressText = viewer.findViewById(R.id.stepsCounter_Text_fitnessPage);
+        //stepsProgressText = viewer.findViewById(R.id.stepsCounter_Text_fitnessPage);
 
 
         // TODO: GET the steps on the fitness page to display & might have to transfer code from main to here
