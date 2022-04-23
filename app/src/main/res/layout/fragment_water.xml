@@ -94,6 +94,7 @@
                 android:textColor="#FFFFFF"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toStartOf="@+id/progress_plus"
+                app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toEndOf="@+id/progress_minus"
                 app:layout_constraintTop_toTopOf="parent" />
 
