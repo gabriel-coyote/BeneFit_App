@@ -52,9 +52,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private Sensor accel;
     private static final String TEXT_NUM_STEPS = "";
     public static int numSteps;
+    public static int numStepsGoal;
 
 
-    public static  TextView TvSteps;
+    public static  TextView TvSteps, TvStepsGoal;
+    public  static View TvSteps_fractionLine;
     private Button BtnStart, BtnStop;
     /* **************** STEP COUNTER STUFF - END **************** */
 
@@ -98,10 +100,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
                                         // TODO: Might need to change these ID's
         TvSteps = (TextView) findViewById(R.id.StepsProgress_text);
+        TvSteps_fractionLine = (View) findViewById(R.id.view);
+        TvStepsGoal = (TextView) findViewById(R.id.StepsGoal_text);
 
         BtnStart = (Button) findViewById(R.id.btn_start);
 
         // Starts Counting steps
+        numStepsGoal = 0;
         BtnStart.setOnClickListener(arg0 -> {
 
             numSteps = 0;
@@ -150,18 +155,26 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 case R.id.menu_Geo:
                     loadFragment(fragmentGyms);
                     TvSteps.setVisibility(View.INVISIBLE);
+                    TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+                    TvStepsGoal.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.menu_Food:
                     loadFragment(fragmentFood);
                     TvSteps.setVisibility(View.INVISIBLE);
+                    TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+                    TvStepsGoal.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.menu_Fitness:
                     loadFragment(fragmentFitness);
                     TvSteps.setVisibility(View.VISIBLE);
+                    TvSteps_fractionLine.setVisibility(View.VISIBLE);
+                    TvStepsGoal.setVisibility(View.VISIBLE);
                     break;
                 case R.id.menu_Profile:
                     loadFragment(fragmentProfile);
                     TvSteps.setVisibility(View.INVISIBLE);
+                    TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+                    TvStepsGoal.setVisibility(View.INVISIBLE);
                     break;
                 default: break;
             }
@@ -174,6 +187,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         bottomNavigationView.setSelectedItemId(R.id.menu_Profile);
 
     }
+
+
 
 
 
@@ -207,9 +222,22 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void step(long timeNs) {
-        numSteps++;
-        TvSteps.setText(TEXT_NUM_STEPS + numSteps);
+
+
+
+
+        if(numStepsGoal == 0){
+            // Don't update the text from "set goals"
+        }else{
+            numSteps++;
+            // numStepsGoal hase been set ; update textview
+            TvSteps.setText(TEXT_NUM_STEPS + numSteps);
+            TvStepsGoal.setText(String.valueOf(numStepsGoal));
+
+        }
+
     }
+
 
 
     /* **************** STEP COUNTER STUFF - END **************** */

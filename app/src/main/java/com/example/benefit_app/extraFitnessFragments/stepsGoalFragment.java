@@ -23,6 +23,7 @@ public class stepsGoalFragment extends Fragment {
 
     private TextView stepsGoal_text;
     private ImageView stepsPlus, stepsMinus;
+    private Button saveStepsButton;
     private int stepsGoal_int;
 
     View viewer;
@@ -58,7 +59,9 @@ public class stepsGoalFragment extends Fragment {
         /*PURPOSE:          To go back on back arrow click */
         backButton = viewer.findViewById(R.id.back_button_steps);
         backButton.setOnClickListener(view -> {getActivity().onBackPressed();
-            MainActivity.TvSteps.setVisibility(View.VISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.VISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);});
 
 
         stepsGoal_int = 0;
@@ -71,10 +74,20 @@ public class stepsGoalFragment extends Fragment {
         stepsPlus.setOnClickListener(view -> displayStepsGoal_plus());
         stepsMinus.setOnClickListener(view -> displayStepsGoal_minus());
 
+
+        saveStepsButton = viewer.findViewById(R.id.save_step_goal_button);
+        saveStepsButton.setOnClickListener(view -> {saveStepsGoal();});
+
         return viewer;
     }
 
 
+    /* ********************************************************************** */
+    private void saveStepsGoal(){
+
+        MainActivity.numStepsGoal = stepsGoal_int;
+        alertDialog("Saved steps Goal: " + String.valueOf(stepsGoal_int));
+    }
     /* ********************************************************************** */
     private void displayStepsGoal_plus(){
         stepsGoal_int += 100;

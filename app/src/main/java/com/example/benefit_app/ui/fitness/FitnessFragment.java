@@ -72,17 +72,23 @@ public class FitnessFragment extends Fragment {
         // For Water
         waterProgressBar = viewer.findViewById(R.id.WaterProgressBar);
         waterProgressBar.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWater);
-            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
 
         // Redirects to notifications
         notificationBell = viewer.findViewById(R.id.fitness_notification_bell);
         notificationBell.setOnClickListener(view -> {loadFragment(MainActivity.fragmentNotifications);
-            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
 
         // Redirects to workouts Page
         workoutsIcon = viewer.findViewById(R.id.StartWorkoutsIcon);
         workoutsIcon.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWorkouts);
-            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
 
 
         //stepsProgressBar = viewer.findViewById(R.id.StepsProgressBar);
@@ -100,9 +106,13 @@ public class FitnessFragment extends Fragment {
         caloriesBox = viewer.findViewById(R.id.CaloriesSquare);
 
         stepsBox.setOnClickListener(view -> {loadFragment(MainActivity.fragmentStepsGoal);
-            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
         caloriesBox.setOnClickListener(view -> {loadFragment(MainActivity.fragmentCaloriesGoal);
-            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
 
         return viewer;
     }

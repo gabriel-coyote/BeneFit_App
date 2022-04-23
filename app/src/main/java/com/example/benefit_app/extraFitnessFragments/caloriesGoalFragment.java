@@ -56,7 +56,9 @@ public class caloriesGoalFragment extends Fragment {
         /*PURPOSE:          To go back on back arrow click */
         backButton = viewer.findViewById(R.id.back_button_calories);
         backButton.setOnClickListener(view -> {getActivity().onBackPressed();
-            MainActivity.TvSteps.setVisibility(View.VISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.VISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);});
 
         caloriesGoal_int = 0;
         caloriesGoal_text = viewer.findViewById(R.id.todays_calories_goal_text);
