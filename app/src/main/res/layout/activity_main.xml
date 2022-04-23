@@ -5,20 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
-
-
+    tools:context=".MainActivity">
 
 
     <FrameLayout
         android:id="@+id/main_fragment_Container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+    </FrameLayout>
 
-   <com.google.android.material.bottomappbar.BottomAppBar
+    <com.google.android.material.bottomappbar.BottomAppBar
        android:id="@+id/bottomAppBar"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -65,11 +63,16 @@
 
     <TextView
         android:id="@+id/StepsProgress_text"
-        android:layout_width="365dp"
-        android:layout_height="265dp"
-        android:layout_marginBottom="72dp"
-        android:text="steps taken"
-        android:textColor="#03A9F4"
-        android:textSize="30sp" />
+        android:layout_width="92dp"
+        android:layout_height="31dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginBottom="70dp"
+        android:text="0"
+        android:gravity="center_horizontal"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:fontFamily="@font/orbitron"
+        app:layout_anchor="@+id/main_fragment_Container"
+        app:layout_anchorGravity="start|center" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
