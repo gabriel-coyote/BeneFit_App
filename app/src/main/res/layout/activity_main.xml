@@ -1,96 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <FrameLayout
+        android:id="@+id/main_fragment_Container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:context=".MainActivity">
+    </FrameLayout>
 
-
-            <FrameLayout
-                android:id="@+id/main_fragment_Container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            </FrameLayout>
-
-            <com.google.android.material.bottomappbar.BottomAppBar
-                android:id="@+id/bottomAppBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:backgroundTint="#0F0F14"
-                app:fabCradleMargin="5dp"
-                app:fabCradleRoundedCornerRadius="7dp">
+    <com.google.android.material.bottomappbar.BottomAppBar
+       android:id="@+id/bottomAppBar"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="bottom"
+       android:backgroundTint="#0F0F14"
+       app:fabCradleMargin="5dp"
+       app:fabCradleRoundedCornerRadius="7dp"
+       >
 
 
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                    android:id="@+id/bottomNavigationView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/background_transparent"
-                    app:itemIconTint="@drawable/bottom_nav_colors"
-                    app:itemTextColor="@drawable/bottom_nav_colors"
-                    app:menu="@menu/bottom_navigation_menu" />
+   <com.google.android.material.bottomnavigation.BottomNavigationView
+       android:id="@+id/bottomNavigationView"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:menu="@menu/bottom_navigation_menu"
+       android:layout_marginEnd="16dp"
+       android:background="@drawable/background_transparent"
+       app:itemIconTint="@drawable/bottom_nav_colors"
+       app:itemTextColor="@drawable/bottom_nav_colors"
+       />
 
-            </com.google.android.material.bottomappbar.BottomAppBar>
+   </com.google.android.material.bottomappbar.BottomAppBar>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/actionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_menu_action_button"
-                app:layout_anchor="@id/bottomAppBar"
-                tools:ignore="ContentDescription,SpeakableTextPresentCheck,
-            SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/actionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_menu_action_button"
+        app:layout_anchor="@id/bottomAppBar"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck,
+        SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
 
-            <Button
-                android:id="@+id/btn_start"
-                android:layout_width="86dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:clickable="false"
-                android:text="Button"
-                android:visibility="invisible"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="86dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        android:clickable="false"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/StepsProgress_text"
+        android:layout_width="92dp"
+        android:layout_height="31dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginBottom="70dp"
+        android:text="0"
+        android:gravity="center_horizontal"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:fontFamily="@font/orbitron"
+        app:layout_anchor="@+id/main_fragment_Container"
+        app:layout_anchorGravity="start|center" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/StepsProgress_text"
-            android:layout_width="92dp"
-            android:layout_height="31dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="400dp"
-            android:fontFamily="@font/orbitron"
-            android:gravity="center_horizontal"
-            android:text="0"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -27,6 +27,8 @@ public class FitnessFragment extends Fragment {
 
     private ProgressBar waterProgressBar;
     private ImageView workoutsIcon;
+    private ImageView stepsBox;
+    private ImageView caloriesBox;
     private ImageView notificationBell;
     private TextView date_text;
 
@@ -70,17 +72,17 @@ public class FitnessFragment extends Fragment {
         // For Water
         waterProgressBar = viewer.findViewById(R.id.WaterProgressBar);
         waterProgressBar.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWater);
-    MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
 
         // Redirects to notifications
         notificationBell = viewer.findViewById(R.id.fitness_notification_bell);
         notificationBell.setOnClickListener(view -> {loadFragment(MainActivity.fragmentNotifications);
-        MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
 
         // Redirects to workouts Page
         workoutsIcon = viewer.findViewById(R.id.StartWorkoutsIcon);
         workoutsIcon.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWorkouts);
-        MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
 
 
         //stepsProgressBar = viewer.findViewById(R.id.StepsProgressBar);
@@ -91,6 +93,16 @@ public class FitnessFragment extends Fragment {
 
         // TODO: GET the steps on the fitness page to display & might have to transfer code from main to here
         //stepsProgressText.setText(MainActivity.numSteps);
+
+
+        // To go to our goals pages for steps and Calories
+        stepsBox = viewer.findViewById(R.id.StepSquare);
+        caloriesBox = viewer.findViewById(R.id.CaloriesSquare);
+
+        stepsBox.setOnClickListener(view -> {loadFragment(MainActivity.fragmentStepsGoal);
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
+        caloriesBox.setOnClickListener(view -> {loadFragment(MainActivity.fragmentCaloriesGoal);
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);});
 
         return viewer;
     }

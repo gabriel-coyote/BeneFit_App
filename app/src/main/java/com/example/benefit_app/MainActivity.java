@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 
 //import com.example.benefit_app.extraFitnessFragments.layout_part2_Fragment;
+import com.example.benefit_app.extraFitnessFragments.caloriesGoalFragment;
+import com.example.benefit_app.extraFitnessFragments.stepsGoalFragment;
 import com.example.benefit_app.extraFitnessFragments.waterFragment;
 import com.example.benefit_app.extraFitnessFragments.workoutsFragment;
 import com.example.benefit_app.extraProfileFragments.notificationsFragment;
@@ -61,8 +63,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         To use in conjunction with loadfragment() */
     final Fragment fragmentGyms = new GymsFragment();
     final Fragment fragmentFood = new FoodFragment();
-    public final static Fragment fragmentFitness = new FitnessFragment();
     final Fragment fragmentProfile = new ProfileFragment();
+    public final static Fragment fragmentFitness = new FitnessFragment();
 
     /* PURPOSE:         Defining our sub/helper fragments */
     // s
@@ -71,6 +73,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public final static Fragment fragmentNotifications = new notificationsFragment();
     public final static Fragment fragmentWorkouts = new workoutsFragment();
     public final static Fragment fragmentLayout_part2 = new layout_part2_Fragment();
+
+    //Goals Fragment Setters
+    public final static Fragment fragmentStepsGoal = new stepsGoalFragment();
+    public final static Fragment fragmentCaloriesGoal = new caloriesGoalFragment();
 
 
     public static BottomNavigationView bottomNavigationView;
