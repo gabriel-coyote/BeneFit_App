@@ -23,7 +23,7 @@ import java.util.Date;
 
 public class FitnessFragment extends Fragment {
 
-    private ProgressBar stepsProgressBar;
+    //private ProgressBar stepsProgressBar;
 
     private ProgressBar waterProgressBar;
     private ImageView workoutsIcon;
@@ -120,9 +120,9 @@ public class FitnessFragment extends Fragment {
 
 
     // TODO: Run this method every so often - somehow
-    public void setStepsProgressBar() {
-        stepsProgressBar.setProgress(MainActivity.stepsCounted_main);
-    }
+//    public void setStepsProgressBar(int steps) {
+//        stepsProgressBar.setProgress(steps);
+//    }
 
 
     /* ********************************************************************** */
@@ -137,8 +137,6 @@ public class FitnessFragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
-
 
 
 }

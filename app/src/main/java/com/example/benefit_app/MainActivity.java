@@ -13,6 +13,7 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
@@ -36,6 +37,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener, StepListener {
 
+    public static ProgressBar stepsProgress;
+
 
 
     // TODO: Might need to have all the step counter stuff in its own fragment class under 'stepProgress_Testing'
@@ -53,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private static final String TEXT_NUM_STEPS = "";
     public static int numSteps;
     public static int numStepsGoal;
+    //public ProgressBar stepsProgressBar;
+    public FitnessFragment fitnessFragment;
 
 
     public static  TextView TvSteps, TvStepsGoal;
@@ -88,7 +93,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//        stepsProgressBar = (ProgressBar) findViewById(R.id.StepsProgressBar);
+//        stepsProgressBar.setProgress(6);
         /* **************** STEP COUNTER STUFF - BEGIN **************** */
 
 
@@ -97,6 +103,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         simpleStepDetector = new StepDetector();
         simpleStepDetector.registerListener(this);
+
+        stepsProgress = findViewById(R.id.StepsProgressBar);
+
+
 
                                         // TODO: Might need to change these ID's
         TvSteps = (TextView) findViewById(R.id.StepsProgress_text);
@@ -230,6 +240,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             // Don't update the text from "set goals"
         }else{
             numSteps++;
+            stepsProgress.setProgress(numSteps);
+            //fitnessFragment.setStepsProgressBar(numSteps);
             // numStepsGoal hase been set ; update textview
             TvSteps.setText(TEXT_NUM_STEPS + numSteps);
             TvStepsGoal.setText(String.valueOf(numStepsGoal));

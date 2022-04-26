@@ -115,6 +115,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ProgressBar
+            android:id="@+id/StepsProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginBottom="367dp"
+            android:background="@drawable/circle_shape_steps"
+            android:indeterminate="false"
+            android:max="0"
+            android:progress="100"
+            android:progressDrawable="@drawable/circular_progress_bar_steps"
+            android:scaleX="-1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>

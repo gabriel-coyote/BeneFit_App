@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,8 @@ import com.example.benefit_app.R;
 
 
 public class stepsGoalFragment extends Fragment {
+
+    private ProgressBar stepsProgressBar;
 
 
     private ImageView backButton;
@@ -56,6 +59,9 @@ public class stepsGoalFragment extends Fragment {
             viewer = inflater.inflate(R.layout.fragment_steps_goal, container, false);
         }
 
+//        stepsProgressBar = (ProgressBar) viewer.findViewById(R.id.StepsProgressBar);
+//        stepsProgressBar.setProgress(6);
+
         /*PURPOSE:          To go back on back arrow click */
         backButton = viewer.findViewById(R.id.back_button_steps);
         backButton.setOnClickListener(view -> {getActivity().onBackPressed();
@@ -87,6 +93,7 @@ public class stepsGoalFragment extends Fragment {
 
         MainActivity.numStepsGoal = stepsGoal_int;
         alertDialog("Saved steps Goal: " + String.valueOf(stepsGoal_int));
+        MainActivity.stepsProgress.setMax(stepsGoal_int);
     }
     /* ********************************************************************** */
     private void displayStepsGoal_plus(){
