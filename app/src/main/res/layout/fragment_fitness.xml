@@ -152,24 +152,6 @@
         app:layout_constraintBottom_toTopOf="@+id/StepSquare"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-
-    <ProgressBar
-        android:id="@+id/caloriesProgressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginBottom="15dp"
-        android:background="@drawable/circle_shape_calories"
-        android:indeterminate="false"
-        android:max="100"
-        android:progress="100"
-        android:progressDrawable="@drawable/circular_progress_bar_calories"
-        app:layout_constraintBottom_toBottomOf="@+id/CaloriesSquare"
-        app:layout_constraintEnd_toEndOf="@+id/CaloriesSquare"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="@+id/CaloriesSquare" />
-
     <ImageView
         android:id="@+id/StartWorkoutsIcon"
         android:layout_width="120dp"
