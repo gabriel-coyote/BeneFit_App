@@ -23,8 +23,6 @@ import java.util.Date;
 
 public class FitnessFragment extends Fragment {
 
-    //private ProgressBar stepsProgressBar;
-
     private ProgressBar waterProgressBar;
     private ImageView workoutsIcon;
     private ImageView stepsBox;
@@ -32,7 +30,6 @@ public class FitnessFragment extends Fragment {
     private ImageView notificationBell;
     private TextView date_text;
 
-    public TextView stepsProgressText;
     View viewer;
 
     /* ********************************************************************** */
@@ -69,36 +66,33 @@ public class FitnessFragment extends Fragment {
         //For time
         date_text = viewer.findViewById(R.id.date_text);
         date_text.setText(dateForm.format(thisDate));
+
+
         // For Water
         waterProgressBar = viewer.findViewById(R.id.WaterProgressBar);
         waterProgressBar.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWater);
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
-            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
 
         // Redirects to notifications
         notificationBell = viewer.findViewById(R.id.fitness_notification_bell);
         notificationBell.setOnClickListener(view -> {loadFragment(MainActivity.fragmentNotifications);
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
-            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
 
         // Redirects to workouts Page
         workoutsIcon = viewer.findViewById(R.id.StartWorkoutsIcon);
         workoutsIcon.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWorkouts);
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
-            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
 
 
-        //stepsProgressBar = viewer.findViewById(R.id.StepsProgressBar);
-        //stepsProgressBar.setOnClickListener(view -> loadFragment(MainActivity.stepCounterFragment));
-
-        //stepsProgressText = viewer.findViewById(R.id.stepsCounter_Text_fitnessPage);
-
-
-        // TODO: GET the steps on the fitness page to display & might have to transfer code from main to here
-        //stepsProgressText.setText(MainActivity.numSteps);
 
 
         // To go to our goals pages for steps and Calories
@@ -108,21 +102,20 @@ public class FitnessFragment extends Fragment {
         stepsBox.setOnClickListener(view -> {loadFragment(MainActivity.fragmentStepsGoal);
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
-            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
+
+
         caloriesBox.setOnClickListener(view -> {loadFragment(MainActivity.fragmentCaloriesGoal);
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
-            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);});
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
 
         return viewer;
     }
 
 
-
-    // TODO: Run this method every so often - somehow
-//    public void setStepsProgressBar(int steps) {
-//        stepsProgressBar.setProgress(steps);
-//    }
 
 
     /* ********************************************************************** */
@@ -137,6 +130,8 @@ public class FitnessFragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
 
 
 }

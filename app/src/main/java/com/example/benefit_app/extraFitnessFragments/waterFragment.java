@@ -99,7 +99,10 @@ public class waterFragment extends Fragment{
         back_button.setOnClickListener(view -> {getActivity().onBackPressed();
                     MainActivity.TvSteps.setVisibility(View.VISIBLE);
                     MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
-                    MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);});
+                    MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
+                    MainActivity.stepsProgress.setVisibility(View.VISIBLE);});
+
+
         //save buttons------------>
         save_bottle_size_button = viewer.findViewById(R.id.save_bottle_size_button);
         save_todays_goal_button = viewer.findViewById(R.id.save_todays_goal_button);

@@ -67,7 +67,8 @@ public class stepsGoalFragment extends Fragment {
         backButton.setOnClickListener(view -> {getActivity().onBackPressed();
             MainActivity.TvSteps.setVisibility(View.VISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
-            MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);});
+            MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
+            MainActivity.stepsProgress.setVisibility(View.VISIBLE);});
 
 
         stepsGoal_int = 0;
@@ -92,6 +93,7 @@ public class stepsGoalFragment extends Fragment {
     private void saveStepsGoal(){
 
         MainActivity.numStepsGoal = stepsGoal_int;
+
         alertDialog("Saved steps Goal: " + String.valueOf(stepsGoal_int));
         MainActivity.stepsProgress.setMax(stepsGoal_int);
     }

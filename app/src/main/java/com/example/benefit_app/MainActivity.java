@@ -37,18 +37,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener, StepListener {
 
+    // Our Fitness Page Circular Progress Bar(s)
     public static ProgressBar stepsProgress;
 
 
-
-    // TODO: Might need to have all the step counter stuff in its own fragment class under 'stepProgress_Testing'
     /* **************** STEP COUNTER STUFF - BEGIN **************** */
 
     public final static Fragment stepCounterFragment = new stepCounterFragment();
-
     // Holds the global variable of steps counted
     public static int stepsCounted_main;
-
     private TextView textView;
     private StepDetector simpleStepDetector;
     private SensorManager sensorManager;
@@ -56,7 +53,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private static final String TEXT_NUM_STEPS = "";
     public static int numSteps;
     public static int numStepsGoal;
-    //public ProgressBar stepsProgressBar;
     public FitnessFragment fitnessFragment;
 
 
@@ -64,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public  static View TvSteps_fractionLine;
     private Button BtnStart, BtnStop;
     /* **************** STEP COUNTER STUFF - END **************** */
-
 
     /* PURPOSE:         Defining our fragments
                         To use in conjunction with loadfragment() */
@@ -87,15 +82,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
     public static BottomNavigationView bottomNavigationView;
+
+
     /* ********************************************************************** */
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        stepsProgressBar = (ProgressBar) findViewById(R.id.StepsProgressBar);
-//        stepsProgressBar.setProgress(6);
-        /* **************** STEP COUNTER STUFF - BEGIN **************** */
 
 
         // Get an instance of the SensorManager
@@ -104,16 +98,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         simpleStepDetector = new StepDetector();
         simpleStepDetector.registerListener(this);
 
+        // Binding all the progress bars to their layouts' ID
         stepsProgress = findViewById(R.id.StepsProgressBar);
 
 
 
                                         // TODO: Might need to change these ID's
-        TvSteps = (TextView) findViewById(R.id.StepsProgress_text);
-        TvSteps_fractionLine = (View) findViewById(R.id.view);
-        TvStepsGoal = (TextView) findViewById(R.id.StepsGoal_text);
+        TvSteps = findViewById(R.id.StepsProgress_text);
+        TvSteps_fractionLine = findViewById(R.id.view);
+        TvStepsGoal = findViewById(R.id.StepsGoal_text);
 
-        BtnStart = (Button) findViewById(R.id.btn_start);
+        BtnStart = findViewById(R.id.btn_start);
 
         // Starts Counting steps
         numStepsGoal = 0;
@@ -126,35 +121,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         BtnStart.performClick();
 
-        //BtnStop = (Button) findViewById(R.id.btn_stop);
 
 
 
-        /*
-        BtnStart.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                numSteps = 0;
-                sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
-
-            }
-        });
-
-
-        BtnStop.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View arg0) {
-
-                sensorManager.unregisterListener(MainActivity.this);
-
-            }
-        });
-
-         */
-        /* **************** STEP COUNTER STUFF - END **************** */
 
         /* PURPOSE:         To handle the navigation selection on BottomNavigationView
                             Switches fragments/page based on current selected menu item */
@@ -164,27 +133,49 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             switch (item.getItemId()){
                 case R.id.menu_Geo:
                     loadFragment(fragmentGyms);
+
+
+                    // Hide fitness steps progress stuff
                     TvSteps.setVisibility(View.INVISIBLE);
                     TvSteps_fractionLine.setVisibility(View.INVISIBLE);
                     TvStepsGoal.setVisibility(View.INVISIBLE);
+                    stepsProgress.setVisibility(View.INVISIBLE);
                     break;
                 case R.id.menu_Food:
                     loadFragment(fragmentFood);
+
+
+                    // Hide fitness steps progress stuff
                     TvSteps.setVisibility(View.INVISIBLE);
                     TvSteps_fractionLine.setVisibility(View.INVISIBLE);
                     TvStepsGoal.setVisibility(View.INVISIBLE);
+                    stepsProgress.setVisibility(View.INVISIBLE);
+
+
                     break;
                 case R.id.menu_Fitness:
                     loadFragment(fragmentFitness);
+
+
+                    // Show fitness steps progress stuff
                     TvSteps.setVisibility(View.VISIBLE);
                     TvSteps_fractionLine.setVisibility(View.VISIBLE);
                     TvStepsGoal.setVisibility(View.VISIBLE);
+                    stepsProgress.setVisibility(View.VISIBLE);
+
+
                     break;
                 case R.id.menu_Profile:
                     loadFragment(fragmentProfile);
+
+
+                    // Hide fitness steps progress stuff
                     TvSteps.setVisibility(View.INVISIBLE);
                     TvSteps_fractionLine.setVisibility(View.INVISIBLE);
                     TvStepsGoal.setVisibility(View.INVISIBLE);
+                    stepsProgress.setVisibility(View.INVISIBLE);
+
+
                     break;
                 default: break;
             }
@@ -195,6 +186,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         /* PURPOSE:         To set our default fragment once user logs in */
         bottomNavigationView.setSelectedItemId(R.id.menu_Profile);
+
 
     }
 
