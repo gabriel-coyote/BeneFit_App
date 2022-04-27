@@ -101,7 +101,7 @@ public class FitnessFragment extends Fragment {
 
 
 
-        // To go to our goals pages for steps and Calories
+        // To go to our goals pages for steps and Calories...
         stepsBox = viewer.findViewById(R.id.StepSquare);
         caloriesBox = viewer.findViewById(R.id.CaloriesSquare);
 
