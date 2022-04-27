@@ -131,6 +131,114 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <TextView
+            android:id="@+id/WaterProgress_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Click To"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/WaterProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/WaterProgressBar" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="90dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/WaterProgress_text" />
+
+        <TextView
+            android:id="@+id/WaterGoal_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Set Goal!"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/WaterProgressBar"
+            app:layout_constraintTop_toBottomOf="@+id/view2"/>
+
+        <ProgressBar
+            android:id="@+id/WaterProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/circle_shape_water"
+            android:indeterminate="false"
+            android:max="0"
+            android:progress="0"
+            android:progressDrawable="@drawable/circular_progress_bar_water"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/StepsProgressBar" />
+
+
+        <TextView
+            android:id="@+id/caloriesProgress_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Click To"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/caloriesProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/caloriesProgressBar" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="250dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caloriesProgress_text" />
+
+        <TextView
+            android:id="@+id/caloriesGoal_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Set Goal!"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/caloriesProgressBar"
+            app:layout_constraintTop_toBottomOf="@+id/view3"/>
+
+
+        <ProgressBar
+            android:id="@+id/caloriesProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="197dp"
+            android:background="@drawable/circle_shape_calories"
+            android:indeterminate="false"
+            android:max="0"
+            android:progress="0"
+            android:progressDrawable="@drawable/circular_progress_bar_calories"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/WaterProgressBar" />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
