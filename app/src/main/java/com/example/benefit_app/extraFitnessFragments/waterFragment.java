@@ -115,7 +115,7 @@ public class waterFragment extends Fragment{
         todays_goal_text = viewer.findViewById(R.id.todays_goal_text);
         bottle_size_text = viewer.findViewById(R.id.bottle_size_text);
 
-        //Bottle size listeners
+        //Bottle size listeners...
         bottle_size_minus.setOnClickListener(view -> changeWaterValue(1,0,0,0,0,0));
         bottle_size_plus.setOnClickListener(view -> changeWaterValue(0,1,0,0,0,0));
 
