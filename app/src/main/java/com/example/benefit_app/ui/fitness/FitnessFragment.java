@@ -23,7 +23,7 @@ import java.util.Date;
 
 public class FitnessFragment extends Fragment {
 
-    private ProgressBar waterProgressBar;
+   // private ProgressBar waterProgressBar;
     private ImageView workoutsIcon;
     private ImageView stepsBox;
     private ImageView caloriesBox;
@@ -69,8 +69,8 @@ public class FitnessFragment extends Fragment {
 
 
         // For Water
-        waterProgressBar = viewer.findViewById(R.id.WaterProgressBar);
-        waterProgressBar.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWater);
+        //waterProgressBar = viewer.findViewById(R.id.WaterProgressBar);
+        MainActivity.waterProgressBar.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWater);
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
             MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
