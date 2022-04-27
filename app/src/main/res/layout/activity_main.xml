@@ -82,15 +82,15 @@
             android:id="@+id/StepsProgress_text"
             android:layout_width="92dp"
             android:layout_height="31dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/orbitron"
             android:gravity="center_horizontal"
             android:text="Click To"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/StepsProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/StepsProgressBar" />
 
         <View
             android:id="@+id/view"
@@ -105,15 +105,15 @@
             android:id="@+id/StepsGoal_text"
             android:layout_width="92dp"
             android:layout_height="31dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="440dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/orbitron"
             android:gravity="center_horizontal"
             android:text="Set Goal!"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/StepsProgressBar"
+            app:layout_constraintTop_toBottomOf="@+id/view"/>
 
         <ProgressBar
             android:id="@+id/StepsProgressBar"
