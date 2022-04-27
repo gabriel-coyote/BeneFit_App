@@ -68,7 +68,9 @@ public class stepsGoalFragment extends Fragment {
             MainActivity.TvSteps.setVisibility(View.VISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
             MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
-            MainActivity.stepsProgress.setVisibility(View.VISIBLE);});
+            MainActivity.stepsProgress.setVisibility(View.VISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.VISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);});
 
 
         stepsGoal_int = 0;
