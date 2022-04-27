@@ -152,33 +152,33 @@ public class waterFragment extends Fragment{
         if(bsp == 1){
             bottle_size_count += 1;
             bottle_size_temp = Integer.toString(bottle_size_count);
-            bottle_size_text.setText(bottle_size_temp+" "+"Oz.");
+            bottle_size_text.setText(bottle_size_temp+" "+"bottle");
         }
         else if(bsm == 1){
             bottle_size_count -= 1;
             bottle_size_temp = Integer.toString(bottle_size_count);
-            bottle_size_text.setText(bottle_size_temp+" "+"Oz.");
+            bottle_size_text.setText(bottle_size_temp+" "+"bottle");
         }
         else if(tgm == 1){
             todays_goal_count -= 1;
             todays_goal_temp = Integer.toString(todays_goal_count);
-            todays_goal_text.setText(todays_goal_temp+" "+"Oz.");
+            todays_goal_text.setText(todays_goal_temp+" "+"bottle");
 
         }
         else if(tgp == 1){
             todays_goal_count += 1;
             todays_goal_temp = Integer.toString(todays_goal_count);
-            todays_goal_text.setText(todays_goal_temp+" "+"Oz.");
+            todays_goal_text.setText(todays_goal_temp+" "+"bottle");
         }
         else if(pp == 1){
             todays_progress_count += 1;
             progress_temp = Integer.toString(todays_progress_count);
-            todays_progress_text.setText(progress_temp+" "+"Oz.");
+            todays_progress_text.setText(progress_temp+" "+"bottle");
         }
         else if(pm == 1){
             todays_progress_count -= 1;
             progress_temp = Integer.toString(todays_progress_count);
-            todays_progress_text.setText(progress_temp+" "+"Oz.");
+            todays_progress_text.setText(progress_temp+" "+"bottle");
         }
 
 
@@ -213,7 +213,7 @@ public class waterFragment extends Fragment{
                     //TODO: Fix water added to database
                     todaysWaterRef.child("todaysProgress").setValue(todaysWater);
 
-                    alertDialog("Added "+todaysWater+"oz. to Log");
+                    alertDialog("Added "+todaysWater+"bottle to Log");
                 }
             }
 
@@ -252,7 +252,7 @@ public class waterFragment extends Fragment{
 
                     todaysWaterRef.child("todaysGoal").setValue(water_goal);
 
-                    alertDialog("Set "+water_goal+"oz. Goal to Log");
+                    alertDialog("Set "+water_goal+"bottle Goal to Log");
                 }
             }
 
