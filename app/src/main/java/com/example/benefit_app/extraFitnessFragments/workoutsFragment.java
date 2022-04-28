@@ -40,7 +40,7 @@ public class workoutsFragment extends Fragment {
         viewer = inflater.inflate(R.layout.fragment_workouts, container, false);
 
         // Opening the specific workout
-        openWorkoutsButton = viewer.findViewById(R.id.workouts_openButton);
+        openWorkoutsButton = viewer.findViewById(R.id.monday_workout);
         openWorkoutsButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentLayout_part2));
 
 
