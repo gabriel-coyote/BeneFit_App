@@ -24,6 +24,7 @@ import com.example.benefit_app.extraFitnessFragments.waterFragment;
 import com.example.benefit_app.extraFitnessFragments.workoutsFragment;
 import com.example.benefit_app.extraProfileFragments.notificationsFragment;
 import com.example.benefit_app.extraFitnessFragments.layout_part2_Fragment;
+import com.example.benefit_app.fitnessFragments.displayWorkoutFragment;
 import com.example.benefit_app.stepProgress_Testing.SensorFilter;
 import com.example.benefit_app.stepProgress_Testing.StepDetector;
 import com.example.benefit_app.stepProgress_Testing.StepListener;
@@ -70,13 +71,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     final Fragment fragmentProfile = new ProfileFragment();
     public final static Fragment fragmentFitness = new FitnessFragment();
 
-    /* PURPOSE:         Defining our sub/helper fragments */
+    /* PURPOSE:         Defining our sub/helper fragments ,,,*/
     // s
     public final static Fragment fragmentProfileEdit = new ProfileEditFragment();
     public final static Fragment fragmentWater = new waterFragment();
     public final static Fragment fragmentNotifications = new notificationsFragment();
     public final static Fragment fragmentWorkouts = new workoutsFragment();
     public final static Fragment fragmentLayout_part2 = new layout_part2_Fragment();
+    public final static Fragment fragmentDisplayWorkouts = new displayWorkoutFragment();
 
     //Goals Fragment Setters
     public final static Fragment fragmentStepsGoal = new stepsGoalFragment();

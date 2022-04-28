@@ -158,18 +158,16 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/back_button_workouts"
+    <ImageView
+        android:id="@+id/back_button_chooseWorkouts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/background_transparent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        android:background="@drawable/icon_back_arrow"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_back_arrow"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
