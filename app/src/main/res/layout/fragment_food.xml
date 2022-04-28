@@ -382,10 +382,10 @@
         android:id="@+id/fireSymbol"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="196dp"
         android:src="@drawable/fire_animated"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -405,7 +405,7 @@
         android:layout_height="55dp"
         android:layout_marginTop="188dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_meat" />
