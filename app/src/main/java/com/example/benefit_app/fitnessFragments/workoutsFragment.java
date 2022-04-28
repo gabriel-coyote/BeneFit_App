@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.benefit_app.MainActivity;
@@ -25,7 +26,7 @@ public class workoutsFragment extends Fragment {
     private Button openWorkoutsButton;
     private TextView date_text_workout;
 
-    private TextView backButton;
+    private ImageButton backButton;
 
     View viewer;
 
