@@ -51,7 +51,7 @@ public class notificationsFragment extends Fragment {
     /* ********************************************************************** */
     /* FUNCTION NAME:    loadFragment
        INPUT:            A Fragment
-       OUTPUT:           n/a
+       OUTPUT:           N/A
        PURPOSE:          Switches/loads a fragment into the main fragment container */
     private void loadFragment(Fragment fragment) {
 
