@@ -100,19 +100,9 @@ public class waterFragment extends Fragment{
                     MainActivity.TvSteps.setVisibility(View.VISIBLE);
                     MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
                     MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
-
                     MainActivity.stepsProgress.setVisibility(View.VISIBLE);
                     MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);
-                    MainActivity.waterProgressBar.setVisibility(View.VISIBLE);
-
-
-                    MainActivity.TvWater.setVisibility(View.VISIBLE);
-                    MainActivity.TvWater_fractionLine.setVisibility(View.VISIBLE);
-                    MainActivity.TvWaterGoal.setVisibility(View.VISIBLE);
-
-                    MainActivity.TvCalories.setVisibility(View.VISIBLE);
-                    MainActivity.TvCalories_fractionLine.setVisibility(View.VISIBLE);
-                    MainActivity.TvCaloriesGoal.setVisibility(View.VISIBLE);});
+                    MainActivity.waterProgressBar.setVisibility(View.VISIBLE);});
 
 
         //save buttons------------>
@@ -125,7 +115,7 @@ public class waterFragment extends Fragment{
         todays_goal_text = viewer.findViewById(R.id.todays_goal_text);
         bottle_size_text = viewer.findViewById(R.id.bottle_size_text);
 
-        //Bottle size listeners....
+        //Bottle size listeners
         bottle_size_minus.setOnClickListener(view -> changeWaterValue(1,0,0,0,0,0));
         bottle_size_plus.setOnClickListener(view -> changeWaterValue(0,1,0,0,0,0));
 
@@ -162,33 +152,33 @@ public class waterFragment extends Fragment{
         if(bsp == 1){
             bottle_size_count += 1;
             bottle_size_temp = Integer.toString(bottle_size_count);
-            bottle_size_text.setText(bottle_size_temp+" "+"Bottles");
+            bottle_size_text.setText(bottle_size_temp+" "+"Oz.");
         }
         else if(bsm == 1){
             bottle_size_count -= 1;
             bottle_size_temp = Integer.toString(bottle_size_count);
-            bottle_size_text.setText(bottle_size_temp+" "+"Bottles");
+            bottle_size_text.setText(bottle_size_temp+" "+"Oz.");
         }
         else if(tgm == 1){
             todays_goal_count -= 1;
             todays_goal_temp = Integer.toString(todays_goal_count);
-            todays_goal_text.setText(todays_goal_temp+" "+"Bottles");
+            todays_goal_text.setText(todays_goal_temp+" "+"Oz.");
 
         }
         else if(tgp == 1){
             todays_goal_count += 1;
             todays_goal_temp = Integer.toString(todays_goal_count);
-            todays_goal_text.setText(todays_goal_temp+" "+"Bottles");
+            todays_goal_text.setText(todays_goal_temp+" "+"Oz.");
         }
         else if(pp == 1){
             todays_progress_count += 1;
             progress_temp = Integer.toString(todays_progress_count);
-            todays_progress_text.setText(progress_temp+" "+"Bottles");
+            todays_progress_text.setText(progress_temp+" "+"Oz.");
         }
         else if(pm == 1){
             todays_progress_count -= 1;
             progress_temp = Integer.toString(todays_progress_count);
-            todays_progress_text.setText(progress_temp+" "+"Bottles");
+            todays_progress_text.setText(progress_temp+" "+"Oz.");
         }
 
 
@@ -223,7 +213,7 @@ public class waterFragment extends Fragment{
                     //TODO: Fix water added to database
                     todaysWaterRef.child("todaysProgress").setValue(todaysWater);
 
-                    alertDialog("Added "+todaysWater+"Bottles to Log");
+                    alertDialog("Added "+todaysWater+"oz. to Log");
                 }
             }
 
@@ -262,7 +252,7 @@ public class waterFragment extends Fragment{
 
                     todaysWaterRef.child("todaysGoal").setValue(water_goal);
 
-                    alertDialog("Set "+water_goal+"Bottles Goal to Log");
+                    alertDialog("Set "+water_goal+"oz. Goal to Log");
                 }
             }
 

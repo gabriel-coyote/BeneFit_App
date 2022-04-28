@@ -164,7 +164,36 @@
         app:layout_constraintStart_toStartOf="@+id/imageView23"
         app:srcCompat="@drawable/start_workouts" />
 
-
+    <ProgressBar
+        android:id="@+id/WaterProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/circle_shape_water"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/circular_progress_bar_water"
+        app:layout_constraintBottom_toBottomOf="@+id/WaterSquare"
+        app:layout_constraintEnd_toEndOf="@+id/WaterSquare"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/WaterSquare" />
+    <ProgressBar
+        android:id="@+id/StepsProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/circle_shape_steps"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/circular_progress_bar_steps"
+        app:layout_constraintBottom_toBottomOf="@+id/StepSquare"
+        app:layout_constraintEnd_toEndOf="@+id/StepSquare"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="@+id/StepSquare" />
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
