@@ -63,7 +63,7 @@ public class displayWorkoutFragment extends Fragment {
         title_workout_message = viewer.findViewById(R.id.title_workout_message);
         user_workout_text = viewer.findViewById(R.id.user_workout_text);
         //back button
-        back_button = viewer.findViewById(R.id.back_button);
+        back_button = viewer.findViewById(R.id.display_workout_back);
         back_button.setOnClickListener(view -> loadFragment(MainActivity.fragmentFitness));
 
 

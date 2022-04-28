@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="0.61" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/display_workout_back"
         android:layout_width="32dp"
         android:layout_height="37dp"
         android:src="@drawable/icon_back_arrow"
