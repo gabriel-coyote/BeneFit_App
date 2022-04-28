@@ -43,7 +43,7 @@ public class layout_part2_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Date thisDate = new Date();
-        SimpleDateFormat dateForm = new SimpleDateFormat("EE");
+        SimpleDateFormat dateForm = new SimpleDateFormat("EEE");
         // Inflate the layout for this fragment
         // IF the viewer doesn't exist then make one
         // Else keep the same viewer
