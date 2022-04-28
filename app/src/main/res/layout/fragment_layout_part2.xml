@@ -19,5 +19,37 @@
         app:srcCompat="@drawable/icon_back_arrow"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
+    <TextView
+        android:id="@+id/textViewWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:fontFamily="@font/orbitron"
+        android:text="Create a workout!"
+        android:textColor="#FFFFFF"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_workout_title"
+        android:ems="10"
+        android:fontFamily="@font/orbitron"
+        android:gravity="center"
+        android:hint="Give it a title!"
+        android:inputType="textPersonName"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWorkout"
+        app:layout_constraintVertical_bias="0.075"
+        tools:ignore="TouchTargetSizeCheck" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

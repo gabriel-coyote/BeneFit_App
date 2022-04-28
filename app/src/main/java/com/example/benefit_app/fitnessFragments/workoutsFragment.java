@@ -72,7 +72,7 @@ public class workoutsFragment extends Fragment {
         });
 
         // Opening the specific workout
-        openWorkoutsButton = viewer.findViewById(R.id.workouts_openButton);
+        openWorkoutsButton = viewer.findViewById(R.id.monday_workout);
         openWorkoutsButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentLayout_part2));
 
 
