@@ -64,7 +64,7 @@
         <EditText
             android:id="@+id/editTextCreateWorkout"
             android:layout_width="match_parent"
-            android:layout_height="1000dp"
+            android:layout_height="900dp"
             android:background="@drawable/ic_workout_info"
             android:ems="10"
             android:fontFamily="@font/orbitron"
