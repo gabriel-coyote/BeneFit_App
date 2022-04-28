@@ -59,9 +59,18 @@ public class caloriesGoalFragment extends Fragment {
             MainActivity.TvSteps.setVisibility(View.VISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
             MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
+
             MainActivity.stepsProgress.setVisibility(View.VISIBLE);
             MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);
-            MainActivity.waterProgressBar.setVisibility(View.VISIBLE);});
+            MainActivity.waterProgressBar.setVisibility(View.VISIBLE);
+
+            MainActivity.TvWater.setVisibility(View.VISIBLE);
+            MainActivity.TvWater_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvWaterGoal.setVisibility(View.VISIBLE);
+
+            MainActivity.TvCalories.setVisibility(View.VISIBLE);
+            MainActivity.TvCalories_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvCaloriesGoal.setVisibility(View.VISIBLE);});
 
         caloriesGoal_int = 0;
         caloriesGoal_text = viewer.findViewById(R.id.todays_calories_goal_text);

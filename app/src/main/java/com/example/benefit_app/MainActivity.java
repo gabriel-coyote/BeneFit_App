@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public FitnessFragment fitnessFragment;
 
 
-    public static  TextView TvSteps, TvStepsGoal;
-    public  static View TvSteps_fractionLine;
+    public static  TextView TvSteps, TvStepsGoal, TvWater, TvWaterGoal, TvCalories, TvCaloriesGoal;
+    public  static View TvSteps_fractionLine, TvWater_fractionLine, TvCalories_fractionLine;
     private Button BtnStart, BtnStop;
     /* **************** STEP COUNTER STUFF - END **************** */
 
@@ -105,16 +105,23 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         waterProgressBar = findViewById(R.id.WaterProgressBar);
         caloriesProgressBar = findViewById(R.id.caloriesProgressBar);
 
-
-
-
-                                        // TODO: Might need to change these ID's
+        // Excess Binding for progress bars
         TvSteps = findViewById(R.id.StepsProgress_text);
         TvSteps_fractionLine = findViewById(R.id.view);
         TvStepsGoal = findViewById(R.id.StepsGoal_text);
 
-        BtnStart = findViewById(R.id.btn_start);
+        TvWater = findViewById(R.id.WaterProgress_text);
+        TvWater_fractionLine = findViewById(R.id.view2);
+        TvWaterGoal = findViewById(R.id.WaterGoal_text);
 
+        TvCalories = findViewById(R.id.caloriesText);
+        TvCalories_fractionLine = findViewById(R.id.view3);
+        TvCaloriesGoal = findViewById(R.id.calories_GoalsText);
+
+
+
+
+        BtnStart = findViewById(R.id.btn_start);
         // Starts Counting steps
         numStepsGoal = 0;
         BtnStart.setOnClickListener(arg0 -> {
@@ -144,6 +151,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     TvSteps.setVisibility(View.INVISIBLE);
                     TvSteps_fractionLine.setVisibility(View.INVISIBLE);
                     TvStepsGoal.setVisibility(View.INVISIBLE);
+
+                    TvWater.setVisibility(View.INVISIBLE);
+                    TvWater_fractionLine.setVisibility(View.INVISIBLE);
+                    TvWaterGoal.setVisibility(View.INVISIBLE);
+
+                    TvCalories.setVisibility(View.INVISIBLE);
+                    TvCalories_fractionLine.setVisibility(View.INVISIBLE);
+                    TvCaloriesGoal.setVisibility(View.INVISIBLE);
+
+
+
+                    // Our ProgressBar
                     stepsProgress.setVisibility(View.INVISIBLE);
                     waterProgressBar.setVisibility(View.INVISIBLE);
                     caloriesProgressBar.setVisibility(View.INVISIBLE);
@@ -158,6 +177,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     TvSteps.setVisibility(View.INVISIBLE);
                     TvSteps_fractionLine.setVisibility(View.INVISIBLE);
                     TvStepsGoal.setVisibility(View.INVISIBLE);
+
+                    TvWater.setVisibility(View.INVISIBLE);
+                    TvWater_fractionLine.setVisibility(View.INVISIBLE);
+                    TvWaterGoal.setVisibility(View.INVISIBLE);
+
+                    TvCalories.setVisibility(View.INVISIBLE);
+                    TvCalories_fractionLine.setVisibility(View.INVISIBLE);
+                    TvCaloriesGoal.setVisibility(View.INVISIBLE);
+
+                    // Our ProgressBar
                     stepsProgress.setVisibility(View.INVISIBLE);
                     waterProgressBar.setVisibility(View.INVISIBLE);
                     caloriesProgressBar.setVisibility(View.INVISIBLE);
@@ -172,6 +201,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     TvSteps.setVisibility(View.VISIBLE);
                     TvSteps_fractionLine.setVisibility(View.VISIBLE);
                     TvStepsGoal.setVisibility(View.VISIBLE);
+
+                    TvWater.setVisibility(View.VISIBLE);
+                    TvWater_fractionLine.setVisibility(View.VISIBLE);
+                    TvWaterGoal.setVisibility(View.VISIBLE);
+
+                    TvCalories.setVisibility(View.VISIBLE);
+                    TvCalories_fractionLine.setVisibility(View.VISIBLE);
+                    TvCaloriesGoal.setVisibility(View.VISIBLE);
+
+                    // Our ProgressBar
                     stepsProgress.setVisibility(View.VISIBLE);
                     waterProgressBar.setVisibility(View.VISIBLE);
                     caloriesProgressBar.setVisibility(View.VISIBLE);
@@ -186,6 +225,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                     TvSteps.setVisibility(View.INVISIBLE);
                     TvSteps_fractionLine.setVisibility(View.INVISIBLE);
                     TvStepsGoal.setVisibility(View.INVISIBLE);
+
+                    TvWater.setVisibility(View.INVISIBLE);
+                    TvWater_fractionLine.setVisibility(View.INVISIBLE);
+                    TvWaterGoal.setVisibility(View.INVISIBLE);
+
+                    TvCalories.setVisibility(View.INVISIBLE);
+                    TvCalories_fractionLine.setVisibility(View.INVISIBLE);
+                    TvCaloriesGoal.setVisibility(View.INVISIBLE);
+
+                    // Our ProgressBar
                     stepsProgress.setVisibility(View.INVISIBLE);
                     waterProgressBar.setVisibility(View.INVISIBLE);
                     caloriesProgressBar.setVisibility(View.INVISIBLE);
