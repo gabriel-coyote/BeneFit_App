@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -22,6 +24,9 @@ import java.util.Date;
 public class layout_part2_Fragment extends Fragment {
 
 
+    //For saving workouts
+    private EditText createdWorkoutTitle, createdWorkout;
+    private TextView doneButton;
 
     private TextView date_text;
     private ImageButton backButton;
@@ -63,10 +68,67 @@ public class layout_part2_Fragment extends Fragment {
         backButton.setOnClickListener(view -> {getActivity().onBackPressed(); });
 
 
+        // For saving workouts to main string
+        createdWorkout = viewer.findViewById(R.id.editTextCreateWorkout);
+        createdWorkoutTitle = viewer.findViewById(R.id.editTextCreateTitle);
+        doneButton = viewer.findViewById(R.id.textView5);
+        doneButton.setOnClickListener(view ->  {saveWorkout();});
+
+
+
+
      return viewer;
     }
 
 
+    /* ********************************************************************** */
+
+    public void saveWorkout(){
+
+        String todaysDAY;
+
+        String workout_str = createdWorkout.getText().toString();
+
+        switch (""){
+            case "Monday":
+                MainActivity.mondayWorkoutString = workout_str;
+                break;
+
+
+            case "Tuesday":
+                MainActivity.tuesdayWorkoutString = workout_str;
+                break;
+
+
+            case "Wednesday":
+                MainActivity.wednesdayWorkoutString = workout_str;
+                break;
+
+
+            case "Thursday":
+                MainActivity.thursdayWorkoutString = workout_str;
+                break;
+
+
+            case "Friday":
+                MainActivity.fridayWorkoutString = workout_str;
+                break;
+
+
+            case "Saturday":
+                MainActivity.saturdayWorkoutString = workout_str;
+                break;
+
+
+            case "Sunday":
+                MainActivity.sundayWorkoutString = workout_str;
+                break;
+
+            default:
+                break;
+        }
+
+    }
 
     /* ********************************************************************** */
     /* FUNCTION NAME:    loadFragment
