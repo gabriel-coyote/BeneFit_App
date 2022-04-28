@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         TvCalories = findViewById(R.id.caloriesProgress_text);
         TvCalories_fractionLine = findViewById(R.id.view3);
-        TvCaloriesGoal = findViewById(R.id.calories_GoalsText);
+        TvCaloriesGoal = findViewById(R.id.caloriesGoal_text);
 
 
 
