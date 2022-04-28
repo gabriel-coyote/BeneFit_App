@@ -110,7 +110,7 @@ public class FitnessFragment extends Fragment {
 
         // Redirects to workouts Page
         workoutsIcon = viewer.findViewById(R.id.StartWorkoutsIcon);
-        workoutsIcon.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWorkouts);
+        workoutsIcon.setOnClickListener(view -> {loadFragment(MainActivity.fragmentDisplayWorkouts);
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
             MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);

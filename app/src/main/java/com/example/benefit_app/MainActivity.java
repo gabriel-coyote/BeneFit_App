@@ -35,6 +35,7 @@ import com.example.benefit_app.ui.gyms.GymsFragment;
 import com.example.benefit_app.ui.profile.ProfileEditFragment;
 import com.example.benefit_app.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener, StepListener {
 
@@ -85,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public final static Fragment fragmentCaloriesGoal = new caloriesGoalFragment();
 
 
+    // Our navigation Menus
+    public static  FloatingActionButton actionButton;
     public static BottomNavigationView bottomNavigationView;
 
 
@@ -138,6 +141,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
+        // Take us to our list of workouts on plus button click
+        actionButton.setOnClickListener(view -> {
+            loadFragment(fragmentWorkouts);
+
+        });
 
         /* PURPOSE:         To handle the navigation selection on BottomNavigationView
                             Switches fragments/page based on current selected menu item */
