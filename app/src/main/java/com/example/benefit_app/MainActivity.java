@@ -140,11 +140,31 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
-
+        actionButton = findViewById(R.id.actionButton);
         // Take us to our list of workouts on plus button click
         actionButton.setOnClickListener(view -> {
-            loadFragment(fragmentWorkouts);
 
+            // Hide fitness steps progress stuff
+            TvSteps.setVisibility(View.INVISIBLE);
+            TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+            TvStepsGoal.setVisibility(View.INVISIBLE);
+
+            TvWater.setVisibility(View.INVISIBLE);
+            TvWater_fractionLine.setVisibility(View.INVISIBLE);
+            TvWaterGoal.setVisibility(View.INVISIBLE);
+
+            TvCalories.setVisibility(View.INVISIBLE);
+            TvCalories_fractionLine.setVisibility(View.INVISIBLE);
+            TvCaloriesGoal.setVisibility(View.INVISIBLE);
+
+
+
+            // Our ProgressBar
+            stepsProgress.setVisibility(View.INVISIBLE);
+            waterProgressBar.setVisibility(View.INVISIBLE);
+            caloriesProgressBar.setVisibility(View.INVISIBLE);
+
+            loadFragment(fragmentWorkouts);
         });
 
         /* PURPOSE:         To handle the navigation selection on BottomNavigationView
