@@ -51,8 +51,8 @@ public class workoutsFragment extends Fragment {
         viewer = inflater.inflate(R.layout.fragment_workouts, container, false);
 
         //set date
-        date_text_workout = viewer.findViewById(R.id.textViewWorkout2);
-        date_text_workout.setText(dateForm.format(thisDate));
+        //date_text_workout = viewer.findViewById(R.id.textViewWorkout2);
+        //date_text_workout.setText(dateForm.format(thisDate));
 
         backButton = viewer.findViewById(R.id.back_button_workouts);
         backButton.setOnClickListener(view -> {getActivity().onBackPressed();
