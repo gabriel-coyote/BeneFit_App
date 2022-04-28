@@ -45,6 +45,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public static ProgressBar caloriesProgressBar;
 
 
+
+    // OUR WORKOUTS STRINGS ; for each day of the week
+    public static String mondayWorkoutString = "empty workout :(";
+    public static String tuesdayWorkoutString = "empty workout :(";;
+    public static String wednesdayWorkoutString= "empty workout :(";;
+    public static String thursdayWorkoutString= "empty workout :(";;
+    public static String fridayWorkoutString= "empty workout :(";;
+    public static String saturdayWorkoutString= "empty workout :(";;
+    public static String sundayWorkoutString= "empty workout :(";;
+
     /* **************** STEP COUNTER STUFF - BEGIN **************** */
 
     public final static Fragment stepCounterFragment = new stepCounterFragment();
