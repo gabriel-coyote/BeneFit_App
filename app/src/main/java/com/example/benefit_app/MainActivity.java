@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     final Fragment fragmentProfile = new ProfileFragment();
     public final static Fragment fragmentFitness = new FitnessFragment();
 
-    /* PURPOSE:         Defining our sub/helper fragments */
+    /* PURPOSE:         Defining our sub/helper fragments ,,,*/
     // s
     public final static Fragment fragmentProfileEdit = new ProfileEditFragment();
     public final static Fragment fragmentWater = new waterFragment();
