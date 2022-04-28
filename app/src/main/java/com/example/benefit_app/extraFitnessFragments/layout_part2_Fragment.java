@@ -15,12 +15,15 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class layout_part2_Fragment extends Fragment {
 
 
 
-
+    private TextView date_text;
     private ImageButton backButton;
     View viewer;
 
@@ -39,6 +42,8 @@ public class layout_part2_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Date thisDate = new Date();
+        SimpleDateFormat dateForm = new SimpleDateFormat("dd");
         // Inflate the layout for this fragment
         // IF the viewer doesn't exist then make one
         // Else keep the same viewer
@@ -49,6 +54,8 @@ public class layout_part2_Fragment extends Fragment {
         }else {
             viewer = inflater.inflate(R.layout.fragment_layout_part2, container, false);
         }
+        date_text = viewer.findViewById(R.id.textViewWorkout);
+        date_text.setText(dateForm.format(thisDate));
         // Opening the specific workout
 
 
