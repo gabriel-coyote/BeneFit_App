@@ -54,22 +54,21 @@
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.14824024483550116" />
         <entry key="app/src/main/res/layout/activity_create_account.xml" value="0.21223021582733814" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19186221684250876" />
         <entry key="app/src/main/res/layout/activity_main_test.xml" value="0.33" />
         <entry key="app/src/main/res/layout/food_page.xml" value="0.23822463768115942" />
         <entry key="app/src/main/res/layout/fragment_calories_goal.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_display_workout.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.38384552001953126" />
+        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.349017333984375" />
         <entry key="app/src/main/res/layout/fragment_food.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_gyms.xml" value="0.35144927536231885" />
-        <entry key="app/src/main/res/layout/fragment_layout_part2.xml" value="0.26721014492753625" />
+        <entry key="app/src/main/res/layout/fragment_layout_part2.xml" value="0.24537329190019247" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2814254760742188" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_reset_password.xml" value="0.47401247401247404" />
         <entry key="app/src/main/res/layout/fragment_steps_goal.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_water.xml" value="0.37343356367470565" />
-        <entry key="app/src/main/res/layout/fragment_workouts.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_workouts.xml" value="0.30178527832031254" />
         <entry key="app/src/main/res/layout/step_counter_testing.xml" value="0.26502685546875004" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/app_icom.xml" value="0.203" />
