@@ -8,12 +8,21 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
+
+import org.w3c.dom.Text;
 
 
 public class displayWorkoutFragment extends Fragment {
 
+    private TextView title_workout_message;
+    private TextView user_workout_text;
+    private ImageView back_button;
 
 
     View viewer;
@@ -50,8 +59,12 @@ public class displayWorkoutFragment extends Fragment {
         }else {
             viewer = inflater.inflate(R.layout.fragment_display_workout, container, false);
         }
-
-
+        //Title of workout and user created workout.
+        title_workout_message = viewer.findViewById(R.id.title_workout_message);
+        user_workout_text = viewer.findViewById(R.id.user_workout_text);
+        //back button
+        back_button = viewer.findViewById(R.id.back_button);
+        back_button.setOnClickListener(view -> loadFragment(MainActivity.fragmentFitness));
 
 
 
