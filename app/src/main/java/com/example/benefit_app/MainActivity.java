@@ -23,7 +23,7 @@ import com.example.benefit_app.extraFitnessFragments.stepsGoalFragment;
 import com.example.benefit_app.extraFitnessFragments.waterFragment;
 import com.example.benefit_app.extraFitnessFragments.workoutsFragment;
 import com.example.benefit_app.extraProfileFragments.notificationsFragment;
-import com.example.benefit_app.fitnessFragments.layout_part2_Fragment;
+import com.example.benefit_app.extraFitnessFragments.layout_part2_Fragment;
 import com.example.benefit_app.stepProgress_Testing.SensorFilter;
 import com.example.benefit_app.stepProgress_Testing.StepDetector;
 import com.example.benefit_app.stepProgress_Testing.StepListener;

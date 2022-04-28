@@ -24,6 +24,9 @@ public class workoutsFragment extends Fragment {
 
     private Button openWorkoutsButton;
     private TextView date_text_workout;
+
+    private TextView backButton;
+
     View viewer;
 
 
@@ -50,6 +53,29 @@ public class workoutsFragment extends Fragment {
         date_text_workout = viewer.findViewById(R.id.textViewWorkout2);
         date_text_workout.setText(dateForm.format(thisDate));
 
+        backButton = viewer.findViewById(R.id.back_button_workouts);
+        backButton.setOnClickListener(view -> {getActivity().onBackPressed();
+
+            // Show fitness steps progress stuff
+            MainActivity.TvSteps.setVisibility(View.VISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
+
+            MainActivity.TvWater.setVisibility(View.VISIBLE);
+            MainActivity.TvWater_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvWaterGoal.setVisibility(View.VISIBLE);
+
+            MainActivity.TvCalories.setVisibility(View.VISIBLE);
+            MainActivity.TvCalories_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvCaloriesGoal.setVisibility(View.VISIBLE);
+
+            // Our ProgressBar
+            MainActivity.stepsProgress.setVisibility(View.VISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.VISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);
+        });
+
+
         // Opening the specific workout
         openWorkoutsButton = viewer.findViewById(R.id.workouts_openButton);
         openWorkoutsButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentLayout_part2));
@@ -58,7 +84,6 @@ public class workoutsFragment extends Fragment {
 
      return viewer;
     }
-
 
 
     /* ********************************************************************** */
