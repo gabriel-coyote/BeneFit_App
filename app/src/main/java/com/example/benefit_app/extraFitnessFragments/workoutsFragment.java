@@ -18,7 +18,7 @@ public class workoutsFragment extends Fragment {
 
 
 
-    private Button openMondaysWorkoutButton, openTuesdayWorkoutButton;
+    private Button openMondaysWorkoutButton, openTuesdayWorkoutButton, openWednesdayWorkoutButton, openThursdayWorkoutButton, openFridayWorkoutButton, openSaturdayWorkoutButton, openSundayWorkoutButton;
     View viewer;
 
 
@@ -46,6 +46,11 @@ public class workoutsFragment extends Fragment {
         // Binding the button to fragments_workouts layout
         openMondaysWorkoutButton = viewer.findViewById(R.id.monday_workout);
         openTuesdayWorkoutButton = viewer.findViewById(R.id.tuesday_workout);
+        openWednesdayWorkoutButton = viewer.findViewById(R.id.wednesday_workout);
+        openThursdayWorkoutButton = viewer.findViewById(R.id.thursday_workout);
+        openFridayWorkoutButton = viewer.findViewById(R.id.friday_workout);
+        openSaturdayWorkoutButton = viewer.findViewById(R.id.saturday_workout);
+        openSundayWorkoutButton = viewer.findViewById(R.id.sunday_workout);
 
 
         //On workout button clicked
@@ -55,6 +60,22 @@ public class workoutsFragment extends Fragment {
         openTuesdayWorkoutButton.setOnClickListener(view -> {
 
         });
+        openWednesdayWorkoutButton.setOnClickListener(view -> {
+
+        });
+        openThursdayWorkoutButton.setOnClickListener(view -> {
+
+        });
+        openFridayWorkoutButton.setOnClickListener(view -> {
+
+        });
+        openSaturdayWorkoutButton.setOnClickListener(view -> {
+
+        });
+        openSundayWorkoutButton.setOnClickListener(view -> {
+
+        });
+
 
 
         // Opening the display workout on button clicks.
