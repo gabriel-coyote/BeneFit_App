@@ -33,6 +33,7 @@
         android:id="@+id/user_workout_text"
         android:layout_width="346dp"
         android:layout_height="601dp"
+        android:alpha=".6"
         android:background="@drawable/grey_gradient"
         android:fontFamily="@font/orbitron"
         android:text=" Part 1:\n 1x Naurrto Runs\n 5x No Hands Pushups\n 5x Eat Oreos"
@@ -48,8 +49,11 @@
         android:id="@+id/display_workout_back"
         android:layout_width="32dp"
         android:layout_height="37dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/icon_back_arrow"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

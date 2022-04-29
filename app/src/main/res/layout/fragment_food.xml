@@ -7,23 +7,6 @@
     android:background="@drawable/main_gradiant">
 
 
-    <Button
-        android:id="@+id/buttonSTORE"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:background="@drawable/round_corner_v2"
-        android:fontFamily="@font/orbitron"
-        android:text="Store"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/foodName_placeholder"
         android:layout_width="wrap_content"
