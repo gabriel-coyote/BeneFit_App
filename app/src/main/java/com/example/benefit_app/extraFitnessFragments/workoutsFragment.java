@@ -53,9 +53,13 @@ public class workoutsFragment extends Fragment {
         openSundayWorkoutButton = viewer.findViewById(R.id.sunday_workout);
 
 
+        //Today's Day
+        String todayDay = "";
+
         //On workout button clicked
         openMondaysWorkoutButton.setOnClickListener(view -> {
 
+            openWorkout(todayDay);
         });
         openTuesdayWorkoutButton.setOnClickListener(view -> {
 
@@ -88,6 +92,28 @@ public class workoutsFragment extends Fragment {
 
 
 
+
+
+    public  void openWorkout(String todaysDay){
+
+        switch (todaysDay){
+            case "Monday":
+                loadFragment(MainActivity.fragmentDisplayWorkouts);
+
+                break;
+            case "Tuesday":
+                break;
+
+            default:
+
+                break;
+        }
+
+    }
+
+
+
+
     /* ********************************************************************** */
     /* FUNCTION NAME:    loadFragment
        INPUT:            A Fragment
@@ -100,4 +126,7 @@ public class workoutsFragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
+
 }

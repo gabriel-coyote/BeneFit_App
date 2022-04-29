@@ -55,10 +55,15 @@ public class waterFragment extends Fragment{
     private Button save_todays_goal_button;
     private Button save_todays_progress_button;
 
+
+
+
     //Current Date
     LocalDate dateObj = LocalDate.now();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
     String date = dateObj.format(formatter);
+
+
 
 
     private View viewer;
@@ -88,6 +93,12 @@ public class waterFragment extends Fragment{
         } else{
             viewer = inflater.inflate(R.layout.fragment_water, container, false);
         }
+
+
+        // Our saved listener
+
+
+
 
         //buttons--------->
         bottle_size_plus = viewer.findViewById(R.id.Bottle_size_plus);
@@ -152,9 +163,27 @@ public class waterFragment extends Fragment{
         createTodaysWaterLog();
 
         // Saved Buttons Functions on click
-        save_bottle_size_button.setOnClickListener(view -> addWater(bottle_size_count));
-        save_todays_goal_button.setOnClickListener(view -> setWaterGoal(todays_goal_count));
-        save_todays_progress_button.setOnClickListener(view -> {addWater(todays_progress_count);});
+        save_bottle_size_button.setOnClickListener(view -> {
+            try {
+                addWater(bottle_size_count);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        save_todays_goal_button.setOnClickListener(view -> {
+            try {
+                setWaterGoal(todays_goal_count);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        save_todays_progress_button.setOnClickListener(view -> {
+            try {
+                addWater(todays_progress_count);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
 
         return viewer;
     }
@@ -208,7 +237,7 @@ public class waterFragment extends Fragment{
 
 
     /* *********************************************************************** */
-    private void addWater(int water_progress){
+    private void addWater(int water_progress) throws InterruptedException {
 
 
 //        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -253,6 +282,10 @@ public class waterFragment extends Fragment{
         DatabaseReference todaysWaterRef = FirebaseDatabase.getInstance().getReference()
                 .child("DailyWaterLog")
                 .child(currentKey);
+
+
+
+
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -274,7 +307,7 @@ public class waterFragment extends Fragment{
 
                     MainActivity.waterProgressBar.setProgress(water_progress);
 
-                    alertDialog("Set "+water_progress+" Bottle(s). Progress to Log");
+                    alertDialog("Water progress has been set");
                 }
             }
 
@@ -291,12 +324,11 @@ public class waterFragment extends Fragment{
 
 
 
-
     }
 
 
     /* ********************************************************************** */
-    private void setWaterGoal(int water_goal){
+    private void setWaterGoal(int water_goal) throws InterruptedException {
 
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -320,7 +352,7 @@ public class waterFragment extends Fragment{
 
                     //for updating water progreess bar goal
                     MainActivity.waterProgressBar.setMax(water_goal);
-                    alertDialog("Set "+water_goal+" Bottle(s). Goal to Log");
+                    alertDialog("Water Goal has been set.");
                 }
             }
 
@@ -332,6 +364,7 @@ public class waterFragment extends Fragment{
 
 
         todaysWaterRef.addValueEventListener(eventListener);
+
 
 
 
@@ -380,6 +413,8 @@ public class waterFragment extends Fragment{
 
 
     /* ********************************************************************** */
-    private void alertDialog(String text){ Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+    private void alertDialog(String text){
+        Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT)
+                .show();
     }
 }

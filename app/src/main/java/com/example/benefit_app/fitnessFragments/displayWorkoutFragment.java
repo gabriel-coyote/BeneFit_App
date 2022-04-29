@@ -88,6 +88,22 @@ public class displayWorkoutFragment extends Fragment {
 
 
 
+        String todaysDay = "";
+
+        switch (todaysDay){
+            case "Monday":
+               //ToDO: updateworkout title & main workout box
+
+                break;
+            case "Tuesday":
+                break;
+
+            default:
+
+                break;
+        }
+
+
         return viewer;
     }
 
@@ -100,6 +116,7 @@ public class displayWorkoutFragment extends Fragment {
        OUTPUT:           n/a
        PURPOSE:          Switches/loads a fragment into the main fragment container */
     private void loadFragment(Fragment fragment) {
+
 
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.main_fragment_Container, fragment);
