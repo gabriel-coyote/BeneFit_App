@@ -68,8 +68,8 @@ public class displayWorkoutFragment extends Fragment {
             viewer = inflater.inflate(R.layout.fragment_display_workout, container, false);
         }
         //Title of workout and user created workout.
-        title_workout_message = viewer.findViewById(R.id.title_workout_message);
-        user_workout_text = viewer.findViewById(R.id.user_workout_text);
+        workout_title_text = viewer.findViewById(R.id.title_workout_message);
+        workout_text = viewer.findViewById(R.id.user_workout_text);
         //back button
         back_button = viewer.findViewById(R.id.display_workout_back);
         back_button.setOnClickListener(view -> {loadFragment(MainActivity.fragmentFitness);
@@ -105,31 +105,31 @@ public class displayWorkoutFragment extends Fragment {
             case "Monday":
                //ToDO: updateworkout title & main workout box
                 workout_text.setText(MainActivity.mondayWorkoutString);
-                workout_title_text.setText(MainActivity.mondayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": "+MainActivity.mondayWorkoutString_title);
                 break;
             case "Tuesday":
                 workout_text.setText(MainActivity.tuesdayWorkoutString);
-                workout_title_text.setText(MainActivity.tuesdayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": "+MainActivity.tuesdayWorkoutString_title);
                 break;
             case "Wednesday":
                 workout_text.setText(MainActivity.wednesdayWorkoutString);
-                workout_title_text.setText(MainActivity.wednesdayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": "+MainActivity.wednesdayWorkoutString_title);
                 break;
             case "Thursday":
                 workout_text.setText(MainActivity.thursdayWorkoutString);
-                workout_title_text.setText(MainActivity.thursdayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": "+MainActivity.thursdayWorkoutString_title);
                 break;
             case "Friday":
                 workout_text.setText(MainActivity.fridayWorkoutString);
-                workout_title_text.setText(MainActivity.fridayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": "+MainActivity.fridayWorkoutString_title);
                 break;
             case "Saturday":
                 workout_text.setText(MainActivity.saturdayWorkoutString);
-                workout_title_text.setText(MainActivity.saturdayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": "+MainActivity.saturdayWorkoutString_title);
                 break;
             case "Sunday":
                 workout_text.setText(MainActivity.sundayWorkoutString);
-                workout_title_text.setText(MainActivity.sundayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": "+MainActivity.sundayWorkoutString_title);
                 break;
 
             default:

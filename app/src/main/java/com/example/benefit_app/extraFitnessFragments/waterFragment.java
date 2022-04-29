@@ -63,6 +63,15 @@ public class waterFragment extends Fragment{
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
     String date = dateObj.format(formatter);
 
+    FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+    String currentKey = currentUser.getUid()+"_"+date;
+
+    DatabaseReference todaysWaterRef = FirebaseDatabase.getInstance().getReference()
+            .child("DailyWaterLog")
+            .child(currentKey);
+
+    private int water_Progress = 0;
+    private int water_Goal = 0;
 
 
 
@@ -95,7 +104,6 @@ public class waterFragment extends Fragment{
         }
 
 
-        // Our saved listener
 
 
 
@@ -184,6 +192,74 @@ public class waterFragment extends Fragment{
                 e.printStackTrace();
             }
         });
+
+
+
+
+
+        // Our saved listener
+        ValueEventListener eventProgressListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+
+
+
+                    todaysWaterRef.child("todaysProgress").setValue(water_Progress);
+
+                    todays_progress_text.setText(String.valueOf(water_Progress));
+                    storedWaterProgress = water_Progress;
+
+                    //For updating progress bar
+                    if(MainActivity.waterProgressBar.getMax() > 0){
+                        //Dont update the max/goal
+                    }else{
+                        MainActivity.waterProgressBar.setMax(water_Progress);
+                    }
+
+                    MainActivity.waterProgressBar.setProgress(water_Progress);
+
+                    alertDialog("Water progress has been set");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("AddWaterProgressUpdate_TAG:", error.getMessage()); //Don't ignore errors!
+            }
+        };
+
+        todaysWaterRef.addValueEventListener(eventProgressListener);
+
+        ValueEventListener eventGoalListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()) {
+
+
+
+                    todaysWaterRef.child("todaysGoal").setValue(water_Goal);
+
+                    todays_goal_text.setText(String.valueOf(water_Goal));
+                    storedWaterGoal = water_Goal;
+
+                    //for updating water progreess bar goal
+                    MainActivity.waterProgressBar.setMax(water_Goal);
+                    alertDialog("Water Goal has been set.");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("AddWaterGoalUpdate_TAG:", error.getMessage()); //Don't ignore errors!
+            }
+        };
+
+
+        todaysWaterRef.addValueEventListener(eventGoalListener);
+
+
+
 
         return viewer;
     }
@@ -275,53 +351,61 @@ public class waterFragment extends Fragment{
 
 
 
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        String currentKey = currentUser.getUid()+"_"+date;
+//        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+//        String currentKey = currentUser.getUid()+"_"+date;
 
 
-        DatabaseReference todaysWaterRef = FirebaseDatabase.getInstance().getReference()
-                .child("DailyWaterLog")
-                .child(currentKey);
-
-
-
-
-        ValueEventListener eventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()) {
+//        DatabaseReference todaysWaterRef = FirebaseDatabase.getInstance().getReference()
+//                .child("DailyWaterLog")
+//                .child(currentKey);
 
 
 
-                    todaysWaterRef.child("todaysProgress").setValue(water_progress);
+//
+//        ValueEventListener eventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.exists()) {
+//
+//
+//
+//                    todaysWaterRef.child("todaysProgress").setValue(water_progress);
+//
+//                    todays_progress_text.setText(String.valueOf(water_progress));
+//                    storedWaterProgress = water_progress;
+//
+//                    //For updating progress bar
+//                    if(MainActivity.waterProgressBar.getMax() > 0){
+//                        //Dont update the max/goal
+//                    }else{
+//                        MainActivity.waterProgressBar.setMax(water_progress);
+//                    }
+//
+//                    MainActivity.waterProgressBar.setProgress(water_progress);
+//
+//                    alertDialog("Water progress has been set");
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Log.d("AddWaterProgressUpdate_TAG:", error.getMessage()); //Don't ignore errors!
+//            }
+//        };
+//
+//
+//        todaysWaterRef.addValueEventListener(eventListener);
+//
 
-                    todays_progress_text.setText(String.valueOf(water_progress));
-                    storedWaterProgress = water_progress;
 
-                    //For updating progress bar
-                    if(MainActivity.waterProgressBar.getMax() > 0){
-                        //Dont update the max/goal
-                    }else{
-                        MainActivity.waterProgressBar.setMax(water_progress);
-                    }
-
-                    MainActivity.waterProgressBar.setProgress(water_progress);
-
-                    alertDialog("Water progress has been set");
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("AddWaterProgressUpdate_TAG:", error.getMessage()); //Don't ignore errors!
-            }
-        };
-
-
-        todaysWaterRef.addValueEventListener(eventListener);
+        water_Progress = water_progress;
+        storedWaterProgress = water_progress;
+        todaysWaterRef.child("todaysProgress").setValue(water_Progress);
 
 
 
+
+        MainActivity.TvWater.setText(String.valueOf(water_Progress));
 
 
     }
@@ -330,44 +414,47 @@ public class waterFragment extends Fragment{
     /* ********************************************************************** */
     private void setWaterGoal(int water_goal) throws InterruptedException {
 
+//
+//        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+//        String currentKey = currentUser.getUid()+"_"+date;
+//
+//
+//        DatabaseReference todaysWaterRef = FirebaseDatabase.getInstance().getReference()
+//                .child("DailyWaterLog")
+//                .child(currentKey);
+//        ValueEventListener eventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.exists()) {
+//
+//
+//
+//                    todaysWaterRef.child("todaysGoal").setValue(water_goal);
+//
+//                    todays_goal_text.setText(String.valueOf(water_goal));
+//                    storedWaterGoal = water_goal;
+//
+//                    //for updating water progreess bar goal
+//                    MainActivity.waterProgressBar.setMax(water_goal);
+//                    alertDialog("Water Goal has been set.");
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Log.d("AddWaterGoalUpdate_TAG:", error.getMessage()); //Don't ignore errors!
+//            }
+//        };
+//
+//
+//        todaysWaterRef.addValueEventListener(eventListener);
+//
 
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        String currentKey = currentUser.getUid()+"_"+date;
 
-
-        DatabaseReference todaysWaterRef = FirebaseDatabase.getInstance().getReference()
-                .child("DailyWaterLog")
-                .child(currentKey);
-        ValueEventListener eventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()) {
-
-
-
-                    todaysWaterRef.child("todaysGoal").setValue(water_goal);
-
-                    todays_goal_text.setText(String.valueOf(water_goal));
-                    storedWaterGoal = water_goal;
-
-                    //for updating water progreess bar goal
-                    MainActivity.waterProgressBar.setMax(water_goal);
-                    alertDialog("Water Goal has been set.");
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("AddWaterGoalUpdate_TAG:", error.getMessage()); //Don't ignore errors!
-            }
-        };
-
-
-        todaysWaterRef.addValueEventListener(eventListener);
-
-
-
-
+        water_Goal = water_goal;
+        storedWaterGoal = water_goal;
+        todaysWaterRef.child("todaysGoal").setValue(water_Goal);
+        MainActivity.TvWaterGoal.setText(String.valueOf(water_Goal));
 
     }
     /* ********************************************************************** */
