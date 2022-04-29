@@ -48,6 +48,15 @@ public class workoutsFragment extends Fragment {
         openTuesdayWorkoutButton = viewer.findViewById(R.id.tuesday_workout);
 
 
+        //On workout button clicked
+        openMondaysWorkoutButton.setOnClickListener(view -> {
+
+        });
+        openTuesdayWorkoutButton.setOnClickListener(view -> {
+
+        });
+
+
         // Opening the display workout on button clicks.
 
 
