@@ -64,7 +64,27 @@ public class displayWorkoutFragment extends Fragment {
         user_workout_text = viewer.findViewById(R.id.user_workout_text);
         //back button
         back_button = viewer.findViewById(R.id.display_workout_back);
-        back_button.setOnClickListener(view -> loadFragment(MainActivity.fragmentFitness));
+        back_button.setOnClickListener(view -> {loadFragment(MainActivity.fragmentFitness);
+
+            // Hide fitness steps progress stuff
+            MainActivity.TvSteps.setVisibility(View.VISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
+
+            MainActivity.TvWater.setVisibility(View.VISIBLE);
+            MainActivity.TvWater_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvWaterGoal.setVisibility(View.VISIBLE);
+
+            MainActivity.TvCalories.setVisibility(View.VISIBLE);
+            MainActivity.TvCalories_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvCaloriesGoal.setVisibility(View.VISIBLE);
+
+
+
+            // Our ProgressBar
+            MainActivity.stepsProgress.setVisibility(View.VISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.VISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);});
 
 
 

@@ -42,10 +42,13 @@ public class waterFragment extends Fragment{
     private TextView bottle_size_text;
     private TextView todays_goal_text;
 
+    private int storedWaterGoal = 0, storedWaterProgress = 0;
+
+
     //golabal variables for counting --------------->
-    private int bottle_size_count;
-    private int todays_goal_count;
-    private int todays_progress_count;
+    private int bottle_size_count = 0;
+    private int todays_goal_count = 0;
+    private int todays_progress_count = 0;
 
     //buttons------------>
     private Button save_bottle_size_button;
@@ -97,12 +100,25 @@ public class waterFragment extends Fragment{
         //back button----->
         back_button = viewer.findViewById(R.id.back_button);
         back_button.setOnClickListener(view -> {getActivity().onBackPressed();
-                    MainActivity.TvSteps.setVisibility(View.VISIBLE);
-                    MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
-                    MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
-                    MainActivity.stepsProgress.setVisibility(View.VISIBLE);
-                    MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);
-                    MainActivity.waterProgressBar.setVisibility(View.VISIBLE);});
+            // Hide fitness steps progress stuff
+            MainActivity.TvSteps.setVisibility(View.VISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
+
+            MainActivity.TvWater.setVisibility(View.VISIBLE);
+            MainActivity.TvWater_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvWaterGoal.setVisibility(View.VISIBLE);
+
+            MainActivity.TvCalories.setVisibility(View.VISIBLE);
+            MainActivity.TvCalories_fractionLine.setVisibility(View.VISIBLE);
+            MainActivity.TvCaloriesGoal.setVisibility(View.VISIBLE);
+
+
+
+            // Our ProgressBar
+            MainActivity.stepsProgress.setVisibility(View.VISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.VISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);});
 
 
         //save buttons------------>
@@ -114,6 +130,10 @@ public class waterFragment extends Fragment{
         todays_progress_text = viewer.findViewById(R.id.todays_progress_text);
         todays_goal_text = viewer.findViewById(R.id.todays_goal_text);
         bottle_size_text = viewer.findViewById(R.id.bottle_size_text);
+
+        todays_progress_text.setText(String.valueOf(storedWaterProgress));
+        todays_goal_text.setText(String.valueOf(storedWaterGoal));
+
 
         //Bottle size listeners
         bottle_size_minus.setOnClickListener(view -> changeWaterValue(1,0,0,0,0,0));
@@ -134,6 +154,7 @@ public class waterFragment extends Fragment{
         // Saved Buttons Functions on click
         save_bottle_size_button.setOnClickListener(view -> addWater(bottle_size_count));
         save_todays_goal_button.setOnClickListener(view -> setWaterGoal(todays_goal_count));
+        save_todays_progress_button.setOnClickListener(view -> {addWater(todays_progress_count);});
 
         return viewer;
     }
@@ -162,23 +183,23 @@ public class waterFragment extends Fragment{
         else if(tgm == 1){
             todays_goal_count -= 1;
             todays_goal_temp = Integer.toString(todays_goal_count);
-            todays_goal_text.setText(todays_goal_temp+" "+"Oz.");
+            todays_goal_text.setText(todays_goal_temp+" "+"Bottle(s).");
 
         }
         else if(tgp == 1){
             todays_goal_count += 1;
             todays_goal_temp = Integer.toString(todays_goal_count);
-            todays_goal_text.setText(todays_goal_temp+" "+"Oz.");
+            todays_goal_text.setText(todays_goal_temp+" "+"Bottle(s).");
         }
         else if(pp == 1){
             todays_progress_count += 1;
             progress_temp = Integer.toString(todays_progress_count);
-            todays_progress_text.setText(progress_temp+" "+"Oz.");
+            todays_progress_text.setText(progress_temp+" "+"Bottle(s).");
         }
         else if(pm == 1){
             todays_progress_count -= 1;
             progress_temp = Integer.toString(todays_progress_count);
-            todays_progress_text.setText(progress_temp+" "+"Oz.");
+            todays_progress_text.setText(progress_temp+" "+"Bottle(s).");
         }
 
 
@@ -187,7 +208,42 @@ public class waterFragment extends Fragment{
 
 
     /* ********************************************************************** */
-    private void addWater(int water_count){
+    private void addWater(int water_progress){
+
+
+//        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+//        String currentKey = currentUser.getUid()+"_"+date;
+//
+//
+//        DatabaseReference todaysWaterRef = FirebaseDatabase.getInstance().getReference()
+//                .child("DailyWaterLog")
+//                .child(currentKey);
+//        ValueEventListener eventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.exists()) {
+//
+//
+//                    //String todaysWater_str = snapshot.child("todaysProgress").getValue(String.class);
+//                    int todaysWater = snapshot.child("todaysProgress").getValue(Integer.class);
+//
+//
+//                    todaysWater += water_count;
+//
+//
+//                    //TODO: Fix water added to database
+//                    todaysWaterRef.child("todaysProgress").setValue(todaysWater);
+//
+//                    alertDialog("Added "+todaysWater+"oz. to Log");
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Log.d("AddWaterUpdate_TAG:", error.getMessage()); //Don't ignore errors!
+//            }
+//        };
+
 
 
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -203,28 +259,35 @@ public class waterFragment extends Fragment{
                 if(snapshot.exists()) {
 
 
-                    //String todaysWater_str = snapshot.child("todaysProgress").getValue(String.class);
-                    int todaysWater = snapshot.child("todaysProgress").getValue(Integer.class);
 
+                    todaysWaterRef.child("todaysProgress").setValue(water_progress);
 
-                    todaysWater += water_count;
+                    todays_progress_text.setText(String.valueOf(water_progress));
+                    storedWaterProgress = water_progress;
 
+                    //For updating progress bar
+                    if(MainActivity.waterProgressBar.getMax() > 0){
+                        //Dont update the max/goal
+                    }else{
+                        MainActivity.waterProgressBar.setMax(water_progress);
+                    }
 
-                    //TODO: Fix water added to database
-                    todaysWaterRef.child("todaysProgress").setValue(todaysWater);
+                    MainActivity.waterProgressBar.setProgress(water_progress);
 
-                    alertDialog("Added "+todaysWater+"oz. to Log");
+                    alertDialog("Set "+water_progress+" Bottle(s). Progress to Log");
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.d("AddWaterUpdate_TAG:", error.getMessage()); //Don't ignore errors!
+                Log.d("AddWaterProgressUpdate_TAG:", error.getMessage()); //Don't ignore errors!
             }
         };
 
 
         todaysWaterRef.addValueEventListener(eventListener);
+
+
 
 
 
@@ -252,7 +315,12 @@ public class waterFragment extends Fragment{
 
                     todaysWaterRef.child("todaysGoal").setValue(water_goal);
 
-                    alertDialog("Set "+water_goal+"oz. Goal to Log");
+                    todays_goal_text.setText(String.valueOf(water_goal));
+                    storedWaterGoal = water_goal;
+
+                    //for updating water progreess bar goal
+                    MainActivity.waterProgressBar.setMax(water_goal);
+                    alertDialog("Set "+water_goal+" Bottle(s). Goal to Log");
                 }
             }
 

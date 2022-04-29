@@ -18,20 +18,23 @@ public class workoutsFragment extends Fragment {
 
 
 
-    private Button openWorkoutsButton;
+    private Button openMondaysWorkoutButton, openTuesdayWorkoutButton;
     View viewer;
 
 
+    /* ********************************************************************** */
 
     public workoutsFragment() {
         // Required empty public constructor
     }
+    /* ********************************************************************** */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
+    /* ********************************************************************** */
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,9 +42,14 @@ public class workoutsFragment extends Fragment {
         // Inflate the layout for this fragment
         viewer = inflater.inflate(R.layout.fragment_workouts, container, false);
 
-        // Opening the specific workout
-        openWorkoutsButton = viewer.findViewById(R.id.monday_workout);
-        openWorkoutsButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentLayout_part2));
+
+        // Binding the button to fragments_workouts layout
+        openMondaysWorkoutButton = viewer.findViewById(R.id.monday_workout);
+        openTuesdayWorkoutButton = viewer.findViewById(R.id.tuesday_workout);
+
+
+        // Opening the display workout on button clicks.
+
 
 
 

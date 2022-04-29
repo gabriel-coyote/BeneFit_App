@@ -56,13 +56,10 @@ public class caloriesGoalFragment extends Fragment {
         /*PURPOSE:          To go back on back arrow click */
         backButton = viewer.findViewById(R.id.back_button_calories);
         backButton.setOnClickListener(view -> {getActivity().onBackPressed();
+            // Hide fitness steps progress stuff
             MainActivity.TvSteps.setVisibility(View.VISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.VISIBLE);
             MainActivity.TvStepsGoal.setVisibility(View.VISIBLE);
-
-            MainActivity.stepsProgress.setVisibility(View.VISIBLE);
-            MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);
-            MainActivity.waterProgressBar.setVisibility(View.VISIBLE);
 
             MainActivity.TvWater.setVisibility(View.VISIBLE);
             MainActivity.TvWater_fractionLine.setVisibility(View.VISIBLE);
@@ -70,7 +67,14 @@ public class caloriesGoalFragment extends Fragment {
 
             MainActivity.TvCalories.setVisibility(View.VISIBLE);
             MainActivity.TvCalories_fractionLine.setVisibility(View.VISIBLE);
-            MainActivity.TvCaloriesGoal.setVisibility(View.VISIBLE);});
+            MainActivity.TvCaloriesGoal.setVisibility(View.VISIBLE);
+
+
+
+            // Our ProgressBar
+            MainActivity.stepsProgress.setVisibility(View.VISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.VISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);});
 
         caloriesGoal_int = 0;
         caloriesGoal_text = viewer.findViewById(R.id.todays_calories_goal_text);

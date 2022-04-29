@@ -23,9 +23,9 @@ import java.util.Date;
 
 public class FitnessFragment extends Fragment {
 
-    private ProgressBar waterProgressBar;
+    //private ProgressBar waterProgressBar;
     private ImageView workoutsIcon;
-    private ImageView stepsBox;
+    private ImageView stepsBox, waterBox;
     private ImageView caloriesBox;
     private ImageView notificationBell;
     private TextView date_text;
@@ -68,31 +68,87 @@ public class FitnessFragment extends Fragment {
         date_text.setText(dateForm.format(thisDate));
 
 
-        // For Water
-//        waterProgressBar = viewer.findViewById(R.id.WaterProgressBar);
-//        waterProgressBar.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWater);
-//            MainActivity.TvSteps.setVisibility(View.INVISIBLE);
-//            MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
-//            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
-//            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
 
         // Redirects to notifications
         notificationBell = viewer.findViewById(R.id.fitness_notification_bell);
         notificationBell.setOnClickListener(view -> {loadFragment(MainActivity.fragmentNotifications);
+            // Hide fitness steps progress stuff
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
             MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
-            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
+
+            MainActivity.TvWater.setVisibility(View.INVISIBLE);
+            MainActivity.TvWater_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvWaterGoal.setVisibility(View.INVISIBLE);
+
+            MainActivity.TvCalories.setVisibility(View.INVISIBLE);
+            MainActivity.TvCalories_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvCaloriesGoal.setVisibility(View.INVISIBLE);
+
+
+
+            // Our ProgressBar
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.INVISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.INVISIBLE);
+
+
+
+        });
 
         // Redirects to workouts Page
         workoutsIcon = viewer.findViewById(R.id.StartWorkoutsIcon);
-        workoutsIcon.setOnClickListener(view -> {loadFragment(MainActivity.fragmentDisplayWorkouts);
+        workoutsIcon.setOnClickListener(view -> {
+
+
+
+            loadFragment(MainActivity.fragmentDisplayWorkouts);
+
+
+
+            // Hide fitness steps progress stuff
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
             MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
-            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
+
+            MainActivity.TvWater.setVisibility(View.INVISIBLE);
+            MainActivity.TvWater_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvWaterGoal.setVisibility(View.INVISIBLE);
+
+            MainActivity.TvCalories.setVisibility(View.INVISIBLE);
+            MainActivity.TvCalories_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvCaloriesGoal.setVisibility(View.INVISIBLE);
 
 
+
+            // Our ProgressBar
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.INVISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.INVISIBLE);});
+
+
+        waterBox = viewer.findViewById(R.id.WaterSquare);
+        waterBox.setOnClickListener(view -> {loadFragment(MainActivity.fragmentWater);
+
+            // Hide fitness steps progress stuff
+            MainActivity.TvSteps.setVisibility(View.INVISIBLE);
+            MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
+
+            MainActivity.TvWater.setVisibility(View.INVISIBLE);
+            MainActivity.TvWater_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvWaterGoal.setVisibility(View.INVISIBLE);
+
+            MainActivity.TvCalories.setVisibility(View.INVISIBLE);
+            MainActivity.TvCalories_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvCaloriesGoal.setVisibility(View.INVISIBLE);
+
+
+
+            // Our ProgressBar
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.INVISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.INVISIBLE);});
 
 
         // To go to our goals pages for steps and Calories
@@ -100,17 +156,47 @@ public class FitnessFragment extends Fragment {
         caloriesBox = viewer.findViewById(R.id.CaloriesSquare);
 
         stepsBox.setOnClickListener(view -> {loadFragment(MainActivity.fragmentStepsGoal);
+            // Hide fitness steps progress stuff
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
             MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
-            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
+
+            MainActivity.TvWater.setVisibility(View.INVISIBLE);
+            MainActivity.TvWater_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvWaterGoal.setVisibility(View.INVISIBLE);
+
+            MainActivity.TvCalories.setVisibility(View.INVISIBLE);
+            MainActivity.TvCalories_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvCaloriesGoal.setVisibility(View.INVISIBLE);
+
+
+
+            // Our ProgressBar
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.INVISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.INVISIBLE);});
 
 
         caloriesBox.setOnClickListener(view -> {loadFragment(MainActivity.fragmentCaloriesGoal);
+            // Hide fitness steps progress stuff
             MainActivity.TvSteps.setVisibility(View.INVISIBLE);
             MainActivity.TvSteps_fractionLine.setVisibility(View.INVISIBLE);
             MainActivity.TvStepsGoal.setVisibility(View.INVISIBLE);
-            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);});
+
+            MainActivity.TvWater.setVisibility(View.INVISIBLE);
+            MainActivity.TvWater_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvWaterGoal.setVisibility(View.INVISIBLE);
+
+            MainActivity.TvCalories.setVisibility(View.INVISIBLE);
+            MainActivity.TvCalories_fractionLine.setVisibility(View.INVISIBLE);
+            MainActivity.TvCaloriesGoal.setVisibility(View.INVISIBLE);
+
+
+
+            // Our ProgressBar
+            MainActivity.stepsProgress.setVisibility(View.INVISIBLE);
+            MainActivity.waterProgressBar.setVisibility(View.INVISIBLE);
+            MainActivity.caloriesProgressBar.setVisibility(View.INVISIBLE);});
 
         return viewer;
     }
