@@ -17,12 +17,18 @@ import com.example.benefit_app.R;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class displayWorkoutFragment extends Fragment {
 
     private TextView title_workout_message;
     private TextView user_workout_text;
     private ImageView back_button;
+    private TextView workout_text;
+    private TextView workout_title_text;
+    private String date_text;
 
 
     View viewer;
@@ -49,6 +55,8 @@ public class displayWorkoutFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Date thisDate = new Date();
+        SimpleDateFormat dateForm = new SimpleDateFormat("EEEE");
         // Inflate the layout for this fragment
         // IF the viewer doesn't exist then make one
         // Else keep the same viewer
@@ -79,6 +87,8 @@ public class displayWorkoutFragment extends Fragment {
             MainActivity.TvCalories_fractionLine.setVisibility(View.VISIBLE);
             MainActivity.TvCaloriesGoal.setVisibility(View.VISIBLE);
 
+            workout_text = viewer.findViewById(R.id.user_workout_text);
+            workout_title_text.findViewById(R.id.title_workout_message);
 
 
             // Our ProgressBar
@@ -87,15 +97,39 @@ public class displayWorkoutFragment extends Fragment {
             MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);});
 
 
+        //date_text = dateForm.format(thisDate);
 
-        String todaysDay = "";
+        String todaysDay = dateForm.format(thisDate);
 
         switch (todaysDay){
             case "Monday":
                //ToDO: updateworkout title & main workout box
-
+                workout_text.setText(MainActivity.mondayWorkoutString);
+                workout_title_text.setText(MainActivity.mondayWorkoutString_title);
                 break;
             case "Tuesday":
+                workout_text.setText(MainActivity.tuesdayWorkoutString);
+                workout_title_text.setText(MainActivity.tuesdayWorkoutString_title);
+                break;
+            case "Wednesday":
+                workout_text.setText(MainActivity.wednesdayWorkoutString);
+                workout_title_text.setText(MainActivity.wednesdayWorkoutString_title);
+                break;
+            case "Thursday":
+                workout_text.setText(MainActivity.thursdayWorkoutString);
+                workout_title_text.setText(MainActivity.thursdayWorkoutString_title);
+                break;
+            case "Friday":
+                workout_text.setText(MainActivity.fridayWorkoutString);
+                workout_title_text.setText(MainActivity.fridayWorkoutString_title);
+                break;
+            case "Saturday":
+                workout_text.setText(MainActivity.saturdayWorkoutString);
+                workout_title_text.setText(MainActivity.saturdayWorkoutString_title);
+                break;
+            case "Sunday":
+                workout_text.setText(MainActivity.sundayWorkoutString);
+                workout_title_text.setText(MainActivity.sundayWorkoutString_title);
                 break;
 
             default:

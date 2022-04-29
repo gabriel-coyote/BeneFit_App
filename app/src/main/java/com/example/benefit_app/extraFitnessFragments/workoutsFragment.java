@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
@@ -17,6 +18,8 @@ import com.example.benefit_app.R;
 public class workoutsFragment extends Fragment {
 
 
+    private TextView workout_text;
+    private TextView workout_title_text;
 
     private Button openMondaysWorkoutButton, openTuesdayWorkoutButton, openWednesdayWorkoutButton, openThursdayWorkoutButton, openFridayWorkoutButton, openSaturdayWorkoutButton, openSundayWorkoutButton;
     View viewer;
@@ -52,31 +55,39 @@ public class workoutsFragment extends Fragment {
         openSaturdayWorkoutButton = viewer.findViewById(R.id.saturday_workout);
         openSundayWorkoutButton = viewer.findViewById(R.id.sunday_workout);
 
+        workout_text = viewer.findViewById(R.id.user_workout_text);
+        workout_title_text.findViewById(R.id.title_workout_message);
+
 
         //Today's Day
-        String todayDay = "";
+
 
         //On workout button clicked
         openMondaysWorkoutButton.setOnClickListener(view -> {
+            loadFragment(MainActivity.fragmentDisplayWorkouts);
 
-            openWorkout(todayDay);
         });
         openTuesdayWorkoutButton.setOnClickListener(view -> {
-
+            loadFragment(MainActivity.fragmentDisplayWorkouts);
         });
         openWednesdayWorkoutButton.setOnClickListener(view -> {
+            loadFragment(MainActivity.fragmentDisplayWorkouts);
 
         });
         openThursdayWorkoutButton.setOnClickListener(view -> {
+            loadFragment(MainActivity.fragmentDisplayWorkouts);
 
         });
         openFridayWorkoutButton.setOnClickListener(view -> {
+            loadFragment(MainActivity.fragmentDisplayWorkouts);
 
         });
         openSaturdayWorkoutButton.setOnClickListener(view -> {
+            loadFragment(MainActivity.fragmentDisplayWorkouts);
 
         });
         openSundayWorkoutButton.setOnClickListener(view -> {
+            loadFragment(MainActivity.fragmentDisplayWorkouts);
 
         });
 
@@ -94,22 +105,7 @@ public class workoutsFragment extends Fragment {
 
 
 
-    public  void openWorkout(String todaysDay){
 
-        switch (todaysDay){
-            case "Monday":
-                loadFragment(MainActivity.fragmentDisplayWorkouts);
-
-                break;
-            case "Tuesday":
-                break;
-
-            default:
-
-                break;
-        }
-
-    }
 
 
 
