@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/activity_main.xml" value="0.42384406165004535" />
+        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/fragment_calories_goal.xml" value="0.42384406165004535" />
+        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/fragment_display_workout.xml" value="0.4553227875160325" />
+        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/fragment_fitness.xml" value="0.33" />
+        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/fragment_profile.xml" value="0.5" />
+        <entry key="..\:/Users/Alex/StudioProjects/BeneFit_App/app/src/main/res/layout/fragment_workouts.xml" value="0.4553227875160325" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable-v24/round_corner_v4.xml" value="0.3655" />
         <entry key="app/src/main/res/drawable-v24/round_corner_v5.xml" value="0.3655" />
@@ -14,7 +20,6 @@
         <entry key="app/src/main/res/drawable/background_gradient_v1.xml" value="0.327" />
         <entry key="app/src/main/res/drawable/background_gradient_v2.xml" value="0.293" />
         <entry key="app/src/main/res/drawable/background_reset_password.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/background_savebutton.xml" value="0.3425" />
         <entry key="app/src/main/res/drawable/background_transparent.xml" value="0.1395" />
         <entry key="app/src/main/res/drawable/bottom_nav_colors.xml" value="0.2345" />
         <entry key="app/src/main/res/drawable/circle_shape.xml" value="0.167" />
@@ -33,8 +38,6 @@
         <entry key="app/src/main/res/drawable/grey_gradient.xml" value="0.3425" />
         <entry key="app/src/main/res/drawable/ic_create_button.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
-        <entry key="app/src/main/res/drawable/ic_rectangle_19.xml" value="0.3425" />
-        <entry key="app/src/main/res/drawable/ic_workout_info.xml" value="0.3425" />
         <entry key="app/src/main/res/drawable/icon_action_button.xml" value="0.293" />
         <entry key="app/src/main/res/drawable/icon_bar_chart.xml" value="0.293" />
         <entry key="app/src/main/res/drawable/icon_email.xml" value="0.293" />
@@ -51,7 +54,6 @@
         <entry key="app/src/main/res/drawable/round_corner_v1.xml" value="0.1865" />
         <entry key="app/src/main/res/drawable/round_corner_v2.xml" value="0.1865" />
         <entry key="app/src/main/res/drawable/round_corner_v3.xml" value="0.1785" />
-        <entry key="app/src/main/res/drawable/round_corners.xml" value="0.3425" />
         <entry key="app/src/main/res/drawable/rounded_corner_view.xml" value="0.11" />
         <entry key="app/src/main/res/font/.xml" value="0.2935185185185185" />
         <entry key="app/src/main/res/font/bai_jamjuree_bold.xml" value="0.1675925925925926" />
@@ -63,17 +65,17 @@
         <entry key="app/src/main/res/layout/activity_main_test.xml" value="0.33" />
         <entry key="app/src/main/res/layout/food_page.xml" value="0.23822463768115942" />
         <entry key="app/src/main/res/layout/fragment_calories_goal.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_display_workout.xml" value="0.27306671142578126" />
-        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.26183776855468754" />
-        <entry key="app/src/main/res/layout/fragment_food.xml" value="0.28115508590919375" />
+        <entry key="app/src/main/res/layout/fragment_display_workout.xml" value="0.21927083333333333" />
+        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_food.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_gyms.xml" value="0.35144927536231885" />
-        <entry key="app/src/main/res/layout/fragment_layout_part2.xml" value="0.14792022705078126" />
+        <entry key="app/src/main/res/layout/fragment_layout_part2.xml" value="0.2985991198607165" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2814254760742188" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.18721129928810015" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_reset_password.xml" value="0.47401247401247404" />
         <entry key="app/src/main/res/layout/fragment_steps_goal.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_water.xml" value="0.3202765202176744" />
+        <entry key="app/src/main/res/layout/fragment_water.xml" value="0.37343356367470565" />
         <entry key="app/src/main/res/layout/fragment_workouts.xml" value="0.27727966308593754" />
         <entry key="app/src/main/res/layout/step_counter_testing.xml" value="0.26502685546875004" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />

@@ -23,6 +23,8 @@ public class caloriesGoalFragment extends Fragment {
 
     private TextView caloriesGoal_text;
     private ImageView caloriesPlus, caloriesMinus;
+    private Button calories_button;
+
     private int caloriesGoal_int;
 
     View viewer;
@@ -81,10 +83,12 @@ public class caloriesGoalFragment extends Fragment {
 
         caloriesPlus = viewer.findViewById(R.id.todays_calories_goal_plus);
         caloriesMinus = viewer.findViewById(R.id.todays_calories_goal_minus);
+        calories_button = viewer.findViewById(R.id.save_calories_goal_button);
 
         // On plus or minus image click, adjust our TextView Goal
         caloriesPlus.setOnClickListener(view -> displayCaloriesGoal_plus());
         caloriesMinus.setOnClickListener(view -> displayCaloriesGoal_minus());
+        calories_button.setOnClickListener(view -> {displayCaloriesGoal_save();});
 
 
         return viewer;
@@ -107,6 +111,11 @@ public class caloriesGoalFragment extends Fragment {
             //don't subtract 100 , we don't want negatives
             alertDialog("Can't be negative 👿");
         }
+    }
+    private void displayCaloriesGoal_save(){
+        MainActivity.TvCaloriesGoal.setText(caloriesGoal_int);
+        MainActivity.caloriesProgressBar.setMax(caloriesGoal_int);
+
     }
     /* ********************************************************************** */
     /* FUNCTION NAME:    alertDialog

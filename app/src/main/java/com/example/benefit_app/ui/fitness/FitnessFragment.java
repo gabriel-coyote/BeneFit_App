@@ -220,8 +220,8 @@ public class FitnessFragment extends Fragment {
         return viewer;
     }
 
-/*
-w
+
+
     //For changing picture//////////////////////////////////////////////////////////////
     @Override
     public void onClick(View v){
@@ -242,11 +242,10 @@ w
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null){
             Uri selectedImage = data.getData();
-            imageToUpload.setImageURI(selectedImaage);
+            imageToUpload.setImageURI(selectedImage);
         }
     }
 
-*/
 
 
     /* ********************************************************************** */
