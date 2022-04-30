@@ -2,9 +2,11 @@ package com.example.benefit_app.fitnessFragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,12 @@ import android.widget.Toast;
 
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -61,13 +69,13 @@ public class displayWorkoutFragment extends Fragment {
         // Inflate the layout for this fragment
         // IF the viewer doesn't exist then make one
         // Else keep the same viewer
-        if (viewer != null) {
-            if ((ViewGroup)viewer.getParent() != null)
-                ((ViewGroup)viewer.getParent()).removeView(viewer);
-            return viewer;
-        }else {
+       // if (viewer != null) {
+         //   if ((ViewGroup)viewer.getParent() != null)
+         //       ((ViewGroup)viewer.getParent()).removeView(viewer);
+        //    return viewer;
+        //}else {
             viewer = inflater.inflate(R.layout.fragment_display_workout, container, false);
-        }
+        //}
         //Title of workout and user created workout.
         workout_title_text = viewer.findViewById(R.id.title_workout_message);
         workout_text = viewer.findViewById(R.id.user_workout_text);
@@ -104,37 +112,29 @@ public class displayWorkoutFragment extends Fragment {
 
         switch (todaysDay){
             case "Monday":
-               //ToDO: updateworkout title & main workout box
-                workout_text.setText(MainActivity.mondayWorkoutString);
-                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.mondayWorkoutString_title);
+
+                loadWorkoutInfo("Monday");
                 break;
             case "Tuesday":
-                workout_text.setText(MainActivity.tuesdayWorkoutString);
-                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.tuesdayWorkoutString_title);
+                loadWorkoutInfo("Tuesday");
                 break;
             case "Wednesday":
-                workout_text.setText(MainActivity.wednesdayWorkoutString);
-                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.wednesdayWorkoutString_title);
+                loadWorkoutInfo("Wednesday");
                 break;
             case "Thursday":
-                workout_text.setText(MainActivity.thursdayWorkoutString);
-                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.thursdayWorkoutString_title);
+                loadWorkoutInfo("Thursday");
                 break;
             case "Friday":
-                workout_text.setText(MainActivity.fridayWorkoutString);
-                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.fridayWorkoutString_title);
+                loadWorkoutInfo("Friday");
                 break;
             case "Saturday":
-                workout_text.setText(MainActivity.saturdayWorkoutString);
-                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.saturdayWorkoutString_title);
+                loadWorkoutInfo("Saturday");
                 break;
             case "Sunday":
-                workout_text.setText(MainActivity.sundayWorkoutString);
-                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.sundayWorkoutString_title);
+                loadWorkoutInfo("Sunday");
                 break;
 
             default:
-
                 break;
         }
 
@@ -145,6 +145,43 @@ public class displayWorkoutFragment extends Fragment {
 
 
     /* ********************************************************************** */
+    public void loadWorkoutInfo(String WorkoutDay){
+
+
+
+        String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DatabaseReference rootRef  = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference userWorkouts = rootRef.child("UsersWorkouts").child(currentUser).child(WorkoutDay);
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    // User does have workout created for today in database; so load data into view
+
+                    workout_title_text.setText(snapshot.child("workoutTitle").getValue(String.class));
+                    workout_text.setText(snapshot.child("workoutBody").getValue(String.class));
+                }else{
+                    // User doesn't have a specific workout created for this day
+
+                    workout_title_text.setText(WorkoutDay+": blank");
+                    workout_text.setText("No workout created for this day; \nClick create");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("LoadWorkouts_TAG:", error.getMessage()); //Don't ignore errors!
+
+            }
+        };
+
+        userWorkouts.addListenerForSingleValueEvent(eventListener);
+
+
+
+
+    }
     /* ********************************************************************** */
     /* FUNCTION NAME:    loadFragment
        INPUT:            A Fragment

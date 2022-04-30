@@ -2,9 +2,11 @@ package com.example.benefit_app.extraFitnessFragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,12 @@ import android.widget.Toast;
 
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class workoutsFragment extends Fragment {
@@ -55,15 +63,16 @@ public class workoutsFragment extends Fragment {
 
 
 
-        // Set workouts buttons title
-        openMondaysWorkoutButton.setText("MONDAY: "+MainActivity.mondayWorkoutString_title);
-        openTuesdayWorkoutButton.setText("TUESDAY: "+MainActivity.tuesdayWorkoutString_title);
-        openWednesdayWorkoutButton.setText("WEDNESDAY: "+MainActivity.wednesdayWorkoutString_title);
-        openThursdayWorkoutButton.setText("THURSDAY: "+MainActivity.thursdayWorkoutString_title);
-        openFridayWorkoutButton.setText("FRIDAY: "+MainActivity.fridayWorkoutString_title);
-        openSaturdayWorkoutButton.setText("SATURDAY: "+MainActivity.saturdayWorkoutString_title);
-        openSundayWorkoutButton.setText("SUNDAY: "+MainActivity.sundayWorkoutString_title);
+//        // Set workouts buttons title
+//        openMondaysWorkoutButton.setText("MONDAY: "+MainActivity.mondayWorkoutString_title);
+//        openTuesdayWorkoutButton.setText("TUESDAY: "+MainActivity.tuesdayWorkoutString_title);
+//        openWednesdayWorkoutButton.setText("WEDNESDAY: "+MainActivity.wednesdayWorkoutString_title);
+//        openThursdayWorkoutButton.setText("THURSDAY: "+MainActivity.thursdayWorkoutString_title);
+//        openFridayWorkoutButton.setText("FRIDAY: "+MainActivity.fridayWorkoutString_title);
+//        openSaturdayWorkoutButton.setText("SATURDAY: "+MainActivity.saturdayWorkoutString_title);
+//        openSundayWorkoutButton.setText("SUNDAY: "+MainActivity.sundayWorkoutString_title);
 
+        loadWorkoutInfo();
         //On workout button clicked
         openMondaysWorkoutButton.setOnClickListener(view -> {
 
@@ -108,7 +117,108 @@ public class workoutsFragment extends Fragment {
 
 
 
+    /* ********************************************************************** */
 
+    public void loadWorkoutInfo(){
+
+
+
+        String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DatabaseReference rootRef  = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference userWorkouts = rootRef.child("UsersWorkouts").child(currentUser);
+
+
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.child("Monday").exists()){
+                    // User does have workout created for today in database; so load data into view
+                    openMondaysWorkoutButton.setText("MONDAY: "+snapshot.child("Monday").child("workoutTitle").getValue(String.class));
+                }else{
+                    // User doesn't have a specific workout created for this day
+                    openMondaysWorkoutButton.setText("MONDAY: ");
+                }
+
+                if(snapshot.child("Tuesday").exists()){
+                    // User does have workout created for today in database; so load data into view
+                    openTuesdayWorkoutButton.setText("TUESDAY: "+snapshot.child("Tuesday").child("workoutTitle").getValue(String.class));
+                }else{
+                    // User doesn't have a specific workout created for this day
+                    openTuesdayWorkoutButton.setText("TUESDAY: ");
+                }
+
+                if(snapshot.child("Wednesday").exists()){
+                    // User does have workout created for today in database; so load data into view
+                    openWednesdayWorkoutButton.setText("WEDNESDAY: "+snapshot.child("Wednesday").child("workoutTitle").getValue(String.class));
+                }else{
+                    // User doesn't have a specific workout created for this day
+                    openWednesdayWorkoutButton.setText("WEDNESDAY: ");
+                }
+
+                if(snapshot.child("Thursday").exists()){
+                    // User does have workout created for today in database; so load data into view
+                    openThursdayWorkoutButton.setText("THURSDAY: "+snapshot.child("Thursday").child("workoutTitle").getValue(String.class));
+                }else{
+                    // User doesn't have a specific workout created for this day
+                    openThursdayWorkoutButton.setText("THUSDAY: ");
+                }
+
+
+                if(snapshot.child("Friday").exists()){
+                    // User does have workout created for today in database; so load data into view
+                    openFridayWorkoutButton.setText("FRIDAY: "+snapshot.child("Friday").child("workoutTitle").getValue(String.class));
+                }else{
+                    // User doesn't have a specific workout created for this day
+                    openFridayWorkoutButton.setText("FRIDAY: ");
+                }
+
+
+                if(snapshot.child("Saturday").exists()){
+                    // User does have workout created for today in database; so load data into view
+                    openSaturdayWorkoutButton.setText("SATURDAY: "+snapshot.child("Saturday").child("workoutTitle").getValue(String.class));
+                }else{
+                    // User doesn't have a specific workout created for this day
+                    openSaturdayWorkoutButton.setText("SATURDAY: ");
+                }
+
+
+                if(snapshot.child("Sunday").exists()){
+                    // User does have workout created for today in database; so load data into view
+                    openSundayWorkoutButton.setText("SUNDAY: "+snapshot.child("Sunday").child("workoutTitle").getValue(String.class));
+                }else{
+                    // User doesn't have a specific workout created for this day
+                    openSundayWorkoutButton.setText("SUNDAY: ");
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("LoadWorkoutsNAMES_TAG:", error.getMessage()); //Don't ignore errors!
+
+            }
+        };
+
+        userWorkouts.addListenerForSingleValueEvent(eventListener);
+
+        // FirebaseDatabase dbRef = new
+
+//        if(){
+//            // User does have workout created for today in database; so load data into view
+//            createdWorkoutTitle.setText();
+//            createdWorkout.setText();
+//            createdWorkoutCalories.setText(String.valueOf());
+//        }else{
+//            // User doesn't have a specific workout created for this day
+//            createdWorkoutTitle.setText("");
+//            createdWorkout.setText("");
+//            createdWorkoutCalories.setText("");
+//        }
+
+
+    }
 
 
 

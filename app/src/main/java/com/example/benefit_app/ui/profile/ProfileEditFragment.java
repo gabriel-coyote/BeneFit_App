@@ -39,7 +39,7 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
     private TextView last_name_text;
     private TextView email_text;
     private TextView pnum_text;
-    private TextView username_text;
+    private TextView username_text, birthdate_text, gender_text, height_text, weight_text;
 
 
 
@@ -96,6 +96,9 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
 
 
 
+        loadProfileInfo();
+
+
         /* On back button click of the Profile Edit Page go back to main Profile Page */
         backButton = viewer.findViewById(R.id.editProfileBackArrow);
         backButton.setOnClickListener(view -> getActivity().onBackPressed());
@@ -106,6 +109,10 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
         email_text = viewer.findViewById(R.id.email_text);
         pnum_text = viewer.findViewById(R.id.pnum_text);
         username_text = viewer.findViewById(R.id.username_text);
+        birthdate_text = viewer.findViewById(R.id.Birthdate_text);
+        gender_text = viewer.findViewById(R.id.Gender_text);
+        weight_text = viewer.findViewById(R.id.Weight_text);
+        height_text = viewer.findViewById(R.id.Height_text);
 
 
 
@@ -146,15 +153,21 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
         String email_input = email_text.getText().toString().trim();
         String pnum_input = pnum_text.getText().toString().trim();
         String username_input = username_text.getText().toString().trim();
+        String birthday_input = birthdate_text.getText().toString().trim();
+        String gender_input = gender_text.getText().toString().trim();
+        String weight_input = weight_text.getText().toString().trim();
+        String height_input = height_text.getText().toString().trim();
 
 
-        if(fname_input.isEmpty() || lname_input.isEmpty() || email_input.isEmpty() || pnum_input.isEmpty() || username_input.isEmpty()){
+        if(fname_input.isEmpty() || lname_input.isEmpty() || email_input.isEmpty() || pnum_input.isEmpty() || username_input.isEmpty()
+        || birthday_input.isEmpty() || gender_input.isEmpty() || weight_input.isEmpty() || height_input.isEmpty()){
           alertDialog("Please fill out all entries.");
         } else {
             // Everything is filled in
 
             // Creating Object User to setvalue in the object oriented database in firebase
-            User user = new User(fname_input,lname_input,email_input,pnum_input,username_input);
+            User user = new User(fname_input,lname_input,email_input,pnum_input,username_input,
+                    birthday_input, gender_input, weight_input, height_input);
 
             // Updating our Names & Username
             //edit_profile_display_name.setText(user.getFirstName()+" "+user.getLastName());
@@ -198,8 +211,52 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
 
 
     }
-
     /* ********************************************************************** */
+    public void loadProfileInfo() {
+
+
+        String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference userWorkouts = rootRef.child("Users").child(currentUser);
+
+
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    // User does have workout created for today in database; so load data into view
+                    first_name_text.setText(snapshot.child("workoutTitle").getValue(String.class));
+                    last_name_text.setText(snapshot.child("workoutTitle").getValue(String.class));
+                    email_text.setText(snapshot.child("workoutTitle").getValue(String.class));
+                    pnum_text .setText(snapshot.child("workoutTitle").getValue(String.class));
+                    username_text.setText(snapshot.child("workoutTitle").getValue(String.class));
+                    birthdate_text .setText(snapshot.child("workoutTitle").getValue(String.class));
+                    gender_text.setText(snapshot.child("workoutTitle").getValue(String.class));
+                    weight_text .setText(snapshot.child("workoutTitle").getValue(String.class));
+                    height_text.setText(snapshot.child("workoutTitle").getValue(String.class));
+
+                } else {
+                    // User doesn't have a specific workout created for this day
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("LoadWorkouts_TAG:", error.getMessage()); //Don't ignore errors!
+
+            }
+        };
+
+        userWorkouts.addListenerForSingleValueEvent(eventListener);
+    }
+
+
+
+
+        /* ********************************************************************** */
     // Check if the logged in user has a saved profile
     // If so update UI to display name & username
     private void updateUI(){

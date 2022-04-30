@@ -80,9 +80,9 @@ public class FitnessFragment extends Fragment {
 
 
         //profile picture
-        imageToUpload = viewer.findViewById(R.id.imageToUpload);
-        change_picture_button = viewer.findViewById(R.id.change_picture_button);
-        change_picture_button.setOnClickListener(view -> {});
+//        imageToUpload = viewer.findViewById(R.id.imageToUpload);
+//        change_picture_button = viewer.findViewById(R.id.change_picture_button);
+//        change_picture_button.setOnClickListener(view -> {});
 
 
 
