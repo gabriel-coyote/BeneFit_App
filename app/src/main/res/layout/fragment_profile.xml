@@ -48,6 +48,86 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/infoButton"
             app:srcCompat="@drawable/icon_line_v1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/orbitron"
+            android:text="Steps"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/infoButton" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/orbitron"
+            android:text="Calories"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/infoButton"
+            app:layout_constraintStart_toStartOf="@+id/infoButton" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/orbitron"
+            android:text="Bottles"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/infoButton" />
+
+        <TextView
+            android:id="@+id/textViewSteps"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/infoButton" />
+
+        <TextView
+            android:id="@+id/textViewCalories"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/infoButton"
+            app:layout_constraintStart_toStartOf="@+id/infoButton" />
+
+        <TextView
+            android:id="@+id/textViewBottles"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/infoButton" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -285,15 +365,14 @@
         android:id="@+id/profile_display_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="468dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="monospace"
         android:text="Buff134"
         android:textColor="@color/white"
         android:typeface="sans"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_display_name" />
 
     <ImageView
         android:id="@+id/appLogo"
