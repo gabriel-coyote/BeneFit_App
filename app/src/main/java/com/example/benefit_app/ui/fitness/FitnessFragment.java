@@ -1,11 +1,14 @@
 package com.example.benefit_app.ui.fitness;
 
 
+import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,12 +26,20 @@ import java.util.Date;
 
 public class FitnessFragment extends Fragment {
 
+    private static final int RESULT_LOAD_IMAGE = 1;
+    private static final int RESULT_OK = 1;
     //private ProgressBar waterProgressBar;
     private ImageView workoutsIcon;
     private ImageView stepsBox, waterBox;
     private ImageView caloriesBox;
     private ImageView notificationBell;
     private TextView date_text;
+
+    //profile picture
+    private ImageView imageToUpload;
+    private Button change_picture_button;
+
+
 
     View viewer;
 
@@ -66,6 +77,14 @@ public class FitnessFragment extends Fragment {
         //For time
         date_text = viewer.findViewById(R.id.date_text);
         date_text.setText(dateForm.format(thisDate));
+
+
+        //profile picture
+        imageToUpload = viewer.findViewById(R.id.imageToUpload);
+        change_picture_button = viewer.findViewById(R.id.change_picture_button);
+        change_picture_button.setOnClickListener(view -> {});
+
+
 
 
 
@@ -201,7 +220,33 @@ public class FitnessFragment extends Fragment {
         return viewer;
     }
 
+/*
+w
+    //For changing picture//////////////////////////////////////////////////////////////
+    @Override
+    public void onClick(View v){
+        switch(v.getId()){
+            case R.id.change_picture_button:
+                Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
+                break;
 
+            default:
+                break;
+        }
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null){
+            Uri selectedImage = data.getData();
+            imageToUpload.setImageURI(selectedImaage);
+        }
+    }
+
+*/
 
 
     /* ********************************************************************** */

@@ -216,7 +216,7 @@
 
 
         <ImageView
-            android:id="@+id/profilePic"
+            android:id="@+id/imageToUpload"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleX="2"
