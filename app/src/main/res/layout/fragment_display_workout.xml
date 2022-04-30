@@ -36,7 +36,9 @@
         android:alpha=".6"
         android:background="@drawable/grey_gradient"
         android:fontFamily="@font/orbitron"
-        android:text=" Part 1:\n 1x Naurrto Runs\n 5x No Hands Pushups\n 5x Eat Oreos"
+        android:paddingStart="10sp"
+        android:paddingTop="10sp"
+        android:text="Example:\n\nPart 1:\n 1x Naurrto Runs\n 5x No Hands Pushups\n 5x Eat Oreos"
         android:textColor="@color/cardview_dark_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,5 +57,20 @@
         app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/ic_display_rectangle"
+        android:fontFamily="@font/orbitron"
+        android:gravity="center"
+        android:text="Log/Mark workout as complete!"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_workout_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

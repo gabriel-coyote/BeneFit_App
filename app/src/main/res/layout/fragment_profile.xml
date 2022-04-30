@@ -407,7 +407,18 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="135dp"
             tools:layout_editor_absoluteY="99dp"/>
+
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="205dp"
+        android:layout_marginEnd="140dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_edit_pic" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
