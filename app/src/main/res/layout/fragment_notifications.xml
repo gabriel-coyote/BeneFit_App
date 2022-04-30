@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/orbitron"
-        android:text="Notifications"
+        android:text="Tasks:"
         android:textColor="#FFFFFF"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,33 +79,23 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/CBtextView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
-                    android:fontFamily="@font/orbitron"
-                    android:text="04-08-2022"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/checkBox1"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
 
-                <TextView
-                    android:id="@+id/CBtextView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
+                <EditText
+                    android:id="@+id/CBtextViewTask1"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/orbitron"
-                    android:text="Drink Water!"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
                     android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
                     android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/checkBox1"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
+                    tools:ignore="TouchTargetSizeCheck" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -124,33 +114,22 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/CBtextView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
+                <EditText
+                    android:id="@+id/CBtextViewTask2"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/orbitron"
-                    android:text="04-07-2022"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
                     android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
                     android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/checkBox2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
-
-                <TextView
-                    android:id="@+id/CBtextView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:fontFamily="@font/orbitron"
-                    android:text="Oops! you missed your workout!"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/checkBox2"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -171,33 +150,22 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/CBtextView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
+                <EditText
+                    android:id="@+id/CBtextViewTask3"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/orbitron"
-                    android:text="04-07-2022"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
                     android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
                     android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/checkBox3"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
-
-                <TextView
-                    android:id="@+id/CBtextView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:fontFamily="@font/orbitron"
-                    android:text="New Friend Request"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/checkBox3"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -218,33 +186,22 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/CBtextView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
+                <EditText
+                    android:id="@+id/CBtextViewTask4"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/orbitron"
-                    android:text="04-06-2022"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
                     android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
                     android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/checkBox4"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
-
-                <TextView
-                    android:id="@+id/CBtextView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:fontFamily="@font/orbitron"
-                    android:text="Drink Water!"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/checkBox4"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -265,33 +222,22 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/CBtextView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
+                <EditText
+                    android:id="@+id/CBtextViewTask5"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/orbitron"
-                    android:text="04-05-2022"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
                     android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
                     android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/checkBox5"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
-
-                <TextView
-                    android:id="@+id/CBtextView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:fontFamily="@font/orbitron"
-                    android:text="Goals met! See you tomorrow!"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/checkBox5"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -311,35 +257,501 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/CBtextView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="32dp"
+                <EditText
+                    android:id="@+id/CBtextViewTask6"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
                     android:fontFamily="@font/orbitron"
-                    android:text="04-04-2022"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
                     android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
                     android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/checkBox6"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
-
-                <TextView
-                    android:id="@+id/CBtextView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="48dp"
-                    android:fontFamily="@font/orbitron"
-                    android:text="You've reached 10,000 steps!"
-                    android:textColor="#FFFFFF"
-                    android:textSize="11sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/checkBox6"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.491" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox7"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask7"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox7"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox8"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask8"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox8"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox9"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask9"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox9"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox10"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask10"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox10"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox11"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask11"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox11"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox12"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask12"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox12"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox13"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask13"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox13"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox14"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask14"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox14"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox15"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask15"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox15"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox16"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask16"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox16"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox17"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask17"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox17"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox18"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask18"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox18"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox19"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask19"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox19"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="387dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox20"
+                    android:layout_width="378dp"
+                    android:layout_height="71dp"
+                    android:background="@drawable/ic_rectangle_notification"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/CBtextViewTask20"
+                    android:layout_width="320dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/orbitron"
+                    android:gravity="center"
+                    android:hint="Set a task!"
+                    android:inputType="textPersonName"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="@+id/checkBox20"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         </LinearLayout>
     </ScrollView>
 
