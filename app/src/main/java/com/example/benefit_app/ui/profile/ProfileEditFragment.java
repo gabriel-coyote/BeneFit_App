@@ -226,15 +226,15 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     // User does have workout created for today in database; so load data into view
-                    first_name_text.setText(snapshot.child("workoutTitle").getValue(String.class));
-                    last_name_text.setText(snapshot.child("workoutTitle").getValue(String.class));
-                    email_text.setText(snapshot.child("workoutTitle").getValue(String.class));
-                    pnum_text .setText(snapshot.child("workoutTitle").getValue(String.class));
-                    username_text.setText(snapshot.child("workoutTitle").getValue(String.class));
-                    birthdate_text .setText(snapshot.child("workoutTitle").getValue(String.class));
-                    gender_text.setText(snapshot.child("workoutTitle").getValue(String.class));
-                    weight_text .setText(snapshot.child("workoutTitle").getValue(String.class));
-                    height_text.setText(snapshot.child("workoutTitle").getValue(String.class));
+                    first_name_text.setText(snapshot.child("firstName").getValue(String.class));
+                    last_name_text.setText(snapshot.child("lastName").getValue(String.class));
+                    email_text.setText(snapshot.child("email").getValue(String.class));
+                    pnum_text .setText(snapshot.child("phoneNumber").getValue(String.class));
+                    username_text.setText(snapshot.child("username").getValue(String.class));
+                    birthdate_text .setText(snapshot.child("birthdate").getValue(String.class));
+                    gender_text.setText(snapshot.child("gender").getValue(String.class));
+                    weight_text .setText(snapshot.child("weight").getValue(String.class));
+                    height_text.setText(snapshot.child("height").getValue(String.class));
 
                 } else {
                     // User doesn't have a specific workout created for this day
