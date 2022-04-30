@@ -116,7 +116,7 @@
         android:ems="10"
         android:fontFamily="@font/orbitron"
         android:inputType="textPersonName"
-        android:text="Calories burned for this workout:"
+        android:text="Calories burned for this workout: "
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@id/editTextTextPersonName2"

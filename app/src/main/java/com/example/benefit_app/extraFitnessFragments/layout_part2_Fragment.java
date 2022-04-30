@@ -30,7 +30,7 @@ public class layout_part2_Fragment extends Fragment {
     private EditText createdWorkoutTitle, createdWorkout;
     private TextView doneButton;
 
-   private TextView titleText;
+    //private TextView titleText;
     private ImageButton backButton;
     View viewer;
 
@@ -64,7 +64,7 @@ public class layout_part2_Fragment extends Fragment {
        // }
 
         // Opening the specific workout
-        titleText = viewer.findViewById(R.id.textViewWorkout);
+        //titleText = viewer.findViewById(R.id.textViewWorkout);
 
         backButton = viewer.findViewById(R.id.back_button_calories_part2);
         backButton.setOnClickListener(view -> {getActivity().onBackPressed(); });
@@ -77,43 +77,43 @@ public class layout_part2_Fragment extends Fragment {
 
         switch (selectedWorkout){
             case "Monday":
-                titleText.setText("Monday:\n"+ MainActivity.mondayWorkoutString_title );
+                //titleText.setText("Monday:\n"+ MainActivity.mondayWorkoutString_title );
                 createdWorkout.setText( MainActivity.mondayWorkoutString );
                 break;
 
 
             case "Tuesday":
-                titleText.setText( "Tuesday:\n"+ MainActivity.tuesdayWorkoutString_title );
+                //titleText.setText( "Tuesday:\n"+ MainActivity.tuesdayWorkoutString_title );
                 createdWorkout.setText( MainActivity.tuesdayWorkoutString );
                 break;
 
 
             case "Wednesday":
-                titleText.setText("Wednesday:\n"+ MainActivity.wednesdayWorkoutString_title );
+                //titleText.setText("Wednesday:\n"+ MainActivity.wednesdayWorkoutString_title );
                 createdWorkout.setText( MainActivity.wednesdayWorkoutString );
                 break;
 
 
             case "Thursday":
-                titleText.setText("Thursday:\n"+ MainActivity.thursdayWorkoutString_title );
+                //titleText.setText("Thursday:\n"+ MainActivity.thursdayWorkoutString_title );
                 createdWorkout.setText( MainActivity.thursdayWorkoutString );
                 break;
 
 
             case "Friday":
-                titleText.setText("Friday:\n"+ MainActivity.fridayWorkoutString_title );
+                //titleText.setText("Friday:\n"+ MainActivity.fridayWorkoutString_title );
                 createdWorkout.setText( MainActivity.fridayWorkoutString );
                 break;
 
 
             case "Saturday":
-                titleText.setText("Saturday:\n"+ MainActivity.saturdayWorkoutString_title );
+                //titleText.setText("Saturday:\n"+ MainActivity.saturdayWorkoutString_title );
                 createdWorkout.setText( MainActivity.saturdayWorkoutString );
                 break;
 
 
             case "Sunday":
-                titleText.setText("Sunday:\n"+ MainActivity.sundayWorkoutString_title );
+                //titleText.setText("Sunday:\n"+ MainActivity.sundayWorkoutString_title );
                 createdWorkout.setText( MainActivity.sundayWorkoutString );
                 break;
 
@@ -144,7 +144,7 @@ public class layout_part2_Fragment extends Fragment {
             case "Monday":
                 MainActivity.mondayWorkoutString_title = workout_name;
                 MainActivity.mondayWorkoutString = workout_str;
-                titleText.setText( "Monday:\n" +workout_name);
+                //titleText.setText( "Monday:\n" +workout_name);
                 alertDialog("Monday's Workout Saved");
                 break;
 
@@ -152,7 +152,7 @@ public class layout_part2_Fragment extends Fragment {
             case "Tuesday":
                 MainActivity.tuesdayWorkoutString_title = workout_name;
                 MainActivity.tuesdayWorkoutString = workout_str;
-                titleText.setText(  "Tuesday:\n" +workout_name);
+                //titleText.setText(  "Tuesday:\n" +workout_name);
                 alertDialog("Tuesday's Workout Saved");
                 break;
 
@@ -160,7 +160,7 @@ public class layout_part2_Fragment extends Fragment {
             case "Wednesday":
                 MainActivity.wednesdayWorkoutString_title = workout_name;
                 MainActivity.wednesdayWorkoutString = workout_str;
-                titleText.setText(  "Wednesday:\n" +workout_name);
+                //titleText.setText(  "Wednesday:\n" +workout_name);
                 alertDialog("Wednesday's Workout Saved");
                 break;
 
@@ -168,7 +168,7 @@ public class layout_part2_Fragment extends Fragment {
             case "Thursday":
                 MainActivity.thursdayWorkoutString_title = workout_name;
                 MainActivity.thursdayWorkoutString = workout_str;
-                titleText.setText(  "Thursday:\n" +workout_name);
+                //titleText.setText(  "Thursday:\n" +workout_name);
                 alertDialog("Thursday's Workout Saved");
                 break;
 
@@ -176,7 +176,7 @@ public class layout_part2_Fragment extends Fragment {
             case "Friday":
                 MainActivity.fridayWorkoutString_title = workout_name;
                 MainActivity.fridayWorkoutString = workout_str;
-                titleText.setText(  "Friday:\n" +workout_name);
+                //titleText.setText(  "Friday:\n" +workout_name);
                 alertDialog("Friday's Workout Saved");
                 break;
 
@@ -184,7 +184,7 @@ public class layout_part2_Fragment extends Fragment {
             case "Saturday":
                 MainActivity.saturdayWorkoutString_title = workout_name;
                 MainActivity.saturdayWorkoutString = workout_str;
-                titleText.setText( "Saturday:\n" +workout_name);
+                //titleText.setText( "Saturday:\n" +workout_name);
                 alertDialog("Saturday's Workout Saved");
                 break;
 
@@ -192,7 +192,7 @@ public class layout_part2_Fragment extends Fragment {
             case "Sunday":
                 MainActivity.sundayWorkoutString_title = workout_name;
                 MainActivity.sundayWorkoutString = workout_str;
-                titleText.setText( "Sunday:\n" +workout_name);
+                //titleText.setText( "Sunday:\n" +workout_name);
                 alertDialog("Sunday's Workout Saved");
                 break;
 
