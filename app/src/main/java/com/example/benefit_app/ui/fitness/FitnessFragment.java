@@ -220,6 +220,20 @@ public class FitnessFragment extends Fragment {
         return viewer;
     }
 
+/*
+w
+    //For changing picture//////////////////////////////////////////////////////////////
+    @Override
+    public void onClick(View v){
+        switch(v.getId()){
+            case R.id.change_picture_button:
+                Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
+                break;
+
+            default:
+                break;
+        }
 
 
     //For changing picture//////////////////////////////////////////////////////////////
@@ -246,6 +260,18 @@ public class FitnessFragment extends Fragment {
         }
     }
 
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null){
+            Uri selectedImage = data.getData();
+            imageToUpload.setImageURI(selectedImaage);
+        }
+    }
+
+*/
 
 
     /* ********************************************************************** */
