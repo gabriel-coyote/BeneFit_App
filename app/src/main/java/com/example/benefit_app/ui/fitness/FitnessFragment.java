@@ -221,7 +221,7 @@ public class FitnessFragment extends Fragment {
     }
 
 /*
-
+w
     //For changing picture//////////////////////////////////////////////////////////////
     @Override
     public void onClick(View v){
