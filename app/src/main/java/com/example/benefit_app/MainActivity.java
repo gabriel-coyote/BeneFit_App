@@ -327,14 +327,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     public void step(long timeNs) {
 
-
+        double temp = 1;
+        int newInt;
 
 
         if(numStepsGoal == 0){
             // Don't update the text from "set goals"
         }else{
             numSteps++;
+            temp = numSteps * .04;
+            newInt= (int)temp;
+            caloriesProgressBar.setProgress(newInt);
             stepsProgress.setProgress(numSteps);
+
             //fitnessFragment.setStepsProgressBar(numSteps);
             // numStepsGoal hase been set ; update textview
             TvSteps.setText(TEXT_NUM_STEPS + numSteps);
