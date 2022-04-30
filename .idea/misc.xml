@@ -34,7 +34,6 @@
         <entry key="app/src/main/res/drawable/ic_create_button.xml" value="0.291" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable/ic_rectangle_19.xml" value="0.3425" />
-        <entry key="app/src/main/res/drawable/ic_workout_info.xml" value="0.3425" />
         <entry key="app/src/main/res/drawable/icon_action_button.xml" value="0.293" />
         <entry key="app/src/main/res/drawable/icon_bar_chart.xml" value="0.293" />
         <entry key="app/src/main/res/drawable/icon_email.xml" value="0.293" />
@@ -67,7 +66,7 @@
         <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.26183776855468754" />
         <entry key="app/src/main/res/layout/fragment_food.xml" value="0.28115508590919375" />
         <entry key="app/src/main/res/layout/fragment_gyms.xml" value="0.35144927536231885" />
-        <entry key="app/src/main/res/layout/fragment_layout_part2.xml" value="0.14792022705078126" />
+        <entry key="app/src/main/res/layout/fragment_layout_part2.xml" value="0.21430358886718753" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2814254760742188" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.18721129928810015" />
         <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.35144927536231885" />

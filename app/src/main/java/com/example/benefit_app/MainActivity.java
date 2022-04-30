@@ -6,10 +6,12 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -341,8 +343,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }
 
     }
+/*
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null){
+            Uri selectedImaage = data.getData();
+            imageToUpload.setImageURI(selectedImaage);
+        }
+    }
 
+*/
 
     /* **************** STEP COUNTER STUFF - END **************** */
 
