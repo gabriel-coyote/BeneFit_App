@@ -580,7 +580,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 */
 
-    /* **************** STEP COUNTER STUFF - END **************** */
+    /* ***************** STEP COUNTER STUFF - END **************** */
 
 //        super.onActivityResult(requestCode, resultCode, data);
 //        if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null){
