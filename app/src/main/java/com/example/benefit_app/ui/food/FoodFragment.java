@@ -77,7 +77,7 @@ public class FoodFragment extends Fragment {
         food_search_textfield = viewer.findViewById(R.id.food_search_field);
 
         foodTitle       = viewer.findViewById(R.id.foodName_placeholder);
-        foodDescription = viewer.findViewById(R.id.foodDescription_placeholder);
+        //foodDescription = viewer.findViewById(R.id.foodDescription_placeholder);
 
         caloriesDisplay = viewer.findViewById(R.id.mainCalories);
         carbsDisplay    = viewer.findViewById(R.id.mainCarbs);

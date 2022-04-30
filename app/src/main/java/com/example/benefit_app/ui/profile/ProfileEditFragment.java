@@ -86,13 +86,13 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
                                 Also return viewer to 'inflate' into the Fragment container viewer */
         // IF the viewer doesn't exist then make one
         // Else keep the same viewer
-        if (viewer != null) {
-            if ((ViewGroup)viewer.getParent() != null)
-                ((ViewGroup)viewer.getParent()).removeView(viewer);
-            return viewer;
-        } else{
+//        if (viewer != null) {
+//            if ((ViewGroup)viewer.getParent() != null)
+//                ((ViewGroup)viewer.getParent()).removeView(viewer);
+//            return viewer;
+//        } else{
             viewer = inflater.inflate(R.layout.fragment_profile_edit, container, false);
-        }
+//        }
 
 
 
@@ -231,7 +231,7 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
                     email_text.setText(snapshot.child("email").getValue(String.class));
                     pnum_text .setText(snapshot.child("phoneNumber").getValue(String.class));
                     username_text.setText(snapshot.child("username").getValue(String.class));
-                    birthdate_text .setText(snapshot.child("birthdate").getValue(String.class));
+                    birthdate_text .setText(snapshot.child("birthDate").getValue(String.class));
                     gender_text.setText(snapshot.child("gender").getValue(String.class));
                     weight_text .setText(snapshot.child("weight").getValue(String.class));
                     height_text.setText(snapshot.child("height").getValue(String.class));

@@ -25,6 +25,7 @@ import android.widget.Toast;
 //import com.example.benefit_app.extraFitnessFragments.layout_part2_Fragment;
 import com.example.benefit_app.Objects.DailyCaloriesLog;
 import com.example.benefit_app.Objects.DailyStepLog;
+import com.example.benefit_app.Objects.DailyWaterLog;
 import com.example.benefit_app.extraFitnessFragments.caloriesGoalFragment;
 import com.example.benefit_app.extraFitnessFragments.stepsGoalFragment;
 import com.example.benefit_app.extraFitnessFragments.waterFragment;
@@ -191,7 +192,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
             DatabaseReference userNameRef = rootRef.child("DailyStepLog").child(key);
             DatabaseReference userNameRefcalories = rootRef.child("DailyCaloriesLog").child(key);
-
+            DatabaseReference userNameRefwater = rootRef.child("DailyWaterLog").child(key);
 
             ValueEventListener eventListener = new ValueEventListener() {
                 @Override
@@ -220,8 +221,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
                        if(MainActivity.stepsProgress.getMax() != 0){
                            // Already Set Goal so show textview
+
                            MainActivity.TvSteps.setText(String.valueOf(snapshot.child("todaysProgress").getValue(Integer.class)));
                            MainActivity.TvStepsGoal.setText(String.valueOf(snapshot.child("todaysGoal").getValue(Integer.class)));
+                           MainActivity.stepsProgress.setProgress(numSteps);
 
                        }
                     }
@@ -251,7 +254,40 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                             //Goal has been set so show TextViews
                             MainActivity.TvCalories.setText(String.valueOf(snapshot.child("todaysProgress").getValue(Integer.class)));
                             MainActivity.TvCaloriesGoal.setText(String.valueOf(snapshot.child("todaysGoal").getValue(Integer.class)));
+                            MainActivity.caloriesProgressBar.setProgress(snapshot.child("todaysProgress").getValue(Integer.class));
 
+                        }
+//
+
+                    }
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Log.d("LoadingTodayStepProgress_TAG:", error.getMessage()); //Don't ignore errors!
+                }
+            };
+
+
+            ValueEventListener eventListener3 = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(!snapshot.exists()){
+
+                        DailyWaterLog todayWaterLog = new DailyWaterLog(0,0);
+                        FirebaseDatabase.getInstance().getReference("DailyWaterLog")
+                                .child(key).setValue(todayWaterLog);
+
+                    } else {
+                        MainActivity.waterProgressBar.setMax(snapshot.child("todaysGoal").getValue(Integer.class));
+
+                        if(MainActivity.waterProgressBar.getMax() != 0){
+                            //Goal has been set so show TextViews
+                            MainActivity.TvWater.setText(String.valueOf(snapshot.child("todaysProgress").getValue(Integer.class)));
+                            MainActivity.TvWaterGoal.setText(String.valueOf(snapshot.child("todaysGoal").getValue(Integer.class)));
+                            MainActivity.waterProgressBar.setProgress(snapshot.child("todaysProgress").getValue(Integer.class));
 
                         }
 //
@@ -270,6 +306,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             userNameRef.addValueEventListener(eventListener);
             userNameRefcalories.addValueEventListener(eventListener2);
+            userNameRefwater.addValueEventListener(eventListener3);
 
 
             sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
