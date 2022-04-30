@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -25,10 +26,11 @@ public class layout_part2_Fragment extends Fragment {
 
 
     //For saving workouts
+    public static String selectedWorkout =  "";
     private EditText createdWorkoutTitle, createdWorkout;
     private TextView doneButton;
 
-    private TextView date_text;
+   private TextView titleText;
     private ImageButton backButton;
     View viewer;
 
@@ -48,21 +50,21 @@ public class layout_part2_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Date thisDate = new Date();
-        SimpleDateFormat dateForm = new SimpleDateFormat("EEEE");
+        SimpleDateFormat dateForm = new SimpleDateFormat("EEEE") ;
+        String todaysDAY = dateForm.format(thisDate);;
         // Inflate the layout for this fragment
         // IF the viewer doesn't exist then make one
         // Else keep the same viewer
-        if (viewer != null) {
-            if ((ViewGroup)viewer.getParent() != null)
-                ((ViewGroup)viewer.getParent()).removeView(viewer);
-            return viewer;
-        }else {
+//        if (viewer != null) {
+//            if ((ViewGroup)viewer.getParent() != null)
+//                ((ViewGroup)viewer.getParent()).removeView(viewer);
+//            return viewer;
+//        }else {
             viewer = inflater.inflate(R.layout.fragment_layout_part2, container, false);
-        }
-        date_text = viewer.findViewById(R.id.textViewWorkout);
-        date_text.setText(dateForm.format(thisDate));
-        // Opening the specific workout
+       // }
 
+        // Opening the specific workout
+        titleText = viewer.findViewById(R.id.textViewWorkout);
 
         backButton = viewer.findViewById(R.id.back_button_calories_part2);
         backButton.setOnClickListener(view -> {getActivity().onBackPressed(); });
@@ -71,6 +73,54 @@ public class layout_part2_Fragment extends Fragment {
         // For saving workouts to main string
         createdWorkout = viewer.findViewById(R.id.editTextCreateWorkout);
         createdWorkoutTitle = viewer.findViewById(R.id.editTextCreateTitle);
+
+
+        switch (selectedWorkout){
+            case "Monday":
+                titleText.setText("Monday:\n"+ MainActivity.mondayWorkoutString_title );
+                createdWorkout.setText( MainActivity.mondayWorkoutString );
+                break;
+
+
+            case "Tuesday":
+                titleText.setText( "Tuesday:\n"+ MainActivity.tuesdayWorkoutString_title );
+                createdWorkout.setText( MainActivity.tuesdayWorkoutString );
+                break;
+
+
+            case "Wednesday":
+                titleText.setText("Wednesday:\n"+ MainActivity.wednesdayWorkoutString_title );
+                createdWorkout.setText( MainActivity.wednesdayWorkoutString );
+                break;
+
+
+            case "Thursday":
+                titleText.setText("Thursday:\n"+ MainActivity.thursdayWorkoutString_title );
+                createdWorkout.setText( MainActivity.thursdayWorkoutString );
+                break;
+
+
+            case "Friday":
+                titleText.setText("Friday:\n"+ MainActivity.fridayWorkoutString_title );
+                createdWorkout.setText( MainActivity.fridayWorkoutString );
+                break;
+
+
+            case "Saturday":
+                titleText.setText("Saturday:\n"+ MainActivity.saturdayWorkoutString_title );
+                createdWorkout.setText( MainActivity.saturdayWorkoutString );
+                break;
+
+
+            case "Sunday":
+                titleText.setText("Sunday:\n"+ MainActivity.sundayWorkoutString_title );
+                createdWorkout.setText( MainActivity.sundayWorkoutString );
+                break;
+
+            default:
+                break;
+        }
+
         doneButton = viewer.findViewById(R.id.textView5);
         doneButton.setOnClickListener(view ->  {saveWorkout();});
 
@@ -85,43 +135,65 @@ public class layout_part2_Fragment extends Fragment {
 
     public void saveWorkout(){
 
-        String todaysDAY;
+
 
         String workout_str = createdWorkout.getText().toString();
+        String workout_name = createdWorkoutTitle.getText().toString();
 
-        switch (""){
+        switch (selectedWorkout){
             case "Monday":
+                MainActivity.mondayWorkoutString_title = workout_name;
                 MainActivity.mondayWorkoutString = workout_str;
+                titleText.setText( "Monday:\n" +workout_name);
+                alertDialog("Monday's Workout Saved");
                 break;
 
 
             case "Tuesday":
+                MainActivity.tuesdayWorkoutString_title = workout_name;
                 MainActivity.tuesdayWorkoutString = workout_str;
+                titleText.setText(  "Tuesday:\n" +workout_name);
+                alertDialog("Tuesday's Workout Saved");
                 break;
 
 
             case "Wednesday":
+                MainActivity.wednesdayWorkoutString_title = workout_name;
                 MainActivity.wednesdayWorkoutString = workout_str;
+                titleText.setText(  "Wednesday:\n" +workout_name);
+                alertDialog("Wednesday's Workout Saved");
                 break;
 
 
             case "Thursday":
+                MainActivity.thursdayWorkoutString_title = workout_name;
                 MainActivity.thursdayWorkoutString = workout_str;
+                titleText.setText(  "Thursday:\n" +workout_name);
+                alertDialog("Thursday's Workout Saved");
                 break;
 
 
             case "Friday":
+                MainActivity.fridayWorkoutString_title = workout_name;
                 MainActivity.fridayWorkoutString = workout_str;
+                titleText.setText(  "Friday:\n" +workout_name);
+                alertDialog("Friday's Workout Saved");
                 break;
 
 
             case "Saturday":
+                MainActivity.saturdayWorkoutString_title = workout_name;
                 MainActivity.saturdayWorkoutString = workout_str;
+                titleText.setText( "Saturday:\n" +workout_name);
+                alertDialog("Saturday's Workout Saved");
                 break;
 
 
             case "Sunday":
+                MainActivity.sundayWorkoutString_title = workout_name;
                 MainActivity.sundayWorkoutString = workout_str;
+                titleText.setText( "Sunday:\n" +workout_name);
+                alertDialog("Sunday's Workout Saved");
                 break;
 
             default:
@@ -142,4 +214,11 @@ public class layout_part2_Fragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+    /* ********************************************************************** */
+    private void alertDialog(String text){
+        Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT)
+                .show();
+    }
+
 }

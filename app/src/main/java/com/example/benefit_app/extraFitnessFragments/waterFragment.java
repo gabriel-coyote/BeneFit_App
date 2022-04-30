@@ -219,7 +219,7 @@ public class waterFragment extends Fragment{
 
                     MainActivity.waterProgressBar.setProgress(water_Progress);
 
-                    alertDialog("Water progress has been set");
+
                 }
             }
 
@@ -245,7 +245,7 @@ public class waterFragment extends Fragment{
 
                     //for updating water progreess bar goal
                     MainActivity.waterProgressBar.setMax(water_Goal);
-                    alertDialog("Water Goal has been set.");
+
                 }
             }
 
@@ -402,7 +402,7 @@ public class waterFragment extends Fragment{
         storedWaterProgress = water_progress;
         todaysWaterRef.child("todaysProgress").setValue(water_Progress);
 
-
+        alertDialog("Water progress has been set");
 
 
         MainActivity.TvWater.setText(String.valueOf(water_Progress));
@@ -456,6 +456,7 @@ public class waterFragment extends Fragment{
         todaysWaterRef.child("todaysGoal").setValue(water_Goal);
         MainActivity.TvWaterGoal.setText(String.valueOf(water_Goal));
 
+        alertDialog("Water Goal has been set.");
     }
     /* ********************************************************************** */
     private void createTodaysWaterLog(){

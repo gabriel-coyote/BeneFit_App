@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
@@ -105,31 +106,31 @@ public class displayWorkoutFragment extends Fragment {
             case "Monday":
                //ToDO: updateworkout title & main workout box
                 workout_text.setText(MainActivity.mondayWorkoutString);
-                workout_title_text.setText(todaysDay + ": "+MainActivity.mondayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.mondayWorkoutString_title);
                 break;
             case "Tuesday":
                 workout_text.setText(MainActivity.tuesdayWorkoutString);
-                workout_title_text.setText(todaysDay + ": "+MainActivity.tuesdayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.tuesdayWorkoutString_title);
                 break;
             case "Wednesday":
                 workout_text.setText(MainActivity.wednesdayWorkoutString);
-                workout_title_text.setText(todaysDay + ": "+MainActivity.wednesdayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.wednesdayWorkoutString_title);
                 break;
             case "Thursday":
                 workout_text.setText(MainActivity.thursdayWorkoutString);
-                workout_title_text.setText(todaysDay + ": "+MainActivity.thursdayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.thursdayWorkoutString_title);
                 break;
             case "Friday":
                 workout_text.setText(MainActivity.fridayWorkoutString);
-                workout_title_text.setText(todaysDay + ": "+MainActivity.fridayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.fridayWorkoutString_title);
                 break;
             case "Saturday":
                 workout_text.setText(MainActivity.saturdayWorkoutString);
-                workout_title_text.setText(todaysDay + ": "+MainActivity.saturdayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.saturdayWorkoutString_title);
                 break;
             case "Sunday":
                 workout_text.setText(MainActivity.sundayWorkoutString);
-                workout_title_text.setText(todaysDay + ": "+MainActivity.sundayWorkoutString_title);
+                workout_title_text.setText(todaysDay + ": \n  "+MainActivity.sundayWorkoutString_title);
                 break;
 
             default:
@@ -156,5 +157,12 @@ public class displayWorkoutFragment extends Fragment {
         transaction.replace(R.id.main_fragment_Container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+
+    /* ********************************************************************** */
+    private void alertDialog(String text){
+        Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT)
+                .show();
     }
 }

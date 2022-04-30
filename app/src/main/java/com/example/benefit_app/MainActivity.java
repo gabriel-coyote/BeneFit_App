@@ -55,13 +55,13 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public static String saturdayWorkoutString= "empty workout :(";;
     public static String sundayWorkoutString= "empty workout :(";;
 
-    public static String mondayWorkoutString_title = "empty workout title :(";
-    public static String tuesdayWorkoutString_title = "empty workout title  :(";;
-    public static String wednesdayWorkoutString_title= "empty workout title :(";;
-    public static String thursdayWorkoutString_title= "empty workout title :(";;
-    public static String fridayWorkoutString_title= "empty workout title :(";;
-    public static String saturdayWorkoutString_title= "empty workout title :(";;
-    public static String sundayWorkoutString_title= "empty workout title  :(";;
+    public static String mondayWorkoutString_title = "blank";
+    public static String tuesdayWorkoutString_title = "blank";;
+    public static String wednesdayWorkoutString_title= "blank";;
+    public static String thursdayWorkoutString_title= "blank";;
+    public static String fridayWorkoutString_title= "blank";;
+    public static String saturdayWorkoutString_title= "blank";;
+    public static String sundayWorkoutString_title= "blank";;
 
     /* **************** STEP COUNTER STUFF - BEGIN **************** */
 
@@ -350,6 +350,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
     /* ********************************************************************** */
+
 
 
 

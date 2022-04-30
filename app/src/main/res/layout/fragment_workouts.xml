@@ -27,7 +27,7 @@
         android:layout_marginTop="120dp"
         android:fontFamily="@font/orbitron"
         android:gravity="center"
-        android:text="Choose a day to view/edit/create     a workout!"
+        android:text="Choose a day to view/edit/create a workout!"
         android:textColor="#FFFFFF"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
