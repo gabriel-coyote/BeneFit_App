@@ -64,12 +64,12 @@
         <entry key="app/src/main/res/layout/food_page.xml" value="0.23822463768115942" />
         <entry key="app/src/main/res/layout/fragment_calories_goal.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_display_workout.xml" value="0.27306671142578126" />
-        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.6298080444335943" />
+        <entry key="app/src/main/res/layout/fragment_fitness.xml" value="0.3524581909179693" />
         <entry key="app/src/main/res/layout/fragment_food.xml" value="0.28115508590919375" />
         <entry key="app/src/main/res/layout/fragment_gyms.xml" value="0.2925183061240376" />
         <entry key="app/src/main/res/layout/fragment_layout_part2.xml" value="0.312091064453125" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.46202850341796875" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.22633636032325635" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.3703099510603589" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2593985854016707" />
         <entry key="app/src/main/res/layout/fragment_profile_edit.xml" value="0.35144927536231885" />
         <entry key="app/src/main/res/layout/fragment_reset_password.xml" value="0.47401247401247404" />
         <entry key="app/src/main/res/layout/fragment_steps_goal.xml" value="0.25" />
