@@ -17,7 +17,10 @@ import android.widget.Toast;
 
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,16 +30,28 @@ import com.google.firebase.database.ValueEventListener;
 import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
 public class displayWorkoutFragment extends Fragment {
+
+
+    // For access daily logs of water, calories, steps
+    //Current Date
+    LocalDate dateObj = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+    String date = dateObj.format(formatter);
+
+
 
     private TextView title_workout_message;
     private TextView user_workout_text;
     private ImageView back_button;
     private TextView workout_text;
     private TextView workout_title_text;
+    private TextView logWorkout_button;
     private String date_text;
 
 
@@ -106,6 +121,12 @@ public class displayWorkoutFragment extends Fragment {
             MainActivity.caloriesProgressBar.setVisibility(View.VISIBLE);});
 
 
+        logWorkout_button = viewer.findViewById(R.id.logWorkout_Tv_id);
+        logWorkout_button.setOnClickListener(view -> {
+            addWorkoutCalories();
+        });
+
+
         //date_text = dateForm.format(thisDate);
 
         String todaysDay = dateForm.format(thisDate);
@@ -144,6 +165,57 @@ public class displayWorkoutFragment extends Fragment {
 
 
 
+
+    /* ********************************************************************** */
+    public void addWorkoutCalories(){
+
+
+        // Add to our current global variable that holds the current user caloriesProgress
+        //
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String key = currentUser.getUid()+"_"+date;
+
+        DatabaseReference rootRef  = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference userDailyCaloriesLog = rootRef.child("DailyCaloriesLog").child(key);
+
+
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    // User does have calories log created for today in database;
+                    int currentCaloriesProgress_int = snapshot.child("todaysProgress").getValue(Integer.class);
+                    int newCaloriesProgress_int =currentCaloriesProgress_int + MainActivity.todayWorkoutCalories_int ;
+
+                    MainActivity.mainCaloriesProgress_int += MainActivity.todayWorkoutCalories_int;
+                    //Add to database
+                    FirebaseDatabase.getInstance().getReference("DailyCaloriesLog")
+                            .child(key).child("todaysProgress").setValue(newCaloriesProgress_int);
+
+                    alertDialog("Added Workout Calories to log!🥵");
+                }else{
+                    // User doesn't have a specific workout created for this day
+
+                    // They should have one created by now
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("LoadWorkouts_TAG:", error.getMessage()); //Don't ignore errors!
+
+            }
+        };
+
+        userDailyCaloriesLog.addListenerForSingleValueEvent(eventListener);
+
+
+
+
+    }
+
+
+
     /* ********************************************************************** */
     public void loadWorkoutInfo(String WorkoutDay){
 
@@ -153,17 +225,20 @@ public class displayWorkoutFragment extends Fragment {
 
         DatabaseReference rootRef  = FirebaseDatabase.getInstance().getReference();
         DatabaseReference userWorkouts = rootRef.child("UsersWorkouts").child(currentUser).child(WorkoutDay);
+
+
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     // User does have workout created for today in database; so load data into view
-
+                    MainActivity.todayWorkoutCalories_int = snapshot.child("workoutCalories").getValue(Integer.class);
                     workout_title_text.setText(snapshot.child("workoutTitle").getValue(String.class));
                     workout_text.setText(snapshot.child("workoutBody").getValue(String.class));
+
                 }else{
                     // User doesn't have a specific workout created for this day
-
+                    MainActivity.todayWorkoutCalories_int = 0;
                     workout_title_text.setText(WorkoutDay+": blank");
                     workout_text.setText("No workout created for this day; \nClick create");
                 }

@@ -69,6 +69,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
+    // Global Variables
+    public static int todayWorkoutCalories_int;
+    public static int mainCaloriesProgress_int;
+
+
     // Our Fitness Page Circular Progress Bar(s)
     public static ProgressBar stepsProgress;
     public static ProgressBar waterProgressBar;
@@ -105,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private static final String TEXT_NUM_STEPS = "";
     public static int numSteps;
     public static int numStepsGoal;
+    private int steps_calories;
     public FitnessFragment fitnessFragment;
 
 
@@ -176,6 +182,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         BtnStart = findViewById(R.id.btn_start);
         // Starts Counting steps
+        steps_calories = 0;
         numStepsGoal = 0;
         BtnStart.setOnClickListener(arg0 -> {
 
@@ -247,8 +254,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                         FirebaseDatabase.getInstance().getReference("DailyCaloriesLog")
                                 .child(key).setValue(todayCaloriesLog);
 
+                        mainCaloriesProgress_int = 0;
                     } else {
                         MainActivity.caloriesProgressBar.setMax(snapshot.child("todaysGoal").getValue(Integer.class));
+                        mainCaloriesProgress_int = snapshot.child("todaysProgress").getValue(Integer.class);
 
                         if(MainActivity.caloriesProgressBar.getMax() != 0){
                             //Goal has been set so show TextViews
@@ -485,7 +494,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public void step(long timeNs) {
 
         double temp = 1;
-        int newInt;
+        int caloriesProgress_int;
 
 //
 //        if(numStepsGoal == 0){
@@ -493,8 +502,17 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 //        }else{
             numSteps++;
             temp = numSteps * .04;
-            newInt = (int)temp;
-            caloriesProgressBar.setProgress(newInt);
+            caloriesProgress_int = (int)temp;
+            if(steps_calories > 24){
+                mainCaloriesProgress_int += 1;
+                steps_calories = 0;
+            }else{
+                mainCaloriesProgress_int += 0;
+                steps_calories += 1;
+            }
+            //mainCaloriesProgress_int += 1;
+
+            caloriesProgressBar.setProgress(mainCaloriesProgress_int);
             stepsProgress.setProgress(numSteps);
 
             //fitnessFragment.setStepsProgressBar(numSteps);
@@ -526,10 +544,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 }
             });
 
-        // Adding user info to Firebase database
+        // Adding user calories info to Firebase database
+
         FirebaseDatabase.getInstance().getReference("DailyCaloriesLog")
                 .child(key).child("todaysProgress")
-                .setValue(newInt).addOnCompleteListener(new OnCompleteListener<Void>() {
+                .setValue(mainCaloriesProgress_int).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){

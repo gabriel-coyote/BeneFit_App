@@ -59,7 +59,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/logWorkout_Tv_id"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_marginTop="36dp"
