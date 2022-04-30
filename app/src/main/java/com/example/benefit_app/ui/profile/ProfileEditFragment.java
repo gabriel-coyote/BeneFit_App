@@ -231,7 +231,7 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
                     email_text.setText(snapshot.child("email").getValue(String.class));
                     pnum_text .setText(snapshot.child("phoneNumber").getValue(String.class));
                     username_text.setText(snapshot.child("username").getValue(String.class));
-                    birthdate_text .setText(snapshot.child("birthdate").getValue(String.class));
+                    birthdate_text .setText(snapshot.child("birthDate").getValue(String.class));
                     gender_text.setText(snapshot.child("gender").getValue(String.class));
                     weight_text .setText(snapshot.child("weight").getValue(String.class));
                     height_text.setText(snapshot.child("height").getValue(String.class));
@@ -265,6 +265,7 @@ public class ProfileEditFragment<FirebaseStorage> extends Fragment {
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference userNameRef = rootRef.child("Users").child(currentUser.getUid());
+
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

@@ -1,6 +1,7 @@
 package com.example.benefit_app;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -13,13 +14,17 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 //import com.example.benefit_app.extraFitnessFragments.layout_part2_Fragment;
+import com.example.benefit_app.Objects.DailyCaloriesLog;
+import com.example.benefit_app.Objects.DailyStepLog;
 import com.example.benefit_app.extraFitnessFragments.caloriesGoalFragment;
 import com.example.benefit_app.extraFitnessFragments.stepsGoalFragment;
 import com.example.benefit_app.extraFitnessFragments.waterFragment;
@@ -36,10 +41,32 @@ import com.example.benefit_app.ui.food.FoodFragment;
 import com.example.benefit_app.ui.gyms.GymsFragment;
 import com.example.benefit_app.ui.profile.ProfileEditFragment;
 import com.example.benefit_app.ui.profile.ProfileFragment;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener, StepListener {
+
+
+    // For access daily logs of water, calories, steps
+    //Current Date
+    LocalDate dateObj = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+    String date = dateObj.format(formatter);
+
+
 
     // Our Fitness Page Circular Progress Bar(s)
     public static ProgressBar stepsProgress;
@@ -151,7 +178,100 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         numStepsGoal = 0;
         BtnStart.setOnClickListener(arg0 -> {
 
-            numSteps = 0;
+            // TODO: update this
+            //numSteps = 0;
+            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+            String key = currentUser.getUid()+"_"+date;
+
+
+
+
+
+
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+            DatabaseReference userNameRef = rootRef.child("DailyStepLog").child(key);
+            DatabaseReference userNameRefcalories = rootRef.child("DailyCaloriesLog").child(key);
+
+
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(!snapshot.exists()){
+                        // Doesn't exist so create blank one
+
+                        DailyStepLog todayStepLog = new DailyStepLog(0,0);
+
+
+
+                        // Adding blank dailySteplog & dailyCalories Log for today to firebase database.
+                        FirebaseDatabase.getInstance().getReference("DailyStepLog")
+                                .child(key).setValue(todayStepLog);
+
+                        alertDialog("Created Blank Step Log ");
+                        numSteps = 0;
+                    } else {
+                        // they already have a saved today step log
+                        //alertDialog("You have a step Log already created for today");
+
+                       // Load todaysProgress into numsteps.
+                       numSteps = snapshot.child("todaysProgress").getValue(Integer.class) ;
+                       numStepsGoal = snapshot.child("todaysGoal").getValue(Integer.class);
+                       MainActivity.stepsProgress.setMax(numStepsGoal);
+
+                       if(MainActivity.stepsProgress.getMax() != 0){
+                           // Already Set Goal so show textview
+                           MainActivity.TvSteps.setText(String.valueOf(snapshot.child("todaysProgress").getValue(Integer.class)));
+                           MainActivity.TvStepsGoal.setText(String.valueOf(snapshot.child("todaysGoal").getValue(Integer.class)));
+
+                       }
+                    }
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Log.d("LoadingTodayStepProgress_TAG:", error.getMessage()); //Don't ignore errors!
+                }
+            };
+
+            ValueEventListener eventListener2 = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(!snapshot.exists()){
+
+                        DailyCaloriesLog todayCaloriesLog = new DailyCaloriesLog(0,0);
+                        FirebaseDatabase.getInstance().getReference("DailyCaloriesLog")
+                                .child(key).setValue(todayCaloriesLog);
+
+                    } else {
+                        MainActivity.caloriesProgressBar.setMax(snapshot.child("todaysGoal").getValue(Integer.class));
+
+                        if(MainActivity.caloriesProgressBar.getMax() != 0){
+                            //Goal has been set so show TextViews
+                            MainActivity.TvCalories.setText(String.valueOf(snapshot.child("todaysProgress").getValue(Integer.class)));
+                            MainActivity.TvCaloriesGoal.setText(String.valueOf(snapshot.child("todaysGoal").getValue(Integer.class)));
+
+
+                        }
+//
+
+                    }
+
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Log.d("LoadingTodayStepProgress_TAG:", error.getMessage()); //Don't ignore errors!
+                }
+            };
+
+
+            userNameRef.addValueEventListener(eventListener);
+            userNameRefcalories.addValueEventListener(eventListener2);
+
+
             sensorManager.registerListener(MainActivity.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
 
         });
@@ -330,22 +450,84 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         double temp = 1;
         int newInt;
 
-
-        if(numStepsGoal == 0){
-            // Don't update the text from "set goals"
-        }else{
+//
+//        if(numStepsGoal == 0){
+//            // Don't update the text from "set goals"
+//        }else{
             numSteps++;
             temp = numSteps * .04;
-            newInt= (int)temp;
+            newInt = (int)temp;
             caloriesProgressBar.setProgress(newInt);
             stepsProgress.setProgress(numSteps);
 
             //fitnessFragment.setStepsProgressBar(numSteps);
             // numStepsGoal hase been set ; update textview
             TvSteps.setText(TEXT_NUM_STEPS + numSteps);
-            TvStepsGoal.setText(String.valueOf(numStepsGoal));
+            if(numStepsGoal == 0){
+                TvStepsGoal.setText("Set Goal!");
+            }else {
+                TvStepsGoal.setText(String.valueOf(numStepsGoal));
+            }
+
+            // Saving steps progress to todays' daily step log
+            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+            String key = currentUser.getUid()+"_"+date;
+
+
+            // Adding user info to Firebase database
+            FirebaseDatabase.getInstance().getReference("DailyStepLog")
+                    .child(key).child("todaysProgress")
+                    .setValue(numSteps).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        //alertDialog("Saving Complete 😌");
+
+                    }else if(!task.isSuccessful()){
+                        //alertDialog("Saving Failed... :(");
+                    }
+                }
+            });
+
+        // Adding user info to Firebase database
+        FirebaseDatabase.getInstance().getReference("DailyCaloriesLog")
+                .child(key).child("todaysProgress")
+                .setValue(newInt).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    //alertDialog("Saving Complete 😌");
+
+                }else if(!task.isSuccessful()){
+                    //alertDialog("Saving Failed... :(");
+                }
+            }
+        });
+
+
+        if(MainActivity.caloriesProgressBar.getMax() == 0){
+            //Calories goal hasn't been sent; don't change textview
+        }else{
+
+            DatabaseReference caloriesDB = FirebaseDatabase.getInstance().getReference().child("DailyCaloriesLog").child(key);
+
+            ValueEventListener updatingTextViewListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.exists()){
+                        MainActivity.TvCalories.setText(String.valueOf(snapshot.child("todaysProgress").getValue(Integer.class)));
+                        MainActivity.TvCaloriesGoal.setText(String.valueOf(snapshot.child("todaysGoal").getValue(Integer.class)));
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            };
 
         }
+//        }
 
     }
 /*
@@ -390,4 +572,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         transaction.commit();
     }
 
+
+    /* ********************************************************************** */
+    private void alertDialog(String text){
+        Toast.makeText(this, text, Toast.LENGTH_SHORT)
+                .show();
+    }
 }

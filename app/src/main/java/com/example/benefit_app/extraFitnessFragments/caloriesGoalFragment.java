@@ -2,6 +2,7 @@ package com.example.benefit_app.extraFitnessFragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,13 +15,25 @@ import android.widget.Toast;
 
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 
 public class caloriesGoalFragment extends Fragment {
 
 
     private ImageView backButton;
-
+    // For access daily logs of water, calories, steps
+    //Current Date
+    LocalDate dateObj = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+    String date = dateObj.format(formatter);
     private TextView caloriesGoal_text;
     private ImageView caloriesPlus, caloriesMinus;
     private Button calories_button;
@@ -112,9 +125,35 @@ public class caloriesGoalFragment extends Fragment {
             alertDialog("Can't be negative 👿");
         }
     }
+
+
+    /* ********************************************************************** */
     private void displayCaloriesGoal_save(){
-        MainActivity.TvCaloriesGoal.setText(caloriesGoal_int);
+        MainActivity.TvCaloriesGoal.setText(String.valueOf(caloriesGoal_int));
         MainActivity.caloriesProgressBar.setMax(caloriesGoal_int);
+
+        alertDialog("Saved Calories Goal");
+
+
+        // Saving steps progress to todays' daily step log
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String key = currentUser.getUid()+"_"+date;
+
+
+        // Adding user info to Firebase database
+        FirebaseDatabase.getInstance().getReference("DailyCaloriesLog")
+                .child(key).child("todaysGoal")
+                .setValue(caloriesGoal_int).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    //alertDialog("Saving Complete 😌");
+
+                }else if(!task.isSuccessful()){
+                    //alertDialog("Saving Failed... :(");
+                }
+            }
+        });
 
     }
     /* ********************************************************************** */
