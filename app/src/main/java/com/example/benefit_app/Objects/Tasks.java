@@ -11,5 +11,26 @@ public class Tasks {
                  String task16,  String task17,  String task18,  String task19,  String task20 ){
 
         this.task1 = task1;
+        this.task2 = task2;
+        this.task3 = task3;
+        this.task4 = task4;
+        this.task5 = task5;
+        this.task6 = task6;
+        this.task7 = task7;
+        this.task8 = task8;
+        this.task9 = task9;
+        this.task10 = task10;
+        this.task11 = task11;
+        this.task12 = task12;
+        this.task13 = task13;
+        this.task14 = task14;
+        this.task15 = task15;
+        this.task16 = task16;
+        this.task17 = task17;
+        this.task18 = task18;
+        this.task19 = task19;
+        this.task20 = task20;
+
+
     }
 }

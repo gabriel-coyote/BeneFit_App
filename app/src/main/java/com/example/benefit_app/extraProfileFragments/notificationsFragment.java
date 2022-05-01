@@ -9,12 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.benefit_app.MainActivity;
 import com.example.benefit_app.R;
 
 
 public class notificationsFragment extends Fragment {
+
+
 
 
     private Button notification_doneButton;
@@ -40,6 +43,8 @@ public class notificationsFragment extends Fragment {
 
         notification_doneButton = viewer.findViewById(R.id.notification_DoneButton);
         notification_doneButton.setOnClickListener(view -> MainActivity.bottomNavigationView.setSelectedItemId(R.id.menu_Profile));
+
+
 
 
         return viewer;
