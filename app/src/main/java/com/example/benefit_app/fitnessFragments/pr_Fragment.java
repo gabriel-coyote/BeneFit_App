@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +26,8 @@ public class pr_Fragment extends Fragment {
 
 
     private ImageView backButton;
+    private EditText prTitle, prBody;
+    private TextView prSaveButton;
 
 
     View viewer;
@@ -84,6 +87,17 @@ public class pr_Fragment extends Fragment {
             getActivity().onBackPressed();
         });
 
+        prBody = viewer.findViewById(R.id.editPRbody);
+        prTitle = viewer.findViewById(R.id.pr_title);
+        prSaveButton = viewer.findViewById(R.id.savePR);
+
+        prSaveButton.setOnClickListener(view -> {
+            createdPR();
+        });
+
+
+
+
 
      return viewer;
     }
@@ -93,6 +107,10 @@ public class pr_Fragment extends Fragment {
 
     /* ********************************************************************** */
 
+    public void createdPR(){
+
+
+    }
 
     /* ********************************************************************** */
     /* FUNCTION NAME:    loadFragment
