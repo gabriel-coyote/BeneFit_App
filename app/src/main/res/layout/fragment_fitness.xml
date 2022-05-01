@@ -13,6 +13,8 @@
         android:layout_height="120dp"
         android:layout_marginTop="108dp"
         android:background="@drawable/ic_pr3_backround"
+        android:clickable="false"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +27,8 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="108dp"
         android:background="@drawable/ic_pr3_backround"
+        android:clickable="false"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,6 +57,7 @@
         android:text="0"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,6 +119,8 @@
         android:layout_marginTop="108dp"
         android:layout_marginEnd="36dp"
         android:background="@drawable/ic_pr3_backround"
+        android:clickable="false"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -284,6 +291,7 @@
         android:text="PR Name"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="@+id/PRSquare1"
         app:layout_constraintStart_toStartOf="@+id/PRSquare1"
         app:layout_constraintTop_toTopOf="@+id/PRSquare1" />
@@ -296,6 +304,7 @@
         android:text="0 lbs"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/PRSquare1"
         app:layout_constraintEnd_toEndOf="@+id/PRSquare1"
         app:layout_constraintStart_toStartOf="@+id/PRSquare1"
@@ -309,6 +318,7 @@
         android:fontFamily="@font/orbitron"
         android:text="PR Name"
         android:textColor="#FFFFFF"
+        android:visibility="invisible"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/PRSquare2"
         app:layout_constraintStart_toStartOf="@+id/PRSquare2"
@@ -322,6 +332,7 @@
         android:text="0 lbs"
         android:textColor="#FFFFFF"
         android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/PRSquare2"
         app:layout_constraintEnd_toEndOf="@+id/PRSquare2"
         app:layout_constraintStart_toStartOf="@+id/PRSquare2"
@@ -335,6 +346,7 @@
         android:fontFamily="@font/orbitron"
         android:text="PR Name"
         android:textColor="#FFFFFF"
+        android:visibility="invisible"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/PRSquare3"
         app:layout_constraintStart_toStartOf="@+id/PRSquare3"
@@ -347,6 +359,7 @@
         android:fontFamily="@font/orbitron"
         android:text="0 lbs"
         android:textColor="#FFFFFF"
+        android:visibility="invisible"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/PRSquare3"
         app:layout_constraintEnd_toEndOf="@+id/PRSquare3"
