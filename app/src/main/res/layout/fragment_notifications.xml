@@ -10,6 +10,7 @@
         android:id="@+id/notification_DoneButton"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
+        android:layout_marginStart="100dp"
         android:layout_marginBottom="128dp"
         android:background="@drawable/background_savebutton"
         android:fontFamily="@font/orbitron"
@@ -28,6 +29,7 @@
         android:background="@drawable/background_savebutton"
         android:fontFamily="@font/orbitron"
         android:text="Clear"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.757"
@@ -341,7 +343,8 @@
                     android:textColorHint="#80FFFFFF"
                     android:textSize="11sp"
                     app:layout_constraintStart_toStartOf="@+id/checkBox8"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
