@@ -3,6 +3,7 @@ package com.example.benefit_app.ui.profile;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -61,13 +62,13 @@ public class ProfileFragment extends Fragment {
 
         // IF the viewer doesn't exist then make one
         // Else keep the same viewer
-        if (viewer != null) {
-            if ((ViewGroup)viewer.getParent() != null)
-                ((ViewGroup)viewer.getParent()).removeView(viewer);
-            return viewer;
-        }else {
+//        if (viewer != null) {
+//            if ((ViewGroup)viewer.getParent() != null)
+//                ((ViewGroup)viewer.getParent()).removeView(viewer);
+//            return viewer;
+//        }else {
             viewer = inflater.inflate(R.layout.fragment_profile, container, false);
-        }
+//        }
 
         profile_editButton = viewer.findViewById(R.id.profile_editButton);
         profile_editButton.setOnClickListener(view -> loadFragment(MainActivity.fragmentProfileEdit));
@@ -82,6 +83,7 @@ public class ProfileFragment extends Fragment {
 
         // Updates Name and Username when the user logs in; if exist
         updateUI();
+        loadLifetimeStats();
 
         //SIGN-OUT FEATURE---------------->
         sign_out_button = viewer.findViewById(R.id.sign_out_button_layout);
@@ -92,6 +94,44 @@ public class ProfileFragment extends Fragment {
         });
         return viewer;
     }
+
+    /* ********************************************************************** */
+    public void loadLifetimeStats(){
+
+//
+//        String currentUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//
+//        DatabaseReference rootRef  = FirebaseDatabase.getInstance().getReference();
+//        DatabaseReference userWorkouts = rootRef.child("UsersWorkouts").child(currentUser).child(WorkoutDay);
+//        ValueEventListener eventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.exists()){
+//                    // User does have workout created for today in database; so load data into view
+////                    createdWorkoutTitle.setText(snapshot.child("workoutTitle").getValue(String.class));
+////                    createdWorkout.setText(snapshot.child("workoutBody").getValue(String.class));
+////                    createdWorkoutCalories.setText(String.valueOf(snapshot.child("workoutCalories").getValue(Integer.class)));
+////
+//                }else{
+//                    // User doesn't have a specific workout created for this day
+////                    createdWorkoutTitle.setText("");
+////                    createdWorkout.setText("");
+////                    createdWorkoutCalories.setText("");
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Log.d("LoadWorkouts_TAG:", error.getMessage()); //Don't ignore errors!
+//
+//            }
+//        };
+//
+//        userWorkouts.addListenerForSingleValueEvent(eventListener);
+//
+
+    }
+
 
     /* ********************************************************************** */
     /* FUNCTION NAME:    loadFragment
