@@ -24,6 +24,14 @@ public class User {
 
     }
 
+    public boolean validUserInput(String name, String password){
+        if(name.equals(String.class) & password.equals(String.class)){
+            return  true;
+        }
+        else{
+            return false;
+        }
+    }
 
     public String getFirstName() {
         return firstName;
