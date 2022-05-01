@@ -306,7 +306,8 @@
                     android:textColorHint="#80FFFFFF"
                     android:textSize="11sp"
                     app:layout_constraintStart_toStartOf="@+id/checkBox7"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
