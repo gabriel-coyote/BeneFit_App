@@ -2,7 +2,6 @@
 <resources>
 
     <!-- This file is used the set the no action bar & status bar theme for the app -->
-    <!-- For Login/Create Page -->
     <style name="AppTheme.Login" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
@@ -15,18 +14,20 @@
         <item name="cornerSize">50%</item>
     </style>
 
-
     <!-- This file is used the set the no action bar & status bar theme for the app -->
-    <!-- Theme for when user is signed in -->
     <style name="AppTheme.Main" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="colorPrimary">#29E1CD</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
     </style>
-
-
-
 
 </resources>
 

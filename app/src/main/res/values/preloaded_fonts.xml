@@ -3,5 +3,6 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/orbitron</item>
         <item>@font/oregano</item>
+        <item>@font/roboto</item>
     </array>
 </resources>

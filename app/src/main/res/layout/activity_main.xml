@@ -1,55 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".MainActivity"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-
-
-
-    <FrameLayout
-        android:id="@+id/main_fragment_Container"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:context=".MainActivity">
 
 
-   <com.google.android.material.bottomappbar.BottomAppBar
-       android:id="@+id/bottomAppBar"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_gravity="bottom"
-       android:backgroundTint="#0F0F14"
-       app:fabCradleMargin="5dp"
-       app:fabCradleRoundedCornerRadius="7dp"
-       >
+            <FrameLayout
+                android:id="@+id/main_fragment_Container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            </FrameLayout>
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottomAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:backgroundTint="#0F0F14"
+                app:fabCradleMargin="5dp"
+                app:fabCradleRoundedCornerRadius="7dp">
 
 
-   <com.google.android.material.bottomnavigation.BottomNavigationView
-       android:id="@+id/bottomNavigationView"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:menu="@menu/bottom_navigation_menu"
-       android:layout_marginEnd="16dp"
-       android:background="@drawable/background_transparent"
-       app:itemIconTint="@drawable/bottom_nav_colors"
-       app:itemTextColor="@drawable/bottom_nav_colors"
-       />
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottomNavigationView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/background_transparent"
+                    app:itemIconTint="@drawable/bottom_nav_colors"
+                    app:itemTextColor="@drawable/bottom_nav_colors"
+                    app:menu="@menu/bottom_navigation_menu" />
 
-   </com.google.android.material.bottomappbar.BottomAppBar>
+            </com.google.android.material.bottomappbar.BottomAppBar>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/actionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_menu_action_button"
-        app:layout_anchor="@id/bottomAppBar"
-        tools:ignore="ContentDescription,SpeakableTextPresentCheck,
-        SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/actionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_menu_action_button"
+                app:layout_anchor="@id/bottomAppBar"
+                tools:ignore="ContentDescription,SpeakableTextPresentCheck,
+            SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
+
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="86dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:clickable="false"
+                android:text="Button"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/StepsProgress_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Click To"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/StepsProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/StepsProgressBar" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="90dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/StepsProgress_text" />
+
+        <TextView
+            android:id="@+id/StepsGoal_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Set Goal!"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/StepsProgressBar"
+            app:layout_constraintTop_toBottomOf="@+id/view"/>
+
+        <ProgressBar
+            android:id="@+id/StepsProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginBottom="367dp"
+            android:background="@drawable/circle_shape_steps"
+            android:indeterminate="false"
+            android:max="0"
+            android:progress="100"
+            android:progressDrawable="@drawable/circular_progress_bar_steps"
+            android:scaleX="-1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/WaterProgress_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Click To"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/WaterProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/WaterProgressBar" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="90dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/WaterProgress_text" />
+
+        <TextView
+            android:id="@+id/WaterGoal_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Set Goal!"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/WaterProgressBar"
+            app:layout_constraintTop_toBottomOf="@+id/view2"/>
+
+        <ProgressBar
+            android:id="@+id/WaterProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="85dp"
+            android:background="@drawable/circle_shape_water"
+            android:indeterminate="false"
+            android:max="0"
+            android:progress="0"
+            android:scaleX="-1"
+            android:progressDrawable="@drawable/circular_progress_bar_water"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/StepsProgressBar" />
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <TextView
+            android:id="@+id/caloriesProgress_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Click To"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/caloriesProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/caloriesProgressBar" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="271dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/caloriesProgress_text" />
+
+        <TextView
+            android:id="@+id/caloriesGoal_text"
+            android:layout_width="92dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/orbitron"
+            android:gravity="center_horizontal"
+            android:text="Set Goal!"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/caloriesProgressBar"
+            app:layout_constraintTop_toBottomOf="@+id/view3"/>
+
+
+        <ProgressBar
+            android:id="@+id/caloriesProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="162dp"
+            android:background="@drawable/circle_shape_calories"
+            android:indeterminate="false"
+            android:max="0"
+            android:progress="0"
+            android:scaleX="-1"
+            android:progressDrawable="@drawable/circular_progress_bar_calories"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/WaterProgressBar" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
