@@ -618,7 +618,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
 
-    /* ********************************************************************** */
+    /* *********************************************************************** */
     /* FUNCTION NAME:    loadFragment
        INPUT:            A Fragment
        OUTPUT:           n/a
